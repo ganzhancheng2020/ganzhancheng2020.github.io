@@ -170,6 +170,108 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-如果创建自己的博客（一）：hexo博客本地部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/05/%E5%A6%82%E6%9E%9C%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Ahexo%E5%8D%9A%E5%AE%A2%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/">如果创建自己的博客（一）：hexo博客本地部署</a>
+    </h1>
+  
+
+        
+        <a href="/2022/07/05/%E5%A6%82%E6%9E%9C%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Ahexo%E5%8D%9A%E5%AE%A2%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/" class="archive-article-date">
+  	<time datetime="2022-07-05T14:51:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1. 安装node.js"></a>1. 安装node.js</h3><p>安装地址：在浏览器输入<code>nodejs.org</code>，点击下载当前版本<code>10.15.1.LTS</code>（以LTS结尾长期支持版的）。<br>下载后将安装包打开然后一直点击安装就可以了，按对应的操作系统安装对应的版本即可。<br>node.js会安装两个包，1是<code>npm</code>，2是<code>node</code></p>
+<h3 id="2-检测hexo是否安装成功"><a href="#2-检测hexo是否安装成功" class="headerlink" title="2. 检测hexo是否安装成功"></a>2. 检测hexo是否安装成功</h3><p>打开我们的<code>terminal</code>输入以下代码，如果成功显示版本号那就是为成功的。</p>
+<pre><code>#sh-3.2# npm -v
+6.10.2
+#sh-3.2# node -v
+v12.8.0 </code></pre><h3 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3. 安装hexo"></a>3. 安装hexo</h3><p>用<code>npm</code>可以直接安装<code>hexo</code>框架</p>
+<pre><code>npm install hexo-cli -g</code></pre><p>如果安装失败看下是不是node版本不适应的原因。<br>请到<code>nodejs.org</code>安装相应的版本（hexo 4.2.0对应的版本为node12.XX.XX）。</p>
+<h3 id="4-验证hexo是否安装成功"><a href="#4-验证hexo是否安装成功" class="headerlink" title="4. 验证hexo是否安装成功"></a>4. 验证hexo是否安装成功</h3><p>注意看当前版本配置为hexo4.2.0 node版本为12.8.0, 如果出错请下载与之对应的版本。</p>
+<pre><code>hexo -v</code></pre><h3 id="5-新建一个目录"><a href="#5-新建一个目录" class="headerlink" title="5. 新建一个目录"></a>5. 新建一个目录</h3><p>hexo安装成功后可以新建一个目录，那是你存放博客文件的地方 如：</p>
+<pre><code>mkdir 个人博客2022</code></pre><h3 id="6-hexo初始化博客"><a href="#6-hexo初始化博客" class="headerlink" title="6. hexo初始化博客"></a>6. hexo初始化博客</h3><p>然后可以进入我们的目录开始初始化博客了。</p>
+<pre><code>cd 个人博客2022
+hexo init blog</code></pre><h3 id="7-启动hexo博客"><a href="#7-启动hexo博客" class="headerlink" title="7. 启动hexo博客"></a>7. 启动hexo博客</h3><p>好的，我们试一下博客是否可以正常启动。</p>
+<pre><code>cd blog
+hexo s</code></pre><h3 id="8-验证hexo博客是否正常运行"><a href="#8-验证hexo博客是否正常运行" class="headerlink" title="8. 验证hexo博客是否正常运行"></a>8. 验证hexo博客是否正常运行</h3><p>最后打开浏览器输入<code>http://localhost:4000/</code>进行验证就可以了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">如何创建自己的博客</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/博客//" class="article-tag-list-link color3">博客</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/07/05/%E5%A6%82%E6%9E%9C%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Ahexo%E5%8D%9A%E5%AE%A2%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-疫情下的巴菲特2020股东大会" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -190,8 +292,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<h2 id="疫情下的巴菲特2020股东大会"><a href="#疫情下的巴菲特2020股东大会" class="headerlink" title="疫情下的巴菲特2020股东大会"></a>疫情下的巴菲特2020股东大会</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p>认为当初购买航空股可获得可观的收益，实际上是个错误。此次疫情对航空业打击很大，现在不清楚航空业在未来的会恢复多少。</p>
+        <h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p>认为当初购买航空股可获得可观的收益，实际上是个错误。此次疫情对航空业打击很大，现在不清楚航空业在未来的会恢复多少。</p>
 <h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><p>如果你持有的股票是自己欣赏的公司，即使疫情下价格发生改变，如果你真的认可商业模式和管理，股票有它自己的优势。</p>
 <h3 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h3><p>现在不建议建仓，除非做好长期持有的准备，如果现在选择进入股市市场要做好下跌50%或更多的准备。</p>
 <h3 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h3><p>回顾大萧条 道琼斯指数1929年9月3号在381.17点 大约两月后1929年11月13号道琼斯指数跌到198.69点跌幅接近50%。大约9个半月后1930年8月29号道琼斯指数恢复到240. 42点涨幅20%。人们当时认为从大萧条到了衰退期。但在1932年7月8号道琼斯指数跌倒了41.22点，不到两年跌幅超过了83%。银行相继面临破产，世界格局发生改变 FBIC机构成立。</p>
@@ -574,6 +675,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">如何创建自己的博客</a>
               </li>
             
             <div class="clearfix"></div>
