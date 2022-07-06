@@ -61,9 +61,11 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/categories/%E7%BC%96%E7%A8%8B">编程</a></li>
+				<li><a href="/categories/%E7%BC%96%E7%A8%8B">编程笔记</a></li>
 	        
-				<li><a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90">数据分析</a></li>
+				<li><a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90">数据分析</a></li>
+	        
+				<li><a href="/archives/index.html">文章归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -127,6 +129,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -149,11 +153,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/categories/%E7%BC%96%E7%A8%8B">编程</a></li>
+					<li style="width: 25%"><a href="/categories/%E7%BC%96%E7%A8%8B">编程笔记</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90">数据分析</a></li>
+					<li style="width: 25%"><a href="/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90">数据分析</a></li>
+		        
+					<li style="width: 25%"><a href="/archives/index.html">文章归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -169,6 +175,105 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-如何创建自己的博客（二）：hexo博客上线github（线上部署）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/06/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9Ahexo%E5%8D%9A%E5%AE%A2%E4%B8%8A%E7%BA%BFgithub%EF%BC%88%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2%EF%BC%89/">如何创建自己的博客（二）：hexo博客部署到github</a>
+    </h1>
+  
+
+        
+        <a href="/2022/07/06/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9Ahexo%E5%8D%9A%E5%AE%A2%E4%B8%8A%E7%BA%BFgithub%EF%BC%88%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2022-07-06T12:35:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-创建github帐号"><a href="#1-创建github帐号" class="headerlink" title="1. 创建github帐号"></a>1. 创建github帐号</h3><p>打开浏览器输入<code>github.com</code>进入github页面，点击右上角的<code>sign up</code>,根据指引依次填写邮箱、密码、用户名就可以了。<br>填好之后github会向你邮箱发送一封验证邮件，通过邮箱验证后就完成注册了。</p>
+<h3 id="2-创建github仓库"><a href="#2-创建github仓库" class="headerlink" title="2. 创建github仓库"></a>2. 创建github仓库</h3><p>i. 登录自己的github帐号，点击<code>Repositories</code>。<br>ii. 点击<code>new</code>，在<code>Repositories name</code>中输入自己的<code>github的用户名+github.io</code>(示例：ganzhancheng2020.github.io)点击确认后并保存。<br>PS：这里<code>Repossitories name</code>一定用自己的<code>github用户名+github.io</code>，不然待会是不能进行部署的。</p>
+<h3 id="3-修改-config配置文件"><a href="#3-修改-config配置文件" class="headerlink" title="3. 修改_config配置文件"></a>3. 修改_config配置文件</h3><p>返回本地blog文件夹，在里面对<code>_config</code>文件修改配置。<br>在文件最后的<code>Deployment</code>模块修改，设置如下：<br>type写<code>git</code>就可以了，repo是刚输入的<code>Repositories name</code>,branch默认为<code>master</code>。</p>
+<pre><code># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: https://github.com/ganzhancheng2020/ganzhancheng2020.github.io.git
+  branch: master</code></pre><h3 id="4-安装hexo开发者插件"><a href="#4-安装hexo开发者插件" class="headerlink" title="4. 安装hexo开发者插件"></a>4. 安装hexo开发者插件</h3><p>这个插件要预先安装不然再进行下一步部署的时候会报错。<br>在<code>terminal</code>输入以下命令：</p>
+<pre><code>npm install hexo-deployer-git --save</code></pre><h3 id="5-将hexo部署到github上去"><a href="#5-将hexo部署到github上去" class="headerlink" title="5. 将hexo部署到github上去"></a>5. 将hexo部署到github上去</h3><p>插件安装完成后，输入hexo d将把本地文件部署到上github上。</p>
+<pre><code>hexo d</code></pre><h3 id="6-登录页面进行测试"><a href="#6-登录页面进行测试" class="headerlink" title="6. 登录页面进行测试"></a>6. 登录页面进行测试</h3><p>完成之后可以在浏览器输入自己的<code>github的用户名+github.io</code>(示例：ganzhancheng2020.github.io)看一下效果。<br>在这过程需要几分钟，若显示404可稍后进行尝试。<br>如果你页面上看到<code>hexo</code>在那就代表hexo博客成功部署到github上了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">如何创建自己的博客</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/博客//" class="article-tag-list-link color3">博客</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/07/06/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9Ahexo%E5%8D%9A%E5%AE%A2%E4%B8%8A%E7%BA%BFgithub%EF%BC%88%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2%EF%BC%89/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-如果创建自己的博客（一）：hexo博客本地部署" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
