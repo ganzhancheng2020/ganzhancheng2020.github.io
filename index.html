@@ -176,6 +176,102 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-如何创建自己的博客（三）：hexo主题更换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/07/07/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9Ahexo%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%8D%A2/">如何创建自己的博客（三）：hexo主题更换</a>
+    </h1>
+  
+
+        
+        <a href="/2022/07/07/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9Ahexo%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%8D%A2/" class="archive-article-date">
+  	<time datetime="2022-07-07T12:28:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-主题选择"><a href="#1-主题选择" class="headerlink" title="1.主题选择"></a>1.主题选择</h3><p>hexo其实有许多好用的主题，其实原版的也不错都可以用。但每个人都会也有自己的个人喜好嘛~<br>hexo官方网页上也是有很多主题的，进入<code>https://hexo.io/themes/</code>页面可以选择自己所喜欢的。<br>这里推荐一款我目前自己在用的主题<code>yilia</code>,这个主题用的人会比较多而且也出得比较久了，所以出了问题的话也会比较好维护。</p>
+<h3 id="2-主题安装"><a href="#2-主题安装" class="headerlink" title="2.主题安装"></a>2.主题安装</h3><p>打开<code>terminal</code>进入在本地<code>**/blog/themes</code>路径下输入以下命令：</p>
+<pre><code>$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code></pre><p>克隆完成后修改hexo根目录下的<code>_config.yml</code>：<code>theme：yilia</code></p>
+<h3 id="3-主题配置"><a href="#3-主题配置" class="headerlink" title="3.主题配置"></a>3.主题配置</h3><p>主题配置在主目录下的<code>_config.yml</code>,请根据自己需要修改使用。下面是本人的配置可以参考使用哈</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Header</span></span><br><span class="line"><span class="comment"># 菜单下面的都是分页，可以按需添加</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">主页:</span> <span class="string">/</span></span><br><span class="line">  <span class="string">编程笔记:</span> <span class="string">/categories/编程</span> </span><br><span class="line">  <span class="string">数据分析:</span> <span class="string">/categories/数据分析</span></span><br><span class="line">  <span class="string">文章归档:</span> <span class="string">/archives/index.html</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="attr">jsonContent:</span></span><br><span class="line">    <span class="attr">meta:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">pages:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">posts:</span></span><br><span class="line">      <span class="attr">title:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">date:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">path:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">text:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">raw:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">content:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">slug:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">updated:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">comments:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">link:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">permalink:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">excerpt:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">categories:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">tags:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># SubNav</span></span><br><span class="line"><span class="attr">subnav:</span></span><br><span class="line">  <span class="attr">github:</span> <span class="string">"https://github.com/ganzhancheng2020"</span></span><br><span class="line">  <span class="comment">#weibo: "#"</span></span><br><span class="line">  <span class="comment">#rss: "#"</span></span><br><span class="line">  <span class="comment">#zhihu: "#"</span></span><br><span class="line">  <span class="comment">#qq: "#"</span></span><br><span class="line">  <span class="attr">weixin:</span> <span class="string">"/assets/img/weixin.png"</span></span><br><span class="line">  <span class="comment">#jianshu: "#"</span></span><br><span class="line">  <span class="comment">#douban: "#"</span></span><br><span class="line">  <span class="comment">#segmentfault: "#"</span></span><br><span class="line">  <span class="attr">bilibili:</span> <span class="string">"https://space.bilibili.com/7522004"</span></span><br><span class="line">  <span class="comment">#acfun: "#"</span></span><br><span class="line">  <span class="attr">mail:</span> <span class="string">"mailto:2513663405@qq.com"</span></span><br><span class="line">  <span class="comment">#facebook: "#"</span></span><br><span class="line">  <span class="comment">#google: "#"</span></span><br><span class="line">  <span class="comment">#twitter: "#"</span></span><br><span class="line">  <span class="attr">linkedin:</span> <span class="string">"https://www.linkedin.com/in/jack-gan-29653b186/"</span></span><br><span class="line"></span><br><span class="line"><span class="attr">rss:</span> <span class="string">/atom.xml</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否需要修改 root 路径</span></span><br><span class="line"><span class="comment"># 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，</span></span><br><span class="line"><span class="comment"># 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Content</span></span><br><span class="line"><span class="comment"># 觉得文章太长想截断，代码&lt;!--more--&gt;需要在文章中使用</span></span><br><span class="line"><span class="comment"># 文章太长，截断按钮文字</span></span><br><span class="line"><span class="attr">excerpt_link:</span> <span class="string">more</span></span><br><span class="line"><span class="comment"># 文章卡片右下角常驻链接，不需要请设置为false</span></span><br><span class="line"><span class="attr">show_all_link:</span> <span class="string">'展开全文'</span></span><br><span class="line"><span class="comment"># 数学公式</span></span><br><span class="line"><span class="attr">mathjax:</span> <span class="literal">false</span></span><br><span class="line"><span class="comment"># 是否在新窗口打开链接</span></span><br><span class="line"><span class="attr">open_in_new:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打赏</span></span><br><span class="line"><span class="comment"># 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏</span></span><br><span class="line"><span class="attr">reward_type:</span> <span class="number">2</span></span><br><span class="line"><span class="comment"># 打赏wording</span></span><br><span class="line"><span class="attr">reward_wording:</span> <span class="string">'谢谢你请我喝咖啡'</span></span><br><span class="line"><span class="comment"># 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg</span></span><br><span class="line"><span class="attr">alipay:</span> </span><br><span class="line"><span class="comment"># 微信二维码图片地址</span></span><br><span class="line"><span class="attr">weixin:</span> <span class="string">/assets/img/reward.png</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 目录</span></span><br><span class="line"><span class="comment"># 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录</span></span><br><span class="line"><span class="attr">toc:</span> <span class="number">2</span></span><br><span class="line"><span class="comment"># 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false</span></span><br><span class="line"><span class="attr">toc_hide_index:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># 目录为空时的提示</span></span><br><span class="line"><span class="attr">toc_empty_wording:</span> <span class="string">'目录，不存在的…'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否有快速回到顶部的按钮</span></span><br><span class="line"><span class="attr">top:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Miscellaneous</span></span><br><span class="line"><span class="attr">baidu_analytics:</span> <span class="string">''</span></span><br><span class="line"><span class="attr">google_analytics:</span> <span class="string">''</span></span><br><span class="line"><span class="attr">favicon:</span> <span class="string">/assets/img/icon.png</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#你的头像url</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">/assets/img/icon.png</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#是否开启分享</span></span><br><span class="line"><span class="attr">share_jia:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment</span></span><br><span class="line"><span class="comment">#不需要使用某项，直接设置值为false，或注释掉</span></span><br><span class="line"><span class="comment">#具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#1、多说</span></span><br><span class="line"><span class="attr">duoshuo:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#2、网易云跟帖</span></span><br><span class="line"><span class="attr">wangyiyun:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#3、畅言</span></span><br><span class="line"><span class="attr">changyan_appid:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">changyan_conf:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的</span></span><br><span class="line"><span class="attr">disqus:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#5、Gitment</span></span><br><span class="line"><span class="attr">gitment_owner:</span> <span class="literal">false</span>      <span class="comment">#你的 GitHub ID</span></span><br><span class="line"><span class="attr">gitment_repo:</span> <span class="string">''</span>          <span class="comment">#存储评论的 repo</span></span><br><span class="line"><span class="attr">gitment_oauth:</span></span><br><span class="line">  <span class="attr">client_id:</span> <span class="string">''</span>           <span class="comment">#client ID</span></span><br><span class="line">  <span class="attr">client_secret:</span> <span class="string">''</span>       <span class="comment">#client secret</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 样式定制 - 一般不需要修改，除非有很强的定制欲望…</span></span><br><span class="line"><span class="attr">style:</span></span><br><span class="line">  <span class="comment"># 头像上面的背景颜色</span></span><br><span class="line">  <span class="attr">header:</span> <span class="string">'#434343'</span></span><br><span class="line">  <span class="comment"># 右滑板块背景</span></span><br><span class="line">  <span class="attr">slider:</span> <span class="string">'linear-gradient(200deg,#a0cfe4,#e8c37e)'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># slider的设置</span></span><br><span class="line"><span class="attr">slider:</span></span><br><span class="line">  <span class="comment"># 是否默认展开tags板块</span></span><br><span class="line">  <span class="attr">showTags:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 智能菜单</span></span><br><span class="line"><span class="comment"># 如不需要，将该对应项置为false</span></span><br><span class="line"><span class="comment"># 比如</span></span><br><span class="line"><span class="comment">#smart_menu:</span></span><br><span class="line"><span class="comment">#  friends: false</span></span><br><span class="line"><span class="attr">smart_menu:</span></span><br><span class="line">  <span class="attr">innerArchive:</span> <span class="string">'所有文章'</span></span><br><span class="line">  <span class="attr">friends:</span> <span class="string">'友情链接'</span></span><br><span class="line">  <span class="attr">aboutme:</span> <span class="string">'关于我'</span></span><br><span class="line"></span><br><span class="line"><span class="attr">friends:</span></span><br><span class="line">  <span class="attr">github:</span> <span class="string">‘https://github.com/ganzhancheng2020’</span></span><br><span class="line"></span><br><span class="line"><span class="attr">aboutme:</span> <span class="string">'一名野生的数据分析师'</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-图片位置"><a href="#4-图片位置" class="headerlink" title="4.图片位置"></a>4.图片位置</h3><p>这里要注意一下打赏中有三个图片是需要放在<code>/assets/img/</code>,这个文件夹是在hexo根目录下的，并不是在theme文件夹下。<br>其中两张是打赏的图片，一张是头像的图片。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打赏</span></span><br><span class="line"><span class="comment"># 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏</span></span><br><span class="line"><span class="attr">reward_type:</span> <span class="number">2</span></span><br><span class="line"><span class="comment"># 打赏wording</span></span><br><span class="line"><span class="attr">reward_wording:</span> <span class="string">'谢谢你请我喝咖啡'</span></span><br><span class="line"><span class="comment"># 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg</span></span><br><span class="line"><span class="attr">alipay:</span> </span><br><span class="line"><span class="comment"># 微信二维码图片地址</span></span><br><span class="line"><span class="attr">weixin:</span> <span class="string">/assets/img/reward.png</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#你的头像url</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">/assets/img/icon.png</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">如何创建自己的博客</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/博客//" class="article-tag-list-link color3">博客</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/07/07/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9Ahexo%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%8D%A2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-数据分析岗位相关职责" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -483,100 +579,6 @@ hexo s</code></pre><h3 id="8-验证hexo博客是否正常运行"><a href="#8-验
 
 
   
-    <article id="post-疫情下的巴菲特2020股东大会" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/04/%E7%96%AB%E6%83%85%E4%B8%8B%E7%9A%84%E5%B7%B4%E8%8F%B2%E7%89%B92020%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A/">疫情下的巴菲特2020股东大会</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/04/%E7%96%AB%E6%83%85%E4%B8%8B%E7%9A%84%E5%B7%B4%E8%8F%B2%E7%89%B92020%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A/" class="archive-article-date">
-  	<time datetime="2020-04-04T03:56:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p>认为当初购买航空股可获得可观的收益，实际上是个错误。此次疫情对航空业打击很大，现在不清楚航空业在未来的会恢复多少。</p>
-<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><p>如果你持有的股票是自己欣赏的公司，即使疫情下价格发生改变，如果你真的认可商业模式和管理，股票有它自己的优势。</p>
-<h3 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h3><p>现在不建议建仓，除非做好长期持有的准备，如果现在选择进入股市市场要做好下跌50%或更多的准备。</p>
-<h3 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h3><p>回顾大萧条 道琼斯指数1929年9月3号在381.17点 大约两月后1929年11月13号道琼斯指数跌到198.69点跌幅接近50%。大约9个半月后1930年8月29号道琼斯指数恢复到240. 42点涨幅20%。人们当时认为从大萧条到了衰退期。但在1932年7月8号道琼斯指数跌倒了41.22点，不到两年跌幅超过了83%。银行相继面临破产，世界格局发生改变 FBIC机构成立。</p>
-<h3 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h3><p>疫情会对经济有影响 某些行业会进一步衰退 比如 汽车行业 报业 航空业 农业</p>
-<h3 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h3><p>石油行业正在发生风险</p>
-<h3 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h3><p>买股票就是买公司收益的一部分，大多数人应该持有标普500</p>
-<h3 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h3><p>做好分散投资 不要把鸡蛋放在同一个篮子里。</p>
-<h3 id="9"><a href="#9" class="headerlink" title="9."></a>9.</h3><p>有时候觉得失去信心其实是没有看到市场的潜在能力，要对美国市场有信心</p>
-<h3 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h3><p>现在股价还太高</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">巴菲特</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/金融//" class="article-tag-list-link color3">金融</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/04/%E7%96%AB%E6%83%85%E4%B8%8B%E7%9A%84%E5%B7%B4%E8%8F%B2%E7%89%B92020%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-自动聊天机器人学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -651,6 +653,100 @@ hexo s</code></pre><h3 id="8-验证hexo博客是否正常运行"><a href="#8-验
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/04/04/%E8%87%AA%E5%8A%A8%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-疫情下的巴菲特2020股东大会" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/04/%E7%96%AB%E6%83%85%E4%B8%8B%E7%9A%84%E5%B7%B4%E8%8F%B2%E7%89%B92020%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A/">疫情下的巴菲特2020股东大会</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/04/%E7%96%AB%E6%83%85%E4%B8%8B%E7%9A%84%E5%B7%B4%E8%8F%B2%E7%89%B92020%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A/" class="archive-article-date">
+  	<time datetime="2020-04-04T03:56:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p>认为当初购买航空股可获得可观的收益，实际上是个错误。此次疫情对航空业打击很大，现在不清楚航空业在未来的会恢复多少。</p>
+<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><p>如果你持有的股票是自己欣赏的公司，即使疫情下价格发生改变，如果你真的认可商业模式和管理，股票有它自己的优势。</p>
+<h3 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h3><p>现在不建议建仓，除非做好长期持有的准备，如果现在选择进入股市市场要做好下跌50%或更多的准备。</p>
+<h3 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h3><p>回顾大萧条 道琼斯指数1929年9月3号在381.17点 大约两月后1929年11月13号道琼斯指数跌到198.69点跌幅接近50%。大约9个半月后1930年8月29号道琼斯指数恢复到240. 42点涨幅20%。人们当时认为从大萧条到了衰退期。但在1932年7月8号道琼斯指数跌倒了41.22点，不到两年跌幅超过了83%。银行相继面临破产，世界格局发生改变 FBIC机构成立。</p>
+<h3 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h3><p>疫情会对经济有影响 某些行业会进一步衰退 比如 汽车行业 报业 航空业 农业</p>
+<h3 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h3><p>石油行业正在发生风险</p>
+<h3 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h3><p>买股票就是买公司收益的一部分，大多数人应该持有标普500</p>
+<h3 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h3><p>做好分散投资 不要把鸡蛋放在同一个篮子里。</p>
+<h3 id="9"><a href="#9" class="headerlink" title="9."></a>9.</h3><p>有时候觉得失去信心其实是没有看到市场的潜在能力，要对美国市场有信心</p>
+<h3 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h3><p>现在股价还太高</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">巴菲特</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/金融//" class="article-tag-list-link color3">金融</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/04/%E7%96%AB%E6%83%85%E4%B8%8B%E7%9A%84%E5%B7%B4%E8%8F%B2%E7%89%B92020%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A/">展开全文 >></a>
         </p>
       
 
@@ -872,11 +968,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">博客</a>
+                <a href="javascript:void(0)" class="js-tag color5">如何创建自己的博客</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">如何创建自己的博客</a>
+                <a href="javascript:void(0)" class="js-tag color3">博客</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -885,10 +981,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">职业规划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">巴菲特</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -901,6 +993,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">文本分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">巴菲特</a>
               </li>
             
             <div class="clearfix"></div>
