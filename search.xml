@@ -962,86 +962,11 @@ Name: fruit, dtype: object
       </tags>
   </entry>
   <entry>
-    <title>如何创建自己的博客（二）：hexo博客部署到github</title>
-    <url>/2022/07/06/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9Ahexo%E5%8D%9A%E5%AE%A2%E4%B8%8A%E7%BA%BFgithub%EF%BC%88%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2%EF%BC%89/</url>
-    <content><![CDATA[<h3 id="1-创建github帐号"><a href="#1-创建github帐号" class="headerlink" title="1. 创建github帐号"></a>1. 创建github帐号</h3><p>打开浏览器输入<code>github.com</code>进入github页面，点击右上角的<code>sign up</code>,根据指引依次填写邮箱、密码、用户名就可以了。<br>填好之后github会向你邮箱发送一封验证邮件，通过邮箱验证后就完成注册了。</p>
-<h3 id="2-创建github仓库"><a href="#2-创建github仓库" class="headerlink" title="2. 创建github仓库"></a>2. 创建github仓库</h3><p>i. 登录自己的github帐号，点击<code>Repositories</code>。<br>ii. 点击<code>new</code>，在<code>Repositories name</code>中输入自己的<code>github的用户名+github.io</code>(示例：ganzhancheng2020.github.io)点击确认后并保存。<br>PS：这里<code>Repossitories name</code>一定用自己的<code>github用户名+github.io</code>，不然待会是不能进行部署的。</p>
-<h3 id="3-修改-config配置文件"><a href="#3-修改-config配置文件" class="headerlink" title="3. 修改_config配置文件"></a>3. 修改_config配置文件</h3><p>返回本地blog文件夹，在里面对<code>_config</code>文件修改配置。<br>在文件最后的<code>Deployment</code>模块修改，设置如下：<br>type写<code>git</code>就可以了，repo是刚输入的<code>Repositories name</code>,branch默认为<code>master</code>。</p>
-<pre><code># Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repo: https://github.com/ganzhancheng2020/ganzhancheng2020.github.io.git
-  branch: master
-</code></pre>
-<h3 id="4-安装hexo开发者插件"><a href="#4-安装hexo开发者插件" class="headerlink" title="4. 安装hexo开发者插件"></a>4. 安装hexo开发者插件</h3><p>这个插件要预先安装不然再进行下一步部署的时候会报错。<br>在<code>terminal</code>输入以下命令：</p>
-<pre><code>npm install hexo-deployer-git --save
-</code></pre>
-<h3 id="5-将hexo部署到github上去"><a href="#5-将hexo部署到github上去" class="headerlink" title="5. 将hexo部署到github上去"></a>5. 将hexo部署到github上去</h3><p>插件安装完成后，输入hexo d将把本地文件部署到上github上。</p>
-<pre><code>hexo d
-</code></pre>
-<h3 id="6-登录页面进行测试"><a href="#6-登录页面进行测试" class="headerlink" title="6. 登录页面进行测试"></a>6. 登录页面进行测试</h3><p>完成之后可以在浏览器输入自己的<code>github的用户名+github.io</code>(示例：ganzhancheng2020.github.io)看一下效果。<br>在这过程需要几分钟，若显示404可稍后进行尝试。<br>如果你页面上看到<code>hexo</code>在那就代表hexo博客成功部署到github上了。</p>
-]]></content>
-      <categories>
-        <category>编程笔记</category>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>如何创建自己的博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何创建自己的博客（五）：hexo文章中插入图片</title>
     <url>/2022/07/10/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9Ahexo%E6%96%87%E7%AB%A0%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<h3 id="1-资源文件夹配置"><a href="#1-资源文件夹配置" class="headerlink" title="1. 资源文件夹配置"></a>1. 资源文件夹配置</h3><p>首先要修改hexo目录根上的<code>_config.yml</code>文件，在里面找到<code>post_asset_folder</code>并设置为：<code>true</code></p>
 <h3 id="2-文章内引用"><a href="#2-文章内引用" class="headerlink" title="2. 文章内引用"></a>2. 文章内引用</h3><p>这时新建文章时会在<code>_post</code>文件夹当中出现一个与文章名同名的资源文件夹，我们只需把图片放到这个资源文件夹当中。<br>然后根据以下命令进行引用，引用的参数为资源文件夹中的图片名称如<code>example.jpg</code>。</p>
 <pre><code>&#123;% asset_img example.jpg %&#125;
-</code></pre>
-]]></content>
-      <categories>
-        <category>编程笔记</category>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>如何创建自己的博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何创建自己的博客（四）：hexo常用命令</title>
-    <url>/2022/07/10/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9Ahexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h3 id="1-新建新文章"><a href="#1-新建新文章" class="headerlink" title="1. 新建新文章"></a>1. 新建新文章</h3><p>新建一篇文章。如果没有设置 layout 的话，默认使用 <code>_config.yml</code> 中的 <code>default_layout</code> 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
-<pre><code>$ hexo new [layout] &lt;title&gt;
-$ hexo new &quot;post title with white space&quot;
-</code></pre>
-<h3 id="2-创建草稿"><a href="#2-创建草稿" class="headerlink" title="2. 创建草稿"></a>2. 创建草稿</h3><p>有时候我们会同时编辑多篇文章，在某些文章未完成不想发表时可以使用创建草稿的功能。当我们把文章部署到现网时只会部署正式文章，草稿是不会在博客中显示的。</p>
-<pre><code>$ hexo new draft &lt;filename&gt;
-</code></pre>
-<p>当我们要将草稿转为正式文章时</p>
-<pre><code>$ hexo publish [layout] &lt;filename&gt;
-</code></pre>
-<h3 id="3-生产静态文件"><a href="#3-生产静态文件" class="headerlink" title="3. 生产静态文件"></a>3. 生产静态文件</h3><pre><code>$ hexo generate
-</code></pre>
-<p>命令也可以简写为</p>
-<pre><code>$ hexo g
-</code></pre>
-<h3 id="4-启动服务器"><a href="#4-启动服务器" class="headerlink" title="4. 启动服务器"></a>4. 启动服务器</h3><p>启动服务器。默认情况下，访问网址为： <code>http://localhost:4000/</code>。这个一般用于本地测试，若没什么问题了可以进行下一步部署网站。</p>
-<pre><code>$  hexo server
-</code></pre>
-<p>命令也可以简写为</p>
-<pre><code>$ hexo s
-</code></pre>
-<h3 id="5-部署网站"><a href="#5-部署网站" class="headerlink" title="5. 部署网站"></a>5. 部署网站</h3><pre><code>$ hexo deploy
-</code></pre>
-<p>命令也可以简写为</p>
-<pre><code>$ hexo d
-</code></pre>
-<h3 id="6-清除缓存"><a href="#6-清除缓存" class="headerlink" title="6. 清除缓存"></a>6. 清除缓存</h3><p>清除缓存文件 (db.json) 和已生成的静态文件 (public)。<br>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
-<pre><code>$ hexo clean
-</code></pre>
-<p>命令也可以简写为</p>
-<pre><code>$ hexo cl
 </code></pre>
 ]]></content>
       <categories>
@@ -1183,53 +1108,78 @@ global.trusted-host=&#39;pypi.tuna.tsinghua.edu.cn&#39;
       </tags>
   </entry>
   <entry>
-    <title>数字化客服设计读后感（一）：中心思想</title>
-    <url>/2022/07/26/%E6%95%B0%E5%AD%97%E5%8C%96%E5%AE%A2%E6%9C%8D%E8%AE%BE%E8%AE%A1%E8%AF%BB%E5%90%8E%E6%84%9F%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E4%B8%AD%E5%BF%83%E6%80%9D%E6%83%B3/</url>
-    <content><![CDATA[<h3 id="1-中心思想"><a href="#1-中心思想" class="headerlink" title="1. 中心思想"></a>1. 中心思想</h3><p>对于一个企业而言，客服是解决产品设计与用户认知之间一切误差的团队。<br>当发生产品设计与企业产生偏差时，用户会通过服务渠道去联系企业，这时服务就产生了。而客服的主要任务会有3个：</p>
-<ol>
-<li>推动企业减少误差.</li>
-<li>误差发生时减少误差.</li>
-<li>在两者的基础上提升效率。</li>
-</ol>
-<p>而去衡量以上3个任务是否做得好，有3个重要的指标: </p>
-<h5 id="1-服务率"><a href="#1-服务率" class="headerlink" title="1. 服务率"></a>1. 服务率</h5><p>服务率的计算公式是：服务次数除以他的产品交易总数。是作为衡量产品与用户认知差异的一个指标。当认识差异存在的时候用户才打电话向客服咨询。而一家企业可以通过服务率的指标去监控消费者对某款产品或某种交易的认知差异，从而推动企业改进。</p>
-<h5 id="2-解决力"><a href="#2-解决力" class="headerlink" title="2. 解决力"></a>2. 解决力</h5><p>客服解决力分为四个阶段：敷衍、传话筒、解决、惊喜。敷衍就是在消费者看来没有解决问题，传话筒就如同器人只是帮助企业转述了标准话说，没有实际得站在用户角度帮助用户解决问题。解决就是帮助了用户解决了当前问题。而惊喜会在解决问题的同时还会给予用户额外的收获。如：告诉用户问题的答案后，提供了避免问题发生的方法或更好得解决问题的途径。</p>
-<p>举例:<br>打电话到海底捞客服，问有新上了什么菜品？客服不但有耐心的解答了问题，还提供了新品查询渠道。本来需要进线询问菜单改为通过微信小程序APP查看菜单，成功得减少了服务率。</p>
-<h6 id="3-费力度"><a href="#3-费力度" class="headerlink" title="3. 费力度"></a>3. 费力度</h6><p>用户在解决问题的时候所需要成本，在获取时的难以程度。如：沟通客服的沟通时间，沟通效率，在客服服务的过程中用户的问题是否能容易得到解答。</p>
+    <title>如何创建自己的博客（四）：hexo常用命令</title>
+    <url>/2022/07/10/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9Ahexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h3 id="1-新建新文章"><a href="#1-新建新文章" class="headerlink" title="1. 新建新文章"></a>1. 新建新文章</h3><p>新建一篇文章。如果没有设置 layout 的话，默认使用 <code>_config.yml</code> 中的 <code>default_layout</code> 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
+<pre><code>$ hexo new [layout] &lt;title&gt;
+$ hexo new &quot;post title with white space&quot;
+</code></pre>
+<h3 id="2-创建草稿"><a href="#2-创建草稿" class="headerlink" title="2. 创建草稿"></a>2. 创建草稿</h3><p>有时候我们会同时编辑多篇文章，在某些文章未完成不想发表时可以使用创建草稿的功能。当我们把文章部署到现网时只会部署正式文章，草稿是不会在博客中显示的。</p>
+<pre><code>$ hexo new draft &lt;filename&gt;
+</code></pre>
+<p>当我们要将草稿转为正式文章时</p>
+<pre><code>$ hexo publish [layout] &lt;filename&gt;
+</code></pre>
+<h3 id="3-生产静态文件"><a href="#3-生产静态文件" class="headerlink" title="3. 生产静态文件"></a>3. 生产静态文件</h3><pre><code>$ hexo generate
+</code></pre>
+<p>命令也可以简写为</p>
+<pre><code>$ hexo g
+</code></pre>
+<h3 id="4-启动服务器"><a href="#4-启动服务器" class="headerlink" title="4. 启动服务器"></a>4. 启动服务器</h3><p>启动服务器。默认情况下，访问网址为： <code>http://localhost:4000/</code>。这个一般用于本地测试，若没什么问题了可以进行下一步部署网站。</p>
+<pre><code>$  hexo server
+</code></pre>
+<p>命令也可以简写为</p>
+<pre><code>$ hexo s
+</code></pre>
+<h3 id="5-部署网站"><a href="#5-部署网站" class="headerlink" title="5. 部署网站"></a>5. 部署网站</h3><pre><code>$ hexo deploy
+</code></pre>
+<p>命令也可以简写为</p>
+<pre><code>$ hexo d
+</code></pre>
+<h3 id="6-清除缓存"><a href="#6-清除缓存" class="headerlink" title="6. 清除缓存"></a>6. 清除缓存</h3><p>清除缓存文件 (db.json) 和已生成的静态文件 (public)。<br>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
+<pre><code>$ hexo clean
+</code></pre>
+<p>命令也可以简写为</p>
+<pre><code>$ hexo cl
+</code></pre>
 ]]></content>
       <categories>
-        <category>读书笔记</category>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
       </categories>
       <tags>
-        <tag>数字化客服设计</tag>
+        <tag>hexo</tag>
+        <tag>如何创建自己的博客</tag>
       </tags>
   </entry>
   <entry>
-    <title>数据分析岗位相关职责</title>
-    <url>/2022/07/06/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B2%97%E4%BD%8D%E7%9B%B8%E5%85%B3%E8%81%8C%E8%B4%A3/</url>
-    <content><![CDATA[<h3 id="数据分析师-x2F-数据挖掘工程师"><a href="#数据分析师-x2F-数据挖掘工程师" class="headerlink" title="数据分析师&#x2F;数据挖掘工程师"></a>数据分析师&#x2F;数据挖掘工程师</h3><ol>
-<li>基于业务理解设计数据基础体系与兄弟团队紧密合作，确保数据收集完好，结构合理，质量良好。</li>
-<li>通过数据收集、数据处理及等可视化方法，善用数据产品释放BI宝贵资源。</li>
-<li>通过业务分析和数据解读，转化成商业洞察和策略建议。</li>
-<li>沉淀分析报告，建立并不断完善分析体系。</li>
-<li>具备一定的数据挖掘能力，挖掘业务隐藏模式，能够预测业务发展趋势，帮助决策及快速调整方向。</li>
-</ol>
-<h3 id="算法团队-x2F-算法工程师"><a href="#算法团队-x2F-算法工程师" class="headerlink" title="算法团队&#x2F;算法工程师"></a>算法团队&#x2F;算法工程师</h3><ol>
-<li>精通统计模式，创新性应用前沿技术。落地实际业务场景，实现最大增值。</li>
-<li>在数据收集与校验中，与兄弟团队紧密合作。</li>
-<li>基于决策层的商业决定，提供及时资源保证。</li>
-<li>发明专利，发表论文。</li>
-</ol>
-<h3 id="数据技术团队-x2F-大数据工程师"><a href="#数据技术团队-x2F-大数据工程师" class="headerlink" title="数据技术团队&#x2F;大数据工程师"></a>数据技术团队&#x2F;大数据工程师</h3><ol>
-<li>数据仓库，数据质量管理。</li>
-<li>从技术评估出发，深度参与数据架构设计。</li>
-<li>通过Hadoop、流计算等工具、高效得加工各种类型的数据。</li>
-</ol>
+    <title>如何创建自己的博客（二）：hexo博客部署到github</title>
+    <url>/2022/07/06/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9Ahexo%E5%8D%9A%E5%AE%A2%E4%B8%8A%E7%BA%BFgithub%EF%BC%88%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2%EF%BC%89/</url>
+    <content><![CDATA[<h3 id="1-创建github帐号"><a href="#1-创建github帐号" class="headerlink" title="1. 创建github帐号"></a>1. 创建github帐号</h3><p>打开浏览器输入<code>github.com</code>进入github页面，点击右上角的<code>sign up</code>,根据指引依次填写邮箱、密码、用户名就可以了。<br>填好之后github会向你邮箱发送一封验证邮件，通过邮箱验证后就完成注册了。</p>
+<h3 id="2-创建github仓库"><a href="#2-创建github仓库" class="headerlink" title="2. 创建github仓库"></a>2. 创建github仓库</h3><p>i. 登录自己的github帐号，点击<code>Repositories</code>。<br>ii. 点击<code>new</code>，在<code>Repositories name</code>中输入自己的<code>github的用户名+github.io</code>(示例：ganzhancheng2020.github.io)点击确认后并保存。<br>PS：这里<code>Repossitories name</code>一定用自己的<code>github用户名+github.io</code>，不然待会是不能进行部署的。</p>
+<h3 id="3-修改-config配置文件"><a href="#3-修改-config配置文件" class="headerlink" title="3. 修改_config配置文件"></a>3. 修改_config配置文件</h3><p>返回本地blog文件夹，在里面对<code>_config</code>文件修改配置。<br>在文件最后的<code>Deployment</code>模块修改，设置如下：<br>type写<code>git</code>就可以了，repo是刚输入的<code>Repositories name</code>,branch默认为<code>master</code>。</p>
+<pre><code># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: https://github.com/ganzhancheng2020/ganzhancheng2020.github.io.git
+  branch: master
+</code></pre>
+<h3 id="4-安装hexo开发者插件"><a href="#4-安装hexo开发者插件" class="headerlink" title="4. 安装hexo开发者插件"></a>4. 安装hexo开发者插件</h3><p>这个插件要预先安装不然再进行下一步部署的时候会报错。<br>在<code>terminal</code>输入以下命令：</p>
+<pre><code>npm install hexo-deployer-git --save
+</code></pre>
+<h3 id="5-将hexo部署到github上去"><a href="#5-将hexo部署到github上去" class="headerlink" title="5. 将hexo部署到github上去"></a>5. 将hexo部署到github上去</h3><p>插件安装完成后，输入hexo d将把本地文件部署到上github上。</p>
+<pre><code>hexo d
+</code></pre>
+<h3 id="6-登录页面进行测试"><a href="#6-登录页面进行测试" class="headerlink" title="6. 登录页面进行测试"></a>6. 登录页面进行测试</h3><p>完成之后可以在浏览器输入自己的<code>github的用户名+github.io</code>(示例：ganzhancheng2020.github.io)看一下效果。<br>在这过程需要几分钟，若显示404可稍后进行尝试。<br>如果你页面上看到<code>hexo</code>在那就代表hexo博客成功部署到github上了。</p>
 ]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
+      </categories>
       <tags>
-        <tag>数据分析</tag>
-        <tag>岗位</tag>
-        <tag>职业规划</tag>
+        <tag>hexo</tag>
+        <tag>如何创建自己的博客</tag>
       </tags>
   </entry>
   <entry>
@@ -1286,6 +1236,103 @@ global.trusted-host=&#39;pypi.tuna.tsinghua.edu.cn&#39;
       </categories>
       <tags>
         <tag>数据分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数字化客服设计读后感（一）：中心思想</title>
+    <url>/2022/07/26/%E6%95%B0%E5%AD%97%E5%8C%96%E5%AE%A2%E6%9C%8D%E8%AE%BE%E8%AE%A1%E8%AF%BB%E5%90%8E%E6%84%9F%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E4%B8%AD%E5%BF%83%E6%80%9D%E6%83%B3/</url>
+    <content><![CDATA[<h3 id="1-中心思想"><a href="#1-中心思想" class="headerlink" title="1. 中心思想"></a>1. 中心思想</h3><p>对于一个企业而言，客服是解决产品设计与用户认知之间一切误差的团队。<br>当发生产品设计与企业产生偏差时，用户会通过服务渠道去联系企业，这时服务就产生了。而客服的主要任务会有3个：</p>
+<ol>
+<li>推动企业减少误差.</li>
+<li>误差发生时减少误差.</li>
+<li>在两者的基础上提升效率。</li>
+</ol>
+<p>而去衡量以上3个任务是否做得好，有3个重要的指标: </p>
+<h5 id="1-服务率"><a href="#1-服务率" class="headerlink" title="1. 服务率"></a>1. 服务率</h5><p>服务率的计算公式是：服务次数除以他的产品交易总数。是作为衡量产品与用户认知差异的一个指标。当认识差异存在的时候用户才打电话向客服咨询。而一家企业可以通过服务率的指标去监控消费者对某款产品或某种交易的认知差异，从而推动企业改进。</p>
+<h5 id="2-解决力"><a href="#2-解决力" class="headerlink" title="2. 解决力"></a>2. 解决力</h5><p>客服解决力分为四个阶段：敷衍、传话筒、解决、惊喜。敷衍就是在消费者看来没有解决问题，传话筒就如同器人只是帮助企业转述了标准话说，没有实际得站在用户角度帮助用户解决问题。解决就是帮助了用户解决了当前问题。而惊喜会在解决问题的同时还会给予用户额外的收获。如：告诉用户问题的答案后，提供了避免问题发生的方法或更好得解决问题的途径。</p>
+<p>举例:<br>打电话到海底捞客服，问有新上了什么菜品？客服不但有耐心的解答了问题，还提供了新品查询渠道。本来需要进线询问菜单改为通过微信小程序APP查看菜单，成功得减少了服务率。</p>
+<h6 id="3-费力度"><a href="#3-费力度" class="headerlink" title="3. 费力度"></a>3. 费力度</h6><p>用户在解决问题的时候所需要成本，在获取时的难以程度。如：沟通客服的沟通时间，沟通效率，在客服服务的过程中用户的问题是否能容易得到解答。</p>
+]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+      <tags>
+        <tag>数字化客服设计</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据分析岗位相关职责</title>
+    <url>/2022/07/06/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B2%97%E4%BD%8D%E7%9B%B8%E5%85%B3%E8%81%8C%E8%B4%A3/</url>
+    <content><![CDATA[<h3 id="数据分析师-x2F-数据挖掘工程师"><a href="#数据分析师-x2F-数据挖掘工程师" class="headerlink" title="数据分析师&#x2F;数据挖掘工程师"></a>数据分析师&#x2F;数据挖掘工程师</h3><ol>
+<li>基于业务理解设计数据基础体系与兄弟团队紧密合作，确保数据收集完好，结构合理，质量良好。</li>
+<li>通过数据收集、数据处理及等可视化方法，善用数据产品释放BI宝贵资源。</li>
+<li>通过业务分析和数据解读，转化成商业洞察和策略建议。</li>
+<li>沉淀分析报告，建立并不断完善分析体系。</li>
+<li>具备一定的数据挖掘能力，挖掘业务隐藏模式，能够预测业务发展趋势，帮助决策及快速调整方向。</li>
+</ol>
+<h3 id="算法团队-x2F-算法工程师"><a href="#算法团队-x2F-算法工程师" class="headerlink" title="算法团队&#x2F;算法工程师"></a>算法团队&#x2F;算法工程师</h3><ol>
+<li>精通统计模式，创新性应用前沿技术。落地实际业务场景，实现最大增值。</li>
+<li>在数据收集与校验中，与兄弟团队紧密合作。</li>
+<li>基于决策层的商业决定，提供及时资源保证。</li>
+<li>发明专利，发表论文。</li>
+</ol>
+<h3 id="数据技术团队-x2F-大数据工程师"><a href="#数据技术团队-x2F-大数据工程师" class="headerlink" title="数据技术团队&#x2F;大数据工程师"></a>数据技术团队&#x2F;大数据工程师</h3><ol>
+<li>数据仓库，数据质量管理。</li>
+<li>从技术评估出发，深度参与数据架构设计。</li>
+<li>通过Hadoop、流计算等工具、高效得加工各种类型的数据。</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>数据分析</tag>
+        <tag>岗位</tag>
+        <tag>职业规划</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>穿搭</title>
+    <url>/2022/08/25/%E7%A9%BF%E6%90%AD/</url>
+    <content><![CDATA[<h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h3><ol>
+<li>颜色不要超过3种颜色以上，注意颜色之间的搭配。</li>
+<li>搭配规则参考色环。同源色，相邻色、对比色。</li>
+<li>遵循2&#x2F;8分布，20%为主色，80%为配色。</li>
+<li>同色系衣服需要有不同的颜色进行过度。</li>
+<li>注意颜色呼应，如上衣图案的颜色最好能和配饰对应上。</li>
+</ol>
+<h3 id="风格"><a href="#风格" class="headerlink" title="风格"></a>风格</h3><ol>
+<li>尽量穿比较宽松的衣服，如直筒裤。</li>
+<li>记得繁简搭配，如果上衣比较复杂那么下身尽量穿得简单一些。</li>
+</ol>
+<h3 id="配饰"><a href="#配饰" class="headerlink" title="配饰"></a>配饰</h3><ol>
+<li>穿衣需要点缀：如项链，帽子，口罩，手表，袜子等都可以成为你的配饰。</li>
+<li>配饰也可以遵循2&#x2F;8分布，配饰作为20%的主显色系。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>人际关系</category>
+      </categories>
+      <tags>
+        <tag>穿搭</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>疫情下的巴菲特2020股东大会</title>
+    <url>/2020/04/04/%E7%96%AB%E6%83%85%E4%B8%8B%E7%9A%84%E5%B7%B4%E8%8F%B2%E7%89%B92020%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A/</url>
+    <content><![CDATA[<h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p>认为当初购买航空股可获得可观的收益，实际上是个错误。此次疫情对航空业打击很大，现在不清楚航空业在未来的会恢复多少。</p>
+<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><p>如果你持有的股票是自己欣赏的公司，即使疫情下价格发生改变，如果你真的认可商业模式和管理，股票有它自己的优势。</p>
+<h3 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h3><p>现在不建议建仓，除非做好长期持有的准备，如果现在选择进入股市市场要做好下跌50%或更多的准备。</p>
+<h3 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h3><p>回顾大萧条 道琼斯指数1929年9月3号在381.17点 大约两月后1929年11月13号道琼斯指数跌到198.69点跌幅接近50%。大约9个半月后1930年8月29号道琼斯指数恢复到240. 42点涨幅20%。人们当时认为从大萧条到了衰退期。但在1932年7月8号道琼斯指数跌倒了41.22点，不到两年跌幅超过了83%。银行相继面临破产，世界格局发生改变 FBIC机构成立。</p>
+<h3 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h3><p>疫情会对经济有影响 某些行业会进一步衰退 比如 汽车行业 报业 航空业 农业</p>
+<h3 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h3><p>石油行业正在发生风险</p>
+<h3 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h3><p>买股票就是买公司收益的一部分，大多数人应该持有标普500</p>
+<h3 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h3><p>做好分散投资 不要把鸡蛋放在同一个篮子里。</p>
+<h3 id="9"><a href="#9" class="headerlink" title="9."></a>9.</h3><p>有时候觉得失去信心其实是没有看到市场的潜在能力，要对美国市场有信心</p>
+<h3 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h3><p>现在股价还太高</p>
+]]></content>
+      <categories>
+        <category>财富密码</category>
+      </categories>
+      <tags>
+        <tag>巴菲特</tag>
       </tags>
   </entry>
   <entry>
@@ -1346,27 +1393,6 @@ global.trusted-host=&#39;pypi.tuna.tsinghua.edu.cn&#39;
       </categories>
       <tags>
         <tag>酒</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>疫情下的巴菲特2020股东大会</title>
-    <url>/2020/04/04/%E7%96%AB%E6%83%85%E4%B8%8B%E7%9A%84%E5%B7%B4%E8%8F%B2%E7%89%B92020%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A/</url>
-    <content><![CDATA[<h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p>认为当初购买航空股可获得可观的收益，实际上是个错误。此次疫情对航空业打击很大，现在不清楚航空业在未来的会恢复多少。</p>
-<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><p>如果你持有的股票是自己欣赏的公司，即使疫情下价格发生改变，如果你真的认可商业模式和管理，股票有它自己的优势。</p>
-<h3 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h3><p>现在不建议建仓，除非做好长期持有的准备，如果现在选择进入股市市场要做好下跌50%或更多的准备。</p>
-<h3 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h3><p>回顾大萧条 道琼斯指数1929年9月3号在381.17点 大约两月后1929年11月13号道琼斯指数跌到198.69点跌幅接近50%。大约9个半月后1930年8月29号道琼斯指数恢复到240. 42点涨幅20%。人们当时认为从大萧条到了衰退期。但在1932年7月8号道琼斯指数跌倒了41.22点，不到两年跌幅超过了83%。银行相继面临破产，世界格局发生改变 FBIC机构成立。</p>
-<h3 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h3><p>疫情会对经济有影响 某些行业会进一步衰退 比如 汽车行业 报业 航空业 农业</p>
-<h3 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h3><p>石油行业正在发生风险</p>
-<h3 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h3><p>买股票就是买公司收益的一部分，大多数人应该持有标普500</p>
-<h3 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h3><p>做好分散投资 不要把鸡蛋放在同一个篮子里。</p>
-<h3 id="9"><a href="#9" class="headerlink" title="9."></a>9.</h3><p>有时候觉得失去信心其实是没有看到市场的潜在能力，要对美国市场有信心</p>
-<h3 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h3><p>现在股价还太高</p>
-]]></content>
-      <categories>
-        <category>财富密码</category>
-      </categories>
-      <tags>
-        <tag>巴菲特</tag>
       </tags>
   </entry>
   <entry>
@@ -1507,32 +1533,6 @@ global.trusted-host=&#39;pypi.tuna.tsinghua.edu.cn&#39;
         <category>运动健康</category>
         <category>睡眠</category>
       </categories>
-  </entry>
-  <entry>
-    <title>穿搭</title>
-    <url>/2022/08/25/%E7%A9%BF%E6%90%AD/</url>
-    <content><![CDATA[<h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h3><ol>
-<li>颜色不要超过3种颜色以上，注意颜色之间的搭配。</li>
-<li>搭配规则参考色环。同源色，相邻色、对比色。</li>
-<li>遵循2&#x2F;8分布，20%为主色，80%为配色。</li>
-<li>同色系衣服需要有不同的颜色进行过度。</li>
-<li>注意颜色呼应，如上衣图案的颜色最好能和配饰对应上。</li>
-</ol>
-<h3 id="风格"><a href="#风格" class="headerlink" title="风格"></a>风格</h3><ol>
-<li>尽量穿比较宽松的衣服，如直筒裤。</li>
-<li>记得繁简搭配，如果上衣比较复杂那么下身尽量穿得简单一些。</li>
-</ol>
-<h3 id="配饰"><a href="#配饰" class="headerlink" title="配饰"></a>配饰</h3><ol>
-<li>穿衣需要点缀：如项链，帽子，口罩，手表，袜子等都可以成为你的配饰。</li>
-<li>配饰也可以遵循2&#x2F;8分布，配饰作为20%的主显色系。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>人际关系</category>
-      </categories>
-      <tags>
-        <tag>穿搭</tag>
-      </tags>
   </entry>
   <entry>
     <title>自然语言处理（一）：TFIDF</title>
