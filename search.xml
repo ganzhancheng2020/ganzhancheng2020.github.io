@@ -1,0 +1,1584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>pandas函数大全</title>
+    <url>/2022/09/29/pandas%E5%87%BD%E6%95%B0%E5%A4%A7%E5%85%A8/</url>
+    <content><![CDATA[<h3 id="函数汇总"><a href="#函数汇总" class="headerlink" title="函数汇总"></a>函数汇总</h3><p>整理了100个Pandas常用的函数，分别分为6类：<br>统计汇总函数、<br>数据清洗函数、<br>数据筛选、<br>绘图与元素级运算函数、<br>时间序列函数<br>其他函数。</p>
+<h5 id="统计汇总函数"><a href="#统计汇总函数" class="headerlink" title="统计汇总函数"></a>统计汇总函数</h5><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>min()</td>
+<td>计算最小值</td>
+</tr>
+<tr>
+<td>max()</td>
+<td>计算最大值</td>
+</tr>
+<tr>
+<td>sum()</td>
+<td>求和</td>
+</tr>
+<tr>
+<td>mean()</td>
+<td>计算平均值</td>
+</tr>
+<tr>
+<td>count()</td>
+<td>计数（统计非缺失元素的个数）</td>
+</tr>
+<tr>
+<td>size()</td>
+<td>计数（统计所有元素的个数）</td>
+</tr>
+<tr>
+<td>median()</td>
+<td>计算中位数</td>
+</tr>
+<tr>
+<td>var()</td>
+<td>计算方差</td>
+</tr>
+<tr>
+<td>std()</td>
+<td>计算标准差</td>
+</tr>
+<tr>
+<td>quantile()</td>
+<td>计算任意分位数</td>
+</tr>
+<tr>
+<td>cov()</td>
+<td>计算协方差</td>
+</tr>
+<tr>
+<td>corr()</td>
+<td>计算相关系数</td>
+</tr>
+<tr>
+<td>skew()</td>
+<td>计算偏度</td>
+</tr>
+<tr>
+<td>kurt()</td>
+<td>计算峰度</td>
+</tr>
+<tr>
+<td>mode()</td>
+<td>计算众数</td>
+</tr>
+<tr>
+<td>describe()</td>
+<td>描述性统计（一次性返回多个统计结果）</td>
+</tr>
+<tr>
+<td>groupby()</td>
+<td>分组</td>
+</tr>
+<tr>
+<td>aggregate()</td>
+<td>聚合运算（可以自定义统计函数）</td>
+</tr>
+<tr>
+<td>argmin()</td>
+<td>寻找最小值所在位置</td>
+</tr>
+<tr>
+<td>argmax()</td>
+<td>寻找最大值所在位置</td>
+</tr>
+<tr>
+<td>any()</td>
+<td>等价于逻辑“或”</td>
+</tr>
+<tr>
+<td>all()</td>
+<td>等价于逻辑“与”</td>
+</tr>
+<tr>
+<td>value_counts()</td>
+<td>频次统计</td>
+</tr>
+<tr>
+<td>cumsum()</td>
+<td>运算累计和</td>
+</tr>
+<tr>
+<td>cumprod()</td>
+<td>运算累计积</td>
+</tr>
+<tr>
+<td>pct­­_change()</td>
+<td>运算比率（后一个元素与前一个元素的比率）</td>
+</tr>
+</tbody></table>
+<h5 id="数据清洗函数"><a href="#数据清洗函数" class="headerlink" title="数据清洗函数"></a>数据清洗函数</h5><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>duplicated()</td>
+<td>判断序列元素是否重复</td>
+</tr>
+<tr>
+<td>drop_duplicates()</td>
+<td>删除重复值</td>
+</tr>
+<tr>
+<td>hasnans()</td>
+<td>判断序列是否存在缺失（返回TRUE或FALSE）</td>
+</tr>
+<tr>
+<td>isnull()</td>
+<td>判断序列元素是否为缺失（返回与序列长度一样的bool值）</td>
+</tr>
+<tr>
+<td>notnull()</td>
+<td>判断序列元素是否不为缺失（返回与序列长度一样的bool值）</td>
+</tr>
+<tr>
+<td>dropna()</td>
+<td>删除缺失值</td>
+</tr>
+<tr>
+<td>fillna()</td>
+<td>缺失值填充</td>
+</tr>
+<tr>
+<td>ffill()</td>
+<td>前向后填充缺失值（使用缺失值的前一个元素填充）</td>
+</tr>
+<tr>
+<td>bfill()</td>
+<td>后向填充缺失值（使用缺失值的后一个元素填充）</td>
+</tr>
+<tr>
+<td>dtypes()</td>
+<td>检查数据类型</td>
+</tr>
+<tr>
+<td>astype()</td>
+<td>类型强制转换</td>
+</tr>
+<tr>
+<td>pd.to_datetime</td>
+<td>转日期时间型</td>
+</tr>
+<tr>
+<td>factorize()</td>
+<td>因子化转换</td>
+</tr>
+<tr>
+<td>sample()</td>
+<td>抽样</td>
+</tr>
+<tr>
+<td>where()</td>
+<td>基于条件判断的值替换</td>
+</tr>
+<tr>
+<td>replace()</td>
+<td>按值替换（不可使用正则）</td>
+</tr>
+<tr>
+<td>str.replace()</td>
+<td>按值替换（可使用正则）</td>
+</tr>
+<tr>
+<td>str.split.str()</td>
+<td>字符分隔</td>
+</tr>
+</tbody></table>
+<h5 id="数据筛选函数"><a href="#数据筛选函数" class="headerlink" title="数据筛选函数"></a>数据筛选函数</h5><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>isin()</td>
+<td>成员关系判断</td>
+</tr>
+<tr>
+<td>between()</td>
+<td>区间判断</td>
+</tr>
+<tr>
+<td>loc()</td>
+<td>条件判断（可使用在数据框中）</td>
+</tr>
+<tr>
+<td>iloc()</td>
+<td>索引判断（可使用在数据框中）</td>
+</tr>
+<tr>
+<td>compress()</td>
+<td>条件判断</td>
+</tr>
+<tr>
+<td>nlargest()</td>
+<td>搜寻最大的n个元素</td>
+</tr>
+<tr>
+<td>nsmallest()</td>
+<td>搜寻最小的n个元素</td>
+</tr>
+<tr>
+<td>str.findall()</td>
+<td>子串查询（可使用正则）</td>
+</tr>
+</tbody></table>
+<h5 id="绘图与元素级运算函数"><a href="#绘图与元素级运算函数" class="headerlink" title="绘图与元素级运算函数"></a>绘图与元素级运算函数</h5><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>hist()</td>
+<td>绘制直方图</td>
+</tr>
+<tr>
+<td>plot()</td>
+<td>可基于kind参数绘制更多图形（饼图，折线图，箱线图等）</td>
+</tr>
+<tr>
+<td>map()</td>
+<td>元素映射</td>
+</tr>
+<tr>
+<td>apply()</td>
+<td>基于自定义函数的元素级操作</td>
+</tr>
+</tbody></table>
+<h5 id="时间序列函数"><a href="#时间序列函数" class="headerlink" title="时间序列函数"></a>时间序列函数</h5><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>dt.date()</td>
+<td>抽取出日期值</td>
+</tr>
+<tr>
+<td>dt.time()</td>
+<td>抽取出时间（时分秒）</td>
+</tr>
+<tr>
+<td>dt.year()</td>
+<td>抽取出年</td>
+</tr>
+<tr>
+<td>dt.mouth()</td>
+<td>抽取出月</td>
+</tr>
+<tr>
+<td>dt.day()</td>
+<td>抽取出日</td>
+</tr>
+<tr>
+<td>dt.hour()</td>
+<td>抽取出时</td>
+</tr>
+<tr>
+<td>dt.minute()</td>
+<td>抽取出分钟</td>
+</tr>
+<tr>
+<td>dt.second()</td>
+<td>抽取出秒</td>
+</tr>
+<tr>
+<td>dt.quarter()</td>
+<td>抽取出季度</td>
+</tr>
+<tr>
+<td>dt.weekday()</td>
+<td>抽取出星期几（返回数值型）</td>
+</tr>
+<tr>
+<td>dt.weekday_name()</td>
+<td>抽取出星期几（返回字符型）</td>
+</tr>
+<tr>
+<td>dt.week()</td>
+<td>抽取出年中的第几周</td>
+</tr>
+<tr>
+<td>dt.dayofyear()</td>
+<td>抽取出年中的第几天</td>
+</tr>
+<tr>
+<td>dt.daysinmonth()</td>
+<td>抽取出月对应的最大天数</td>
+</tr>
+<tr>
+<td>dt.is_month_start()</td>
+<td>判断日期是否为当月的第一天</td>
+</tr>
+<tr>
+<td>dt.is_month_end()</td>
+<td>判断日期是否为当月的最后一天</td>
+</tr>
+<tr>
+<td>dt.is_quarter_start()</td>
+<td>判断日期是否为当季度的第一天</td>
+</tr>
+<tr>
+<td>dt.is_quarter_end()</td>
+<td>判断日期是否为当季度的最后一天</td>
+</tr>
+<tr>
+<td>dt.is_year_start()</td>
+<td>判断日期是否为当年的第一天</td>
+</tr>
+<tr>
+<td>dt.is_year_end()</td>
+<td>判断日期是否为当年的最后一天</td>
+</tr>
+<tr>
+<td>dt.is_leap_year()</td>
+<td>判断日期是否为闰年</td>
+</tr>
+</tbody></table>
+<h5 id="其他函数"><a href="#其他函数" class="headerlink" title="其他函数"></a>其他函数</h5><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>append()</td>
+<td>序列元素的追加（需指定其他序列）</td>
+</tr>
+<tr>
+<td>diff()</td>
+<td>一阶差分</td>
+</tr>
+<tr>
+<td>round()</td>
+<td>元素的四舍五入</td>
+</tr>
+<tr>
+<td>sort_values()</td>
+<td>按值排序</td>
+</tr>
+<tr>
+<td>sort_index()</td>
+<td>按索引排序</td>
+</tr>
+<tr>
+<td>to_dict()</td>
+<td>转为字典</td>
+</tr>
+<tr>
+<td>tolist()</td>
+<td>转为列表</td>
+</tr>
+<tr>
+<td>unique()</td>
+<td>元素排重</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>pandas</tag>
+        <tag>数据分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pandas笔记（一）：查看数据</title>
+    <url>/2022/09/23/pandas%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE/</url>
+    <content><![CDATA[<h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h3><p>Pandas 是 Python 语言的一个扩展程序库，用于数据分析。</p>
+<h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h3><p>打开<code>terminal</code>输入</p>
+<pre><code>&gt;&gt;&gt; pip install pandas
+</code></pre>
+<h3 id="3-生成数据"><a href="#3-生成数据" class="headerlink" title="3. 生成数据"></a>3. 生成数据</h3><p>使用<code>Pandas</code>生成数据的方式有3种：<br>第一种：使用列创建</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data [[<span class="string">&#x27;apple&#x27;</span>,<span class="number">10</span>],[<span class="string">&#x27;banana&#x27;</span>,<span class="number">11</span>],[<span class="string">&#x27;cherry&#x27;</span>,<span class="number">12</span>]]</span><br><span class="line">df = pd.DataFrame(data,columns=[<span class="string">&#x27;fruit&#x27;</span>,<span class="string">&#x27;count&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(df)</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<table>
+<thead>
+<tr>
+<th align="center">fruit</th>
+<th align="center">count</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">apple</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">banana</td>
+<td align="center">11</td>
+</tr>
+<tr>
+<td align="center">cherry</td>
+<td align="center">12</td>
+</tr>
+</tbody></table>
+<p>第二种：使用<code>ndarrays</code>创建</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data = &#123;<span class="string">&#x27;fruit&#x27;</span>:[<span class="string">&#x27;apple&#x27;</span>,<span class="string">&#x27;banana&#x27;</span>,<span class="string">&#x27;cherry&#x27;</span>],<span class="string">&#x27;count&#x27;</span>:[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]&#125;</span><br><span class="line">df = pd.DataFrame(data)</span><br><span class="line"><span class="built_in">print</span>(df)</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<table>
+<thead>
+<tr>
+<th align="center">fruit</th>
+<th align="center">count</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">apple</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">banana</td>
+<td align="center">11</td>
+</tr>
+<tr>
+<td align="center">cherry</td>
+<td align="center">12</td>
+</tr>
+</tbody></table>
+<p>第三种：使用字典创建：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data = [&#123;<span class="string">&#x27;fruit&#x27;</span>:<span class="string">&#x27;apple&#x27;</span>,<span class="string">&#x27;count&#x27;</span>:<span class="number">10</span>&#125;,&#123;<span class="string">&#x27;fruit&#x27;</span>:<span class="string">&#x27;banana&#x27;</span>,<span class="string">&#x27;count&#x27;</span>:<span class="number">11</span>&#125;,&#123;<span class="string">&#x27;fruit&#x27;</span>:<span class="string">&#x27;cherry&#x27;</span>,<span class="string">&#x27;count&#x27;</span>:<span class="number">12</span>&#125;]</span><br><span class="line">df = pd.DataFrame(data)</span><br><span class="line"><span class="built_in">print</span>(df)</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<table>
+<thead>
+<tr>
+<th align="center">fruit</th>
+<th align="center">count</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">apple</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">banana</td>
+<td align="center">11</td>
+</tr>
+<tr>
+<td align="center">cherry</td>
+<td align="center">12</td>
+</tr>
+</tbody></table>
+<h3 id="4-读取数据Excel数据"><a href="#4-读取数据Excel数据" class="headerlink" title="4. 读取数据Excel数据"></a>4. 读取数据Excel数据</h3><p>使用以下<code>code</code>读取excel文件：XXX为文件名，若文件不是与代码放在同一个目录下，需要在前面加入文件路径。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pd.read_csv(<span class="string">&quot;XXX.csv&quot;</span>) <span class="comment">#cvs文件格式使用read_csv</span></span><br><span class="line">pd.read_excel(<span class="string">&quot;XXX.xlsx&quot;</span>) <span class="comment">#xlsx文件格式使用read_excel格式</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>pandas</tag>
+        <tag>数据分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TED演讲（一）：如何成为一个更好的交谈者</title>
+    <url>/2022/07/12/TED%E6%BC%94%E8%AE%B2%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A5%BD%E7%9A%84%E4%BA%A4%E8%B0%88%E8%80%85/</url>
+    <content><![CDATA[<h3 id="1-不要三心二意"><a href="#1-不要三心二意" class="headerlink" title="1. 不要三心二意"></a>1. 不要三心二意</h3><p>在交谈的时候要专心，不要三心二意去想别的事情。</p>
+<h3 id="2-不要好人师表"><a href="#2-不要好人师表" class="headerlink" title="2. 不要好人师表"></a>2. 不要好人师表</h3><p>你需要在进入每一次交流时都假定自己可以学习到一些东西。<br>真正的倾听是需要把个人观点放在一边的。每个人都是某一方面的专家。</p>
+<h3 id="3-使用开放式问题"><a href="#3-使用开放式问题" class="headerlink" title="3. 使用开放式问题"></a>3. 使用开放式问题</h3><p>用what when where why how who 开始提问，这样你会获得一个相对比较复杂的答案。<br>如果用一个复杂的问题提问仅仅会获得一个简答的回答。</p>
+<h3 id="4-顺其自然"><a href="#4-顺其自然" class="headerlink" title="4. 顺其自然"></a>4. 顺其自然</h3><p>让对话顺其自然，故事和想法会不断得出现在你的脑海中，但也要学会控制他们。</p>
+<h3 id="5-如果你不知道，说你不知道。"><a href="#5-如果你不知道，说你不知道。" class="headerlink" title="5. 如果你不知道，说你不知道。"></a>5. 如果你不知道，说你不知道。</h3><p>谨言慎行，说话是一个需要负责任的行为</p>
+<h3 id="6-不要拿自己的经历跟别人的进行比较"><a href="#6-不要拿自己的经历跟别人的进行比较" class="headerlink" title="6. 不要拿自己的经历跟别人的进行比较"></a>6. 不要拿自己的经历跟别人的进行比较</h3><p>每个人的经历都是不一样的，人的悲欢是不可以共鸣的。</p>
+<h3 id="7-尽量别重复自己的话"><a href="#7-尽量别重复自己的话" class="headerlink" title="7. 尽量别重复自己的话"></a>7. 尽量别重复自己的话</h3><p>这样会很无聊，当我们有一个观点想要表达时通常都会换着方式重复说许多遍。</p>
+<h3 id="8-少说废话"><a href="#8-少说废话" class="headerlink" title="8. 少说废话"></a>8. 少说废话</h3><p>说重点，对话者关心的是你与他们的共同点，你是个怎么样的人。</p>
+<h3 id="9-认真倾听"><a href="#9-认真倾听" class="headerlink" title="9. 认真倾听"></a>9. 认真倾听</h3><p>认真倾听彼此</p>
+<h3 id="10-简明扼要"><a href="#10-简明扼要" class="headerlink" title="10.简明扼要"></a>10.简明扼要</h3><p>直奔主题</p>
+]]></content>
+      <categories>
+        <category>人际关系</category>
+      </categories>
+      <tags>
+        <tag>交谈</tag>
+        <tag>社交</tag>
+        <tag>TED演讲</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pandas笔记（二）</title>
+    <url>/2022/09/25/pandas%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+    <content><![CDATA[<h3 id="5-查看数据"><a href="#5-查看数据" class="headerlink" title="5.查看数据"></a>5.查看数据</h3><p>有一张表如下图：</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">fruit</th>
+<th align="center">count</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">apple</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">banana</td>
+<td align="center">11</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">cherry</td>
+<td align="center">12</td>
+</tr>
+</tbody></table>
+<p>生成数据：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">	df = pd.DataFrame(&#123;<span class="string">&#x27;fruit&#x27;</span>:[<span class="string">&#x27;apple&#x27;</span>,<span class="string">&#x27;banana&#x27;</span>,<span class="string">&#x27;cherry&#x27;</span>],<span class="string">&#x27;count&#x27;</span>:[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>查看<code>DataFrame</code>有多少列多少行</p>
+<pre><code>df.shape
+</code></pre>
+<p>（3,2）</p>
+<p>查看<code>DataFrame</code>详情</p>
+<pre><code>df.info()  
+</code></pre>
+<p>运行结果：</p>
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 3 entries, 0 to 2
+Data columns (total 2 columns):
+fruit    3 non-null object
+count    3 non-null int64
+dtypes: int64(1), object(1)
+memory usage: 128.0+ bytes
+</code></pre>
+<p>describe()可以快速查看数据的统计概要：</p>
+<pre><code>df.describe()
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">count</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">count</td>
+<td align="center">3.0</td>
+</tr>
+<tr>
+<td align="center">mean</td>
+<td align="center">11.0</td>
+</tr>
+<tr>
+<td align="center">std</td>
+<td align="center">1.0</td>
+</tr>
+<tr>
+<td align="center">min</td>
+<td align="center">10.0</td>
+</tr>
+<tr>
+<td align="center">25%</td>
+<td align="center">10.5</td>
+</tr>
+<tr>
+<td align="center">50%</td>
+<td align="center">11.0</td>
+</tr>
+<tr>
+<td align="center">75%</td>
+<td align="center">11.5</td>
+</tr>
+<tr>
+<td align="center">max</td>
+<td align="center">12.0</td>
+</tr>
+</tbody></table>
+<p>展示第一行</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.head(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>展示最后一行</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.tail(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>展示第二行</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.iloc(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-获取数据"><a href="#6-获取数据" class="headerlink" title="6.获取数据"></a>6.获取数据</h3><p>选择单列，产生<code>Series</code>,与<code>df.X</code>等效。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df[<span class="string">&#x27;friut&#x27;</span>]</span><br><span class="line">df.friut</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<pre><code>0     apple
+1    banana
+2    cherry
+Name: fruit, dtype: object
+</code></pre>
+<p>用[]切片,获取从第一行开始，到第二行前结束的数据。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df[<span class="number">1</span>:<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">fruit</th>
+<th align="center">count</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">2</td>
+<td align="center">banana</td>
+<td align="center">11</td>
+</tr>
+</tbody></table>
+<p>用标签提取第一行(标签默认为index 从0开始计数)</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.loc[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<p>用标签选取多列数据,[,]中间有两个位置，前面的是用于选取行，后面的是用于选取列。下面代码标识选取所有行以及<code>fruit</code>和<code>count</code>两列。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.loc[:,[<span class="string">&#x27;fruit&#x27;</span>,<span class="string">&#x27;count&#x27;</span>]]</span><br></pre></td></tr></table></figure>
+<p>同理<code>iloc</code>也是用于获取数据，不同于loc，iloc是根据index获取在位置上的数据。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.loc[:,[<span class="number">0</span>,<span class="number">1</span>]]</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">fruit</th>
+<th align="center">count</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">apple</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">banana</td>
+<td align="center">11</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">cherry</td>
+<td align="center">12</td>
+</tr>
+</tbody></table>
+<h3 id="索引-x2F-选择"><a href="#索引-x2F-选择" class="headerlink" title="索引&#x2F;选择"></a>索引&#x2F;选择</h3><p>索引基础用法入如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">操作</th>
+<th align="left">句法</th>
+<th align="left">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">选择列</td>
+<td align="left">df[col]</td>
+<td align="left">Series</td>
+</tr>
+<tr>
+<td align="left">用标签选择行</td>
+<td align="left">df.loc[label]</td>
+<td align="left">Series</td>
+</tr>
+<tr>
+<td align="left">用整数位置选择行</td>
+<td align="left">df.iloc[loc]</td>
+<td align="left">Series</td>
+</tr>
+<tr>
+<td align="left">行切片</td>
+<td align="left">df[5:10]</td>
+<td align="left">DataFrame</td>
+</tr>
+<tr>
+<td align="left">用布尔向量选择行</td>
+<td align="left">df[bool_vec]</td>
+<td align="left">DataFrame</td>
+</tr>
+</tbody></table>
+<h3 id="数据透视表"><a href="#数据透视表" class="headerlink" title="数据透视表"></a>数据透视表</h3><p>数据样例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df = pd.DataFrame(&#123;<span class="string">&#x27;A&#x27;</span>: [<span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;three&#x27;</span>] * <span class="number">3</span>,</span><br><span class="line">                   <span class="string">&#x27;B&#x27;</span>: [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>] * <span class="number">4</span>,</span><br><span class="line">                   <span class="string">&#x27;C&#x27;</span>: [<span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;foo&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>, <span class="string">&#x27;bar&#x27;</span>] * <span class="number">2</span>,</span><br><span class="line">                   <span class="string">&#x27;D&#x27;</span>: np.random.randn(<span class="number">12</span>),</span><br><span class="line">                   <span class="string">&#x27;E&#x27;</span>: np.random.randn(<span class="number">12</span>)&#125;)</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">A</th>
+<th align="center">B</th>
+<th align="center">C</th>
+<th align="center">D</th>
+<th align="center">E</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">one</td>
+<td align="center">A</td>
+<td align="center">foo</td>
+<td align="center">1.031008</td>
+<td align="center">0.985879</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">one</td>
+<td align="center">B</td>
+<td align="center">foo</td>
+<td align="center">-0.936926</td>
+<td align="center">0.043031</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">two</td>
+<td align="center">C</td>
+<td align="center">foo</td>
+<td align="center">-0.911246</td>
+<td align="center">2.123596</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">three</td>
+<td align="center">A</td>
+<td align="center">bar</td>
+<td align="center">-1.684552</td>
+<td align="center">-0.235331</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">one</td>
+<td align="center">B</td>
+<td align="center">bar</td>
+<td align="center">-0.705498</td>
+<td align="center">1.147134</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">one</td>
+<td align="center">C</td>
+<td align="center">bar</td>
+<td align="center">-0.524472</td>
+<td align="center">-0.314987</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">two</td>
+<td align="center">A</td>
+<td align="center">foo</td>
+<td align="center">0.272877</td>
+<td align="center">-0.108869</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">three</td>
+<td align="center">B</td>
+<td align="center">foo</td>
+<td align="center">-1.080479</td>
+<td align="center">0.287439</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">one</td>
+<td align="center">C</td>
+<td align="center">foo</td>
+<td align="center">-0.609487</td>
+<td align="center">-0.139660</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">one</td>
+<td align="center">A</td>
+<td align="center">bar</td>
+<td align="center">-0.806408</td>
+<td align="center">-0.607651</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">two</td>
+<td align="center">B</td>
+<td align="center">bar</td>
+<td align="center">-0.008508</td>
+<td align="center">0.393806</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">three</td>
+<td align="center">C	bar</td>
+<td align="center">-0.145209</td>
+<td align="center">1.897569</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p><code>pivot_table</code>是透视表函数，其中<code>value</code>是透视的数值列，index是透视的行，columns是透视的列。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.pivot_table(values=<span class="string">&#x27;E&#x27;</span>,index=[<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;B&#x27;</span>],columns=[<span class="string">&#x27;C&#x27;</span>])</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">C</th>
+<th align="center">bar</th>
+<th align="center">foo</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">A</td>
+<td align="center">B</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">one</td>
+<td align="center">A</td>
+<td align="center">-0.607651</td>
+<td align="center">0.985879</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">B</td>
+<td align="center">1.147134</td>
+<td align="center">0.043031</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">C</td>
+<td align="center">-0.314987</td>
+<td align="center">-0.139660</td>
+</tr>
+<tr>
+<td align="center">three</td>
+<td align="center">A</td>
+<td align="center">-0.235331</td>
+<td align="center">NaN</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">B</td>
+<td align="center">NaN</td>
+<td align="center">0.287439</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">C</td>
+<td align="center">1.897569</td>
+<td align="center">NaN</td>
+</tr>
+<tr>
+<td align="center">two</td>
+<td align="center">A</td>
+<td align="center">NaN</td>
+<td align="center">-0.108869</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">B</td>
+<td align="center">0.393806</td>
+<td align="center">NaN</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">C</td>
+<td align="center">NaN</td>
+<td align="center">2.123596</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>pandas</tag>
+        <tag>数据分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客的诞生</title>
+    <url>/2020/03/22/%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%AF%9E%E7%94%9F/</url>
+    <content><![CDATA[<h2 id="hexo博客-使用介绍"><a href="#hexo博客-使用介绍" class="headerlink" title="hexo博客 使用介绍"></a>hexo博客 使用介绍</h2><span id="more"></span>
+<h3 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="部署到终端"><a href="#部署到终端" class="headerlink" title="部署到终端"></a>部署到终端</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大数据5V特征</title>
+    <url>/2022/10/10/%E5%A4%A7%E6%95%B0%E6%8D%AE5V%E7%89%B9%E5%BE%81/</url>
+    <content><![CDATA[<h3 id="大数据介绍"><a href="#大数据介绍" class="headerlink" title="大数据介绍"></a>大数据介绍</h3><p>大数据具有5个特征：其中包括Volume(大量)，Velocity（高速）,Variety（多样）,Value(低价值密度),Vercity(真实性)。</p>
+<h6 id="Volume（大量）"><a href="#Volume（大量）" class="headerlink" title="Volume（大量）"></a>Volume（大量）</h6><p>大量指的是庞大的数据量，会对采集，存储，管理，分析造成很大的压力，甚至是超出了传统数据库软件工具能力范围的海量数据集合。这并非指的是TB级别的数据，其计量单位至少是P（千T），E（百万T）或Z（十亿T）。比方说天猫双11中所产生的数据量级。</p>
+<h6 id="Velocity（高速）"><a href="#Velocity（高速）" class="headerlink" title="Velocity（高速）"></a>Velocity（高速）</h6><p>高速指的是数据的更新迭代、数据增长的速度极快，每天每分钟甚至每秒都有新的数据进来或进行数据的更新。这要求实时分析与数据处理及丢弃，而非事后批处理。这也是区别于传统数据挖掘的地方。</p>
+<h6 id="Variety（多样）"><a href="#Variety（多样）" class="headerlink" title="Variety（多样）"></a>Variety（多样）</h6><p>数据的多样性，比方说在整个庞大的数据集里面存在格式各样的数据，如图片的、文本的、音频的、结构化与非结构化的数据等等。这无疑让数据分析师在做数据准备的过程中增添了许多难度。</p>
+<h6 id="Value（低密度价值）"><a href="#Value（低密度价值）" class="headerlink" title="Value（低密度价值）"></a>Value（低密度价值）</h6><p>当这个数据是一条的时候数据本身是不能产生什么价值的，而是要结合海量数据去进行挖掘才能得出这部分数据的意义和价值所在。</p>
+<h6 id="veracity（真实性）"><a href="#veracity（真实性）" class="headerlink" title="veracity（真实性）"></a>veracity（真实性）</h6><p>数据的真实性是一个需要考究的话题，我们需要做到确保数据是真实的并不是伪造的，这也是数据分析的基础。用不真实的数据去建模自然会输出不真实的结果。</p>
+]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>数据分析</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何创建自己的博客（三）：hexo主题更换</title>
+    <url>/2022/07/07/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9Ahexo%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%8D%A2/</url>
+    <content><![CDATA[<h3 id="1-主题选择"><a href="#1-主题选择" class="headerlink" title="1.主题选择"></a>1.主题选择</h3><p>hexo其实有许多好用的主题，其实原版的也不错都可以用。但每个人都会也有自己的个人喜好嘛~<br>hexo官方网页上也是有很多主题的，进入<code>https://hexo.io/themes/</code>页面可以选择自己所喜欢的。<br>这里推荐一款我目前自己在用的主题<code>yilia</code>,这个主题用的人会比较多而且也出得比较久了，所以出了问题的话也会比较好维护。</p>
+<h3 id="2-主题安装"><a href="#2-主题安装" class="headerlink" title="2.主题安装"></a>2.主题安装</h3><p>打开<code>terminal</code>进入在本地<code>**/blog/themes</code>路径下输入以下命令：</p>
+<pre><code>$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
+</code></pre>
+<p>克隆完成后修改hexo根目录下的<code>_config.yml</code>：<code>theme：yilia</code></p>
+<h3 id="3-主题配置"><a href="#3-主题配置" class="headerlink" title="3.主题配置"></a>3.主题配置</h3><p>主题配置在主目录下的<code>_config.yml</code>,请根据自己需要修改使用。下面是本人的配置可以参考使用哈</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Header</span></span><br><span class="line"><span class="comment"># 菜单下面的都是分页，可以按需添加</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">主页:</span> <span class="string">/</span></span><br><span class="line">  <span class="string">编程笔记:</span> <span class="string">/categories/编程</span> </span><br><span class="line">  <span class="string">数据分析:</span> <span class="string">/categories/数据分析</span></span><br><span class="line">  <span class="string">文章归档:</span> <span class="string">/archives/index.html</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="attr">jsonContent:</span></span><br><span class="line">    <span class="attr">meta:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">pages:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">posts:</span></span><br><span class="line">      <span class="attr">title:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">date:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">path:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">text:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">raw:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">content:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">slug:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">updated:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">comments:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">link:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">permalink:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">excerpt:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">categories:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">tags:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># SubNav</span></span><br><span class="line"><span class="attr">subnav:</span></span><br><span class="line">  <span class="attr">github:</span> <span class="string">&quot;https://github.com/ganzhancheng2020&quot;</span></span><br><span class="line">  <span class="comment">#weibo: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#rss: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#zhihu: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#qq: &quot;#&quot;</span></span><br><span class="line">  <span class="attr">weixin:</span> <span class="string">&quot;/assets/img/weixin.png&quot;</span></span><br><span class="line">  <span class="comment">#jianshu: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#douban: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#segmentfault: &quot;#&quot;</span></span><br><span class="line">  <span class="attr">bilibili:</span> <span class="string">&quot;https://space.bilibili.com/7522004&quot;</span></span><br><span class="line">  <span class="comment">#acfun: &quot;#&quot;</span></span><br><span class="line">  <span class="attr">mail:</span> <span class="string">&quot;mailto:2513663405@qq.com&quot;</span></span><br><span class="line">  <span class="comment">#facebook: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#google: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#twitter: &quot;#&quot;</span></span><br><span class="line">  <span class="attr">linkedin:</span> <span class="string">&quot;https://www.linkedin.com/in/jack-gan-29653b186/&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">rss:</span> <span class="string">/atom.xml</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否需要修改 root 路径</span></span><br><span class="line"><span class="comment"># 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，</span></span><br><span class="line"><span class="comment"># 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Content</span></span><br><span class="line"><span class="comment"># 觉得文章太长想截断，代码&lt;!--more--&gt;需要在文章中使用</span></span><br><span class="line"><span class="comment"># 文章太长，截断按钮文字</span></span><br><span class="line"><span class="attr">excerpt_link:</span> <span class="string">more</span></span><br><span class="line"><span class="comment"># 文章卡片右下角常驻链接，不需要请设置为false</span></span><br><span class="line"><span class="attr">show_all_link:</span> <span class="string">&#x27;展开全文&#x27;</span></span><br><span class="line"><span class="comment"># 数学公式</span></span><br><span class="line"><span class="attr">mathjax:</span> <span class="literal">false</span></span><br><span class="line"><span class="comment"># 是否在新窗口打开链接</span></span><br><span class="line"><span class="attr">open_in_new:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打赏</span></span><br><span class="line"><span class="comment"># 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏</span></span><br><span class="line"><span class="attr">reward_type:</span> <span class="number">2</span></span><br><span class="line"><span class="comment"># 打赏wording</span></span><br><span class="line"><span class="attr">reward_wording:</span> <span class="string">&#x27;谢谢你请我喝咖啡&#x27;</span></span><br><span class="line"><span class="comment"># 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg</span></span><br><span class="line"><span class="attr">alipay:</span> </span><br><span class="line"><span class="comment"># 微信二维码图片地址</span></span><br><span class="line"><span class="attr">weixin:</span> <span class="string">/assets/img/reward.png</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 目录</span></span><br><span class="line"><span class="comment"># 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录</span></span><br><span class="line"><span class="attr">toc:</span> <span class="number">2</span></span><br><span class="line"><span class="comment"># 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false</span></span><br><span class="line"><span class="attr">toc_hide_index:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># 目录为空时的提示</span></span><br><span class="line"><span class="attr">toc_empty_wording:</span> <span class="string">&#x27;目录，不存在的…&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否有快速回到顶部的按钮</span></span><br><span class="line"><span class="attr">top:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Miscellaneous</span></span><br><span class="line"><span class="attr">baidu_analytics:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">google_analytics:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">favicon:</span> <span class="string">/assets/img/icon.png</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#你的头像url</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">/assets/img/icon.png</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#是否开启分享</span></span><br><span class="line"><span class="attr">share_jia:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment</span></span><br><span class="line"><span class="comment">#不需要使用某项，直接设置值为false，或注释掉</span></span><br><span class="line"><span class="comment">#具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#1、多说</span></span><br><span class="line"><span class="attr">duoshuo:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#2、网易云跟帖</span></span><br><span class="line"><span class="attr">wangyiyun:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#3、畅言</span></span><br><span class="line"><span class="attr">changyan_appid:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">changyan_conf:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的</span></span><br><span class="line"><span class="attr">disqus:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#5、Gitment</span></span><br><span class="line"><span class="attr">gitment_owner:</span> <span class="literal">false</span>      <span class="comment">#你的 GitHub ID</span></span><br><span class="line"><span class="attr">gitment_repo:</span> <span class="string">&#x27;&#x27;</span>          <span class="comment">#存储评论的 repo</span></span><br><span class="line"><span class="attr">gitment_oauth:</span></span><br><span class="line">  <span class="attr">client_id:</span> <span class="string">&#x27;&#x27;</span>           <span class="comment">#client ID</span></span><br><span class="line">  <span class="attr">client_secret:</span> <span class="string">&#x27;&#x27;</span>       <span class="comment">#client secret</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 样式定制 - 一般不需要修改，除非有很强的定制欲望…</span></span><br><span class="line"><span class="attr">style:</span></span><br><span class="line">  <span class="comment"># 头像上面的背景颜色</span></span><br><span class="line">  <span class="attr">header:</span> <span class="string">&#x27;#434343&#x27;</span></span><br><span class="line">  <span class="comment"># 右滑板块背景</span></span><br><span class="line">  <span class="attr">slider:</span> <span class="string">&#x27;linear-gradient(200deg,#a0cfe4,#e8c37e)&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># slider的设置</span></span><br><span class="line"><span class="attr">slider:</span></span><br><span class="line">  <span class="comment"># 是否默认展开tags板块</span></span><br><span class="line">  <span class="attr">showTags:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 智能菜单</span></span><br><span class="line"><span class="comment"># 如不需要，将该对应项置为false</span></span><br><span class="line"><span class="comment"># 比如</span></span><br><span class="line"><span class="comment">#smart_menu:</span></span><br><span class="line"><span class="comment">#  friends: false</span></span><br><span class="line"><span class="attr">smart_menu:</span></span><br><span class="line">  <span class="attr">innerArchive:</span> <span class="string">&#x27;所有文章&#x27;</span></span><br><span class="line">  <span class="attr">friends:</span> <span class="string">&#x27;友情链接&#x27;</span></span><br><span class="line">  <span class="attr">aboutme:</span> <span class="string">&#x27;关于我&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">friends:</span></span><br><span class="line">  <span class="attr">github:</span> <span class="string">‘https://github.com/ganzhancheng2020’</span></span><br><span class="line"></span><br><span class="line"><span class="attr">aboutme:</span> <span class="string">&#x27;一名野生的数据分析师&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-图片位置"><a href="#4-图片位置" class="headerlink" title="4.图片位置"></a>4.图片位置</h3><p>这里要注意一下打赏中有三个图片是需要放在<code>/assets/img/</code>,这个文件夹是在hexo根目录下的，并不是在theme文件夹下。<br>其中两张是打赏的图片，一张是头像的图片。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打赏</span></span><br><span class="line"><span class="comment"># 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏</span></span><br><span class="line"><span class="attr">reward_type:</span> <span class="number">2</span></span><br><span class="line"><span class="comment"># 打赏wording</span></span><br><span class="line"><span class="attr">reward_wording:</span> <span class="string">&#x27;谢谢你请我喝咖啡&#x27;</span></span><br><span class="line"><span class="comment"># 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg</span></span><br><span class="line"><span class="attr">alipay:</span> </span><br><span class="line"><span class="comment"># 微信二维码图片地址</span></span><br><span class="line"><span class="attr">weixin:</span> <span class="string">/assets/img/reward.png</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#你的头像url</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">/assets/img/icon.png</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>如何创建自己的博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何创建自己的博客（二）：hexo博客部署到github</title>
+    <url>/2022/07/06/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9Ahexo%E5%8D%9A%E5%AE%A2%E4%B8%8A%E7%BA%BFgithub%EF%BC%88%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2%EF%BC%89/</url>
+    <content><![CDATA[<h3 id="1-创建github帐号"><a href="#1-创建github帐号" class="headerlink" title="1. 创建github帐号"></a>1. 创建github帐号</h3><p>打开浏览器输入<code>github.com</code>进入github页面，点击右上角的<code>sign up</code>,根据指引依次填写邮箱、密码、用户名就可以了。<br>填好之后github会向你邮箱发送一封验证邮件，通过邮箱验证后就完成注册了。</p>
+<h3 id="2-创建github仓库"><a href="#2-创建github仓库" class="headerlink" title="2. 创建github仓库"></a>2. 创建github仓库</h3><p>i. 登录自己的github帐号，点击<code>Repositories</code>。<br>ii. 点击<code>new</code>，在<code>Repositories name</code>中输入自己的<code>github的用户名+github.io</code>(示例：ganzhancheng2020.github.io)点击确认后并保存。<br>PS：这里<code>Repossitories name</code>一定用自己的<code>github用户名+github.io</code>，不然待会是不能进行部署的。</p>
+<h3 id="3-修改-config配置文件"><a href="#3-修改-config配置文件" class="headerlink" title="3. 修改_config配置文件"></a>3. 修改_config配置文件</h3><p>返回本地blog文件夹，在里面对<code>_config</code>文件修改配置。<br>在文件最后的<code>Deployment</code>模块修改，设置如下：<br>type写<code>git</code>就可以了，repo是刚输入的<code>Repositories name</code>,branch默认为<code>master</code>。</p>
+<pre><code># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: https://github.com/ganzhancheng2020/ganzhancheng2020.github.io.git
+  branch: master
+</code></pre>
+<h3 id="4-安装hexo开发者插件"><a href="#4-安装hexo开发者插件" class="headerlink" title="4. 安装hexo开发者插件"></a>4. 安装hexo开发者插件</h3><p>这个插件要预先安装不然再进行下一步部署的时候会报错。<br>在<code>terminal</code>输入以下命令：</p>
+<pre><code>npm install hexo-deployer-git --save
+</code></pre>
+<h3 id="5-将hexo部署到github上去"><a href="#5-将hexo部署到github上去" class="headerlink" title="5. 将hexo部署到github上去"></a>5. 将hexo部署到github上去</h3><p>插件安装完成后，输入hexo d将把本地文件部署到上github上。</p>
+<pre><code>hexo d
+</code></pre>
+<h3 id="6-登录页面进行测试"><a href="#6-登录页面进行测试" class="headerlink" title="6. 登录页面进行测试"></a>6. 登录页面进行测试</h3><p>完成之后可以在浏览器输入自己的<code>github的用户名+github.io</code>(示例：ganzhancheng2020.github.io)看一下效果。<br>在这过程需要几分钟，若显示404可稍后进行尝试。<br>如果你页面上看到<code>hexo</code>在那就代表hexo博客成功部署到github上了。</p>
+]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>如何创建自己的博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何创建自己的博客（五）：hexo文章中插入图片</title>
+    <url>/2022/07/10/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9Ahexo%E6%96%87%E7%AB%A0%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<h3 id="1-资源文件夹配置"><a href="#1-资源文件夹配置" class="headerlink" title="1. 资源文件夹配置"></a>1. 资源文件夹配置</h3><p>首先要修改hexo目录根上的<code>_config.yml</code>文件，在里面找到<code>post_asset_folder</code>并设置为：<code>true</code></p>
+<h3 id="2-文章内引用"><a href="#2-文章内引用" class="headerlink" title="2. 文章内引用"></a>2. 文章内引用</h3><p>这时新建文章时会在<code>_post</code>文件夹当中出现一个与文章名同名的资源文件夹，我们只需把图片放到这个资源文件夹当中。<br>然后根据以下命令进行引用，引用的参数为资源文件夹中的图片名称如<code>example.jpg</code>。</p>
+<pre><code>&#123;% asset_img example.jpg %&#125;
+</code></pre>
+]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>如何创建自己的博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何创建自己的博客（四）：hexo常用命令</title>
+    <url>/2022/07/10/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9Ahexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h3 id="1-新建新文章"><a href="#1-新建新文章" class="headerlink" title="1. 新建新文章"></a>1. 新建新文章</h3><p>新建一篇文章。如果没有设置 layout 的话，默认使用 <code>_config.yml</code> 中的 <code>default_layout</code> 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
+<pre><code>$ hexo new [layout] &lt;title&gt;
+$ hexo new &quot;post title with white space&quot;
+</code></pre>
+<h3 id="2-创建草稿"><a href="#2-创建草稿" class="headerlink" title="2. 创建草稿"></a>2. 创建草稿</h3><p>有时候我们会同时编辑多篇文章，在某些文章未完成不想发表时可以使用创建草稿的功能。当我们把文章部署到现网时只会部署正式文章，草稿是不会在博客中显示的。</p>
+<pre><code>$ hexo new draft &lt;filename&gt;
+</code></pre>
+<p>当我们要将草稿转为正式文章时</p>
+<pre><code>$ hexo publish [layout] &lt;filename&gt;
+</code></pre>
+<h3 id="3-生产静态文件"><a href="#3-生产静态文件" class="headerlink" title="3. 生产静态文件"></a>3. 生产静态文件</h3><pre><code>$ hexo generate
+</code></pre>
+<p>命令也可以简写为</p>
+<pre><code>$ hexo g
+</code></pre>
+<h3 id="4-启动服务器"><a href="#4-启动服务器" class="headerlink" title="4. 启动服务器"></a>4. 启动服务器</h3><p>启动服务器。默认情况下，访问网址为： <code>http://localhost:4000/</code>。这个一般用于本地测试，若没什么问题了可以进行下一步部署网站。</p>
+<pre><code>$  hexo server
+</code></pre>
+<p>命令也可以简写为</p>
+<pre><code>$ hexo s
+</code></pre>
+<h3 id="5-部署网站"><a href="#5-部署网站" class="headerlink" title="5. 部署网站"></a>5. 部署网站</h3><pre><code>$ hexo deploy
+</code></pre>
+<p>命令也可以简写为</p>
+<pre><code>$ hexo d
+</code></pre>
+<h3 id="6-清除缓存"><a href="#6-清除缓存" class="headerlink" title="6. 清除缓存"></a>6. 清除缓存</h3><p>清除缓存文件 (db.json) 和已生成的静态文件 (public)。<br>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
+<pre><code>$ hexo clean
+</code></pre>
+<p>命令也可以简写为</p>
+<pre><code>$ hexo cl
+</code></pre>
+]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>如何创建自己的博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何撰写读书笔记</title>
+    <url>/2022/09/04/%E5%A6%82%E4%BD%95%E6%92%B0%E5%86%99%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h3 id="为什么需要做笔记？"><a href="#为什么需要做笔记？" class="headerlink" title="为什么需要做笔记？"></a>为什么需要做笔记？</h3><p>知识的积累是内容提取、梳理、并将知识架构重组的循环过程。好的笔记可以帮助我们更有效率得完成知识转化的过程。</p>
+<img src="/2022/09/04/%E5%A6%82%E4%BD%95%E6%92%B0%E5%86%99%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E8%8E%B7%E5%8F%96%E8%BF%87%E7%A8%8B.png" class="">
+
+<h3 id="怎么去做好的笔记？"><a href="#怎么去做好的笔记？" class="headerlink" title="怎么去做好的笔记？"></a>怎么去做好的笔记？</h3><p>好的笔记是会加速知识转化的过程，那么怎么去写出好的笔记呢？这个可能会因人而异，但我稍微说一下我个人做笔记的方法。</p>
+<h6 id="1-图文并茂"><a href="#1-图文并茂" class="headerlink" title="1. 图文并茂"></a>1. 图文并茂</h6><p>这个不是最重要的一点，但我认为是不可少的。从记忆的角度去看，人类对于图片的记忆要远大于文字。在笔记中适当得插入一些图片、图绘是能有效得帮助记忆的。</p>
+<h6 id="2-有序"><a href="#2-有序" class="headerlink" title="2. 有序"></a>2. 有序</h6><p>比起无序的事情人类更容易记住有序的事，知识也是一样的。在学习的过程中，把知识点融入到自身的知识框架当中就是一个无序转换为有序的过程。在这过程中可以使用思维导图，框架图，列表，思维模型等方法去梳理知识脉络，把知识点串联起来。</p>
+<h6 id="3-拓展"><a href="#3-拓展" class="headerlink" title="3. 拓展"></a>3. 拓展</h6><p>我们在学习新的知识点的时候知识内容是碎片化的，也有可能是因为时间维度上的碎片化学习而导致内容是碎片化的。一个新的知识点在同一本书中也很可能是并不完全的。这时候需要对知识进行补充，与自身的知识架构所匹配，或者在别的书中补充对当前知识点做适当得拓展，把知识点补充完整。</p>
+<h6 id="4-思考"><a href="#4-思考" class="headerlink" title="4. 思考"></a>4. 思考</h6><p>光掌握一个知识点或者说仅仅知道这个知识点的本身是远远不够的，我们需要将已有的知识点链接起来，放到我们整个的知识框架当中去，就像是在寻找知识地图中那块拼图所缺失的位置，这时候可以根据自身的场景写出自己的一些心得与思考，以及多个知识点的组合理论，在整理&#x2F;梳理的时候正是对这个知识思考的过程。</p>
+<h6 id="5-行动"><a href="#5-行动" class="headerlink" title="5. 行动"></a>5. 行动</h6><p>知识点需要与行动相结合，做到知行合一。通过新学习到的知识点可以梳理出一些可以行动的事情或者自身能运用到的场景，立刻去执行，最好是能放到自身的日常系统当中去，周而复始的思考与行动会让知识记得更加牢固。</p>
+]]></content>
+      <categories>
+        <category>思维模型</category>
+      </categories>
+      <tags>
+        <tag>读书笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如果创建自己的博客（一）：hexo博客本地部署</title>
+    <url>/2022/07/05/%E5%A6%82%E6%9E%9C%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Ahexo%E5%8D%9A%E5%AE%A2%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h3 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1. 安装node.js"></a>1. 安装node.js</h3><p>安装地址：在浏览器输入<code>nodejs.org</code>，点击下载当前版本<code>10.15.1.LTS</code>（以LTS结尾长期支持版的）。<br>下载后将安装包打开然后一直点击安装就可以了，按对应的操作系统安装对应的版本即可。<br>node.js会安装两个包，1是<code>npm</code>，2是<code>node</code></p>
+<h3 id="2-检测hexo是否安装成功"><a href="#2-检测hexo是否安装成功" class="headerlink" title="2. 检测hexo是否安装成功"></a>2. 检测hexo是否安装成功</h3><p>打开我们的<code>terminal</code>输入以下代码，如果成功显示版本号那就是为成功的。</p>
+<pre><code>#sh-3.2# npm -v
+6.10.2
+#sh-3.2# node -v
+v12.8.0 
+</code></pre>
+<h3 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3. 安装hexo"></a>3. 安装hexo</h3><p>用<code>npm</code>可以直接安装<code>hexo</code>框架</p>
+<pre><code>npm install hexo-cli -g
+</code></pre>
+<p>如果安装失败看下是不是node版本不适应的原因。<br>请到<code>nodejs.org</code>安装相应的版本（hexo 4.2.0对应的版本为node12.XX.XX）。</p>
+<h3 id="4-验证hexo是否安装成功"><a href="#4-验证hexo是否安装成功" class="headerlink" title="4. 验证hexo是否安装成功"></a>4. 验证hexo是否安装成功</h3><p>注意看当前版本配置为hexo4.2.0 node版本为12.8.0, 如果出错请下载与之对应的版本。</p>
+<pre><code>hexo -v
+</code></pre>
+<h3 id="5-新建一个目录"><a href="#5-新建一个目录" class="headerlink" title="5. 新建一个目录"></a>5. 新建一个目录</h3><p>hexo安装成功后可以新建一个目录，那是你存放博客文件的地方 如：</p>
+<pre><code>mkdir 个人博客2022
+</code></pre>
+<h3 id="6-hexo初始化博客"><a href="#6-hexo初始化博客" class="headerlink" title="6. hexo初始化博客"></a>6. hexo初始化博客</h3><p>然后可以进入我们的目录开始初始化博客了。</p>
+<pre><code>cd 个人博客2022
+hexo init blog
+</code></pre>
+<h3 id="7-启动hexo博客"><a href="#7-启动hexo博客" class="headerlink" title="7. 启动hexo博客"></a>7. 启动hexo博客</h3><p>好的，我们试一下博客是否可以正常启动。</p>
+<pre><code>cd blog
+hexo s
+</code></pre>
+<h3 id="8-验证hexo博客是否正常运行"><a href="#8-验证hexo博客是否正常运行" class="headerlink" title="8. 验证hexo博客是否正常运行"></a>8. 验证hexo博客是否正常运行</h3><p>最后打开浏览器输入<code>http://localhost:4000/</code>进行验证就可以了。</p>
+]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>如何创建自己的博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装Anaconda</title>
+    <url>/2022/10/02/%E5%AE%89%E8%A3%85Anaconda/</url>
+    <content><![CDATA[<h3 id="安装介绍"><a href="#安装介绍" class="headerlink" title="安装介绍"></a>安装介绍</h3><p>之前一直因为安装Anaconda踩了不少坑，所以写个笔记记录一下。本人是用的MacOS系统，下面的安装步骤也是根据这系统写的，若是使用windows系统的朋友也可以参考一下。Anaconda是一个python的环境管理器，广泛适用于人工智能、数据分析、机器学习等领域、可以为用户提供一个很好的编程环境。</p>
+<h3 id="Anaconda安装"><a href="#Anaconda安装" class="headerlink" title="Anaconda安装"></a>Anaconda安装</h3><p>官网安装地址：<a href="https://www.anaconda.com/products/distribution">https://www.anaconda.com/products/distribution</a><br>进入官网页面直接点绿色按钮的下载就可以，但直接下载的话一般会比较慢，这时候我们可以选择到清华源进行下载。<br>清华大学开源软件镜像站安装地址：<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/</a><br>这里有几个版本，根据系统环境的不同下载对应的即可。打开<code>terminal</code>,输入以下命令行，如果以x86_64结尾的下载Anaconda3-2022.05-MacOSX-x86_64.pkg，<br>否则下载Anaconda3-2022.05-MacOSX-arm64.pkg，其余环境的请自行判断。</p>
+<pre><code>(base) JackdeMacBook-Pro:~ jackgan$ uname -a
+Darwin JackdeMacBook-Pro.local **.**.** Darwin Kernel Version 21.6.0: Mon Aug 22 20:17:10 PDT 2022; root:xnu-****.***.****/RELEASE_X86_64 x86_64
+</code></pre>
+<p>安装包下载后直接安装，一直点continue就成。如果不是第一次安装的话请先彻底卸载Anconda。</p>
+<p>安装完成后可以打开<code>terminal</code>并输入以下命令行，确认是否安装成功：</p>
+<pre><code>conda -V
+conda 22.9.0
+</code></pre>
+<p>卸载过程：下载anaconda-clean安装包并运行，若在目录下还有Anaconda的文件夹，把文件夹也一并删除了。</p>
+<pre><code>conda install anaconda-clean
+anaconda-clean --yes
+</code></pre>
+<h3 id="切换镜像源"><a href="#切换镜像源" class="headerlink" title="切换镜像源"></a>切换镜像源</h3><p>将conda切换至清华源后，加快安装包的下载速度。</p>
+<pre><code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge 
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
+conda config --set show_channel_urls yes
+</code></pre>
+<p>查看源是否切换成功</p>
+<pre><code>conda config --show channels
+    channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+  - defaults
+</code></pre>
+<p>恢复默认源</p>
+<pre><code>conda config --remove-key channels
+</code></pre>
+<p>安装pip</p>
+<pre><code>conda install pip
+pip -V
+pip 21.2.4
+</code></pre>
+<p>pip切换至清华源</p>
+<p>临时更改</p>
+<pre><code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+</code></pre>
+<p>永久更改</p>
+<pre><code>pip config set global.trusted-host pypi.tuna.tsinghua.edu.cn
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+</code></pre>
+<p>查看是否切换成功</p>
+<pre><code>pip config list
+global.index-url=&#39;https://pypi.tuna.tsinghua.edu.cn/simple&#39;
+global.trusted-host=&#39;pypi.tuna.tsinghua.edu.cn&#39; 
+</code></pre>
+<h3 id="安装Jupyter-notebook"><a href="#安装Jupyter-notebook" class="headerlink" title="安装Jupyter notebook"></a>安装Jupyter notebook</h3><p>输入以下命令行安装：</p>
+<pre><code>conda install jupyter notebook
+</code></pre>
+<p>运行jupyter notebook：</p>
+<pre><code>jupyter notebook
+</code></pre>
+]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>数据分析</tag>
+        <tag>Anaconda</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据分析岗位相关职责</title>
+    <url>/2022/07/06/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B2%97%E4%BD%8D%E7%9B%B8%E5%85%B3%E8%81%8C%E8%B4%A3/</url>
+    <content><![CDATA[<h3 id="数据分析师-x2F-数据挖掘工程师"><a href="#数据分析师-x2F-数据挖掘工程师" class="headerlink" title="数据分析师&#x2F;数据挖掘工程师"></a>数据分析师&#x2F;数据挖掘工程师</h3><ol>
+<li>基于业务理解设计数据基础体系与兄弟团队紧密合作，确保数据收集完好，结构合理，质量良好。</li>
+<li>通过数据收集、数据处理及等可视化方法，善用数据产品释放BI宝贵资源。</li>
+<li>通过业务分析和数据解读，转化成商业洞察和策略建议。</li>
+<li>沉淀分析报告，建立并不断完善分析体系。</li>
+<li>具备一定的数据挖掘能力，挖掘业务隐藏模式，能够预测业务发展趋势，帮助决策及快速调整方向。</li>
+</ol>
+<h3 id="算法团队-x2F-算法工程师"><a href="#算法团队-x2F-算法工程师" class="headerlink" title="算法团队&#x2F;算法工程师"></a>算法团队&#x2F;算法工程师</h3><ol>
+<li>精通统计模式，创新性应用前沿技术。落地实际业务场景，实现最大增值。</li>
+<li>在数据收集与校验中，与兄弟团队紧密合作。</li>
+<li>基于决策层的商业决定，提供及时资源保证。</li>
+<li>发明专利，发表论文。</li>
+</ol>
+<h3 id="数据技术团队-x2F-大数据工程师"><a href="#数据技术团队-x2F-大数据工程师" class="headerlink" title="数据技术团队&#x2F;大数据工程师"></a>数据技术团队&#x2F;大数据工程师</h3><ol>
+<li>数据仓库，数据质量管理。</li>
+<li>从技术评估出发，深度参与数据架构设计。</li>
+<li>通过Hadoop、流计算等工具、高效得加工各种类型的数据。</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>数据分析</tag>
+        <tag>岗位</tag>
+        <tag>职业规划</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数字化客服设计读后感（一）：中心思想</title>
+    <url>/2022/07/26/%E6%95%B0%E5%AD%97%E5%8C%96%E5%AE%A2%E6%9C%8D%E8%AE%BE%E8%AE%A1%E8%AF%BB%E5%90%8E%E6%84%9F%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E4%B8%AD%E5%BF%83%E6%80%9D%E6%83%B3/</url>
+    <content><![CDATA[<h3 id="1-中心思想"><a href="#1-中心思想" class="headerlink" title="1. 中心思想"></a>1. 中心思想</h3><p>对于一个企业而言，客服是解决产品设计与用户认知之间一切误差的团队。<br>当发生产品设计与企业产生偏差时，用户会通过服务渠道去联系企业，这时服务就产生了。而客服的主要任务会有3个：</p>
+<ol>
+<li>推动企业减少误差.</li>
+<li>误差发生时减少误差.</li>
+<li>在两者的基础上提升效率。</li>
+</ol>
+<p>而去衡量以上3个任务是否做得好，有3个重要的指标: </p>
+<h5 id="1-服务率"><a href="#1-服务率" class="headerlink" title="1. 服务率"></a>1. 服务率</h5><p>服务率的计算公式是：服务次数除以他的产品交易总数。是作为衡量产品与用户认知差异的一个指标。当认识差异存在的时候用户才打电话向客服咨询。而一家企业可以通过服务率的指标去监控消费者对某款产品或某种交易的认知差异，从而推动企业改进。</p>
+<h5 id="2-解决力"><a href="#2-解决力" class="headerlink" title="2. 解决力"></a>2. 解决力</h5><p>客服解决力分为四个阶段：敷衍、传话筒、解决、惊喜。敷衍就是在消费者看来没有解决问题，传话筒就如同器人只是帮助企业转述了标准话说，没有实际得站在用户角度帮助用户解决问题。解决就是帮助了用户解决了当前问题。而惊喜会在解决问题的同时还会给予用户额外的收获。如：告诉用户问题的答案后，提供了避免问题发生的方法或更好得解决问题的途径。</p>
+<p>举例:<br>打电话到海底捞客服，问有新上了什么菜品？客服不但有耐心的解答了问题，还提供了新品查询渠道。本来需要进线询问菜单改为通过微信小程序APP查看菜单，成功得减少了服务率。</p>
+<h6 id="3-费力度"><a href="#3-费力度" class="headerlink" title="3. 费力度"></a>3. 费力度</h6><p>用户在解决问题的时候所需要成本，在获取时的难以程度。如：沟通客服的沟通时间，沟通效率，在客服服务的过程中用户的问题是否能容易得到解答。</p>
+]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+      <tags>
+        <tag>数字化客服设计</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据分析流程</title>
+    <url>/2022/10/03/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%B5%81%E7%A8%8B/</url>
+    <content><![CDATA[<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>本篇博客内容是对于数据分析流程以及其数据分析阶段做一个简要的说明，主要是为了对自身数据分析流程做一个复盘，并开始构建自身的数据分析体系。</p>
+<h3 id="1-明确目标"><a href="#1-明确目标" class="headerlink" title="1. 明确目标"></a>1. 明确目标</h3><p>明确分析的目标，在数据分析所需要输出的内容是什么？是对于现有数据的描述解析，指标的计算，还是对于数据趋势的判断。只有在明确目标的前提下才可以围绕具体的数据进行展开。</p>
+<h3 id="2-数据获取"><a href="#2-数据获取" class="headerlink" title="2. 数据获取"></a>2. 数据获取</h3><p>数据获取的方式大致分为3种：自有数据、公开数据、自行收集</p>
+<p><strong>2.1 自有数据（公司&#x2F;个人自有数据）</strong><br>比方说博客上的PV&#x2F;UV数据，每篇博文的转载量，浏览量，对于博客的打赏、软件上的埋点&#x2F;打点数据等。这种自有的数据一般可以通过一些现成的接口&#x2F;数据文档直接获取。</p>
+<p><strong>2.2 公开数据</strong><br>比方说某上市公司的历年财报，一些数据平台&#x2F;咨询平台对外公开的行业数据，官方机构所发布的大数据信息等。这些公开数据一般是可以自有直接下载的。</p>
+<p><strong>2.3 自行收集</strong><br>比方说某购物网站上用户的评论数据，某招聘网上的招聘数据，互联网直播中的弹幕等。这些数据是通过自建爬虫，到互联网上爬取公开数据，这里要特别注重数据安全规范，以及遵守robots协议。</p>
+<h3 id="3-数据预处理"><a href="#3-数据预处理" class="headerlink" title="3. 数据预处理"></a>3. 数据预处理</h3><p>数据预处理大致会分为四个步步骤（数据抽样、数据探索、数据清洗、特征工程），以下会对四个步骤逐一展开，并解释。</p>
+<p><strong>3.1 数据抽样</strong><br>在做数据分析的过程中难免会遇到数据量过于庞大的情况，在考虑到模型的性能以及分析效率的情况下，通常会选择数据抽样的方式减少耗时，进行分析。用这部分数据样本所分析出来的结果去代表整体的情况。</p>
+<p><strong>3.2 数据探索</strong><br>在做数据分析之前，我们必须于数据本身有一个全面的了解，勘察是否有脏数据存在的情况。这里包含勘察数据量，数据的属性（数据列表中每列所代表的含义），数据的分布情况，脏数据的检测等。这样可以极大程度上方便我们去理解数据的全貌以及去选择接下来的处理方式</p>
+<p><strong>3.3 数据清洗</strong><br>对于一些不规整的数据（脏数据）给清洗干净，让整个数据变成对适合进行分析的数据。脏数据大致可分为四个部分：重复数据、数据缺失、数据异常、数据不一致等。在数据预处理的过程中这通常都会占用整个数据分析流程80%以上的时间。在我们尽可能提升数据质量的情况下才会输出一个好的结果，数据的质量往往决定了我们数据分析结果的上限。对于脏数据的清洗方法会另外开一篇博客，就不在这做过多的解释了。</p>
+<p><strong>3.4 特征工程</strong><br>特征工程是做什么的，我想这句话充分得体现了特征工程的含义。</p>
+<blockquote>
+<p>“feature engineering is manually designing what the input x’s should be.”<br>“you have to turn your inputs into things the algorithm can understand.”</p>
+</blockquote>
+<p>大致含义是通过设计你的X输入变量，让你的算法可以理解它。比方说身高和体重，这是两个常用的属性，那如何判读一个人身材是否标准呢？光从单一身高或体重是无法判断的。这时我们会用到IBM这么一个指标（根据身高和体重衍生出来的），而这就需要去了解很多专业的知识。这也是最简单的特征工程的例子之一。</p>
+<h3 id="4-数据分析"><a href="#4-数据分析" class="headerlink" title="4. 数据分析"></a>4. 数据分析</h3><p>当数据处理好了之后，就可以开始分析了，根据你的分析目标，要选择合适的分析方法。常见的分析方法包括：描述性分析、探索性分析、推断性分析。</p>
+<p><strong>4.1 描述性分析</strong><br>描述性分析主要是对所收集的数据进行分析，得出反映客观现象的各种数量特征的一种分析方法，它包括数据的集中趋势分析、数据离散程度分析、数据的频数分布分析等，描述性分析是对数据进一步分析的基础。</p>
+<p><strong>4.2 探索性分析</strong><br>探索性分析主要是通过一些分析方法从大量的数据中发现未知且有价值信息的过程，它不受研究假设和分析模型的限制，尽可能地寻找变量之间的关联性。常见的分析方法有聚类分析、因子分析、对应分析等方法。</p>
+<p><strong>4.3 推断性分析</strong><br>推断性分析是研究如何根据样本数据来推断总体样本数量特征，它是在对样本数据进行描述统计分析的基础上，对研究总体的数量特征做出推断。常见的分析方法有假设检验、相关分析、回归分析、时间序列分析等方法。</p>
+<h3 id="5-数据建模"><a href="#5-数据建模" class="headerlink" title="5. 数据建模"></a>5. 数据建模</h3><p>从已有的数据中发现客观规律，建立数据模型，对之后数据的输出结果做出预测。数据建模包含构建模型，模型评价以及模型应用三个部分，之后对于数据建模会另开一篇博客，在此不做过多解释。</p>
+<h3 id="6-数据可视化"><a href="#6-数据可视化" class="headerlink" title="6. 数据可视化"></a>6. 数据可视化</h3><p>数据可视化是给已输出的分析过程、数据结论提供有力的支撑。通过数据可视化的方式，如趋势图、散点图、热力图等图表让读者更容易理解数据分析过程以及结论，为数据分析报告奠定基础。</p>
+<h3 id="7-报告撰写"><a href="#7-报告撰写" class="headerlink" title="7. 报告撰写"></a>7. 报告撰写</h3><p>数据分析报告是对数据分析结果的一个呈现方式，让数据所产生的结论变得通俗易懂，让读者更容易理解。一份好的数据分析报告需要有明确的分析目标，清晰的框架以及报告逻辑，结论需要有可观的数据论证给予支撑。而报告的呈现方式可以根据客户的喜好去适配。最重要的是能清晰得表述分析结论。</p>
+]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>数据分析</tag>
+        <tag>流程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>清酒（一）：基本介绍</title>
+    <url>/2022/07/09/%E6%B8%85%E9%85%92%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<h3 id="1-日本清酒介绍"><a href="#1-日本清酒介绍" class="headerlink" title="1.日本清酒介绍"></a>1.日本清酒介绍</h3><p>日本清酒属于日本的国酒，类似于中国白酒在中国的地位。日本清酒虽然借鉴了中国黄酒的酿造法，但却有别于中国的黄酒。该酒色泽呈淡黄色或无色，清亮透明，芳香宜人，口味纯正，绵柔爽口，其酸、甜、苦、涩、辣诸味谐调，<code>酒精含量在15%</code>以上，含多种氨基酸、维生素，是营养丰富的饮料酒。</p>
+<img src="/2022/07/09/%E6%B8%85%E9%85%92%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/%E6%B8%85%E9%85%92.png" class="">
+
+
+<h3 id="2-制作工艺"><a href="#2-制作工艺" class="headerlink" title="2.制作工艺"></a>2.制作工艺</h3><p>日本清酒是通过精选的大米去进行酿制的，日本清酒的制作工艺十分考究。精选的大米要<code>经过磨皮</code>，使大米精白，浸渍时<code>吸收水分</code>快，而且容易蒸熟；<code>发酵</code>又分成前、后发酵两个阶段；杀菌处理在装瓶前、后各进行一次，以确保酒的保质期；勾兑酒液时注重规格和标准。</p>
+<h3 id="3-酿酒所用米"><a href="#3-酿酒所用米" class="headerlink" title="3.酿酒所用米"></a>3.酿酒所用米</h3><p>酿酒所用米跟我们平常的适用米是有区别的，一般来说酒米体积较大，有<code>心白</code>，蛋白质和脂质要少，酒米外硬内软，而且有较好的<code>吸水性</code>。而心白是指白米中心不透明的白色部分，主要<code>成分是淀粉</code>。含有心白的白米，曲菌菌丝易深入白米中心，且在制作酒母与酒醪时，白米更容易<code>糖化</code>，因此酿造清酒必须使用有心白的白米。</p>
+<img src="/2022/07/09/%E6%B8%85%E9%85%92%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/%E9%85%BF%E9%85%92%E7%B1%B3%E7%B1%B3%E5%BF%83.jpeg" class="">
+
+<h3 id="4-精米步合"><a href="#4-精米步合" class="headerlink" title="4.精米步合"></a>4.精米步合</h3><p>之前说到造酒时需要对精选过得大米进行<code>打磨</code>，那么打磨程度的衡量标准就叫做精米步合。打磨后的米重量&#x2F;打磨前的糙米重量x100&#x3D;精米步合（精密度）。在一定程度上，精米步合越低，被打磨掉的米越多，风味越纯净，价格也会越高。</p>
+<img src="/2022/07/09/%E6%B8%85%E9%85%92%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/%E7%B2%BE%E7%B1%B3%E6%AD%A5%E5%90%88.png" class="">
+
+<h3 id="5-清酒级别"><a href="#5-清酒级别" class="headerlink" title="5.清酒级别"></a>5.清酒级别</h3><p>清酒的级别是与精米步合所挂钩的，一般来说精密步和值越低，酒的象棋月浓厚。同样，价格也会越高。<br>以下简单列了个表格：在日本有8种特定名称酒，都是要求精米步合在70%以上的。精米步合70%以下的称为普通酒。<br>而特定名称酒大致也会被分成两类：一是纯米酒，仅用（<code>米+米曲</code>）进行酿造，二是本酿造类，使用（米+米曲+<code>酿造酒精</code>）酿制而成。达到特定精米步合的标准就会被赋予特定名称。<br>用以下表格呈现或许会显得更直观一些：</p>
+<table>
+<thead>
+<tr>
+<th>精米步合</th>
+<th>纯米酒类</th>
+<th>本酿造类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;50%</td>
+<td>纯米大吟酿</td>
+<td>大吟酿</td>
+</tr>
+<tr>
+<td>50%~60%</td>
+<td>纯米吟酿</td>
+<td>吟酿</td>
+</tr>
+<tr>
+<td>60%~70%</td>
+<td>特定纯米酒</td>
+<td>特定本酿造</td>
+</tr>
+<tr>
+<td>60%~70%</td>
+<td>纯米酒</td>
+<td>本酿造</td>
+</tr>
+<tr>
+<td>&gt; 70%</td>
+<td>普通酒</td>
+<td>酿造酒</td>
+</tr>
+</tbody></table>
+<img src="/2022/07/09/%E6%B8%85%E9%85%92%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/%E6%B8%85%E9%85%92%E7%AD%89%E7%BA%A7.jpg" class="">
+
+<h3 id="6-酿造酒精"><a href="#6-酿造酒精" class="headerlink" title="6.酿造酒精"></a>6.酿造酒精</h3><p>对于清酒是否加入了酿造酒精其实并不直接关联品质的优劣，而加入酿造酒精是为了更能激发清酒独特的<code>韵味</code>。所谓酿造酒精,简单来说就是可食用的酒精。酿造酒精基本上<code>不具有香味</code>及<code>味道</code>，因此也<code>不会改变</code>清酒的<code>口感</code>。最初加入酿造酒精的租用也是防止就的品质劣化，它能抑制杂菌繁殖，使酒能够更长时间被保存下来。后来发现清酒的香气更易溶于酒精而不易溶于水，酿造酒精对于清酒的<code>呈香</code>有很大有帮助，所以本酿造类的就还大多有着洗练以及清爽的口感。</p>
+]]></content>
+      <categories>
+        <category>人际关系</category>
+      </categories>
+      <tags>
+        <tag>酒</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>疫情下的巴菲特2020股东大会</title>
+    <url>/2020/04/04/%E7%96%AB%E6%83%85%E4%B8%8B%E7%9A%84%E5%B7%B4%E8%8F%B2%E7%89%B92020%E8%82%A1%E4%B8%9C%E5%A4%A7%E4%BC%9A/</url>
+    <content><![CDATA[<h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p>认为当初购买航空股可获得可观的收益，实际上是个错误。此次疫情对航空业打击很大，现在不清楚航空业在未来的会恢复多少。</p>
+<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><p>如果你持有的股票是自己欣赏的公司，即使疫情下价格发生改变，如果你真的认可商业模式和管理，股票有它自己的优势。</p>
+<h3 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h3><p>现在不建议建仓，除非做好长期持有的准备，如果现在选择进入股市市场要做好下跌50%或更多的准备。</p>
+<h3 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h3><p>回顾大萧条 道琼斯指数1929年9月3号在381.17点 大约两月后1929年11月13号道琼斯指数跌到198.69点跌幅接近50%。大约9个半月后1930年8月29号道琼斯指数恢复到240. 42点涨幅20%。人们当时认为从大萧条到了衰退期。但在1932年7月8号道琼斯指数跌倒了41.22点，不到两年跌幅超过了83%。银行相继面临破产，世界格局发生改变 FBIC机构成立。</p>
+<h3 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h3><p>疫情会对经济有影响 某些行业会进一步衰退 比如 汽车行业 报业 航空业 农业</p>
+<h3 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h3><p>石油行业正在发生风险</p>
+<h3 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h3><p>买股票就是买公司收益的一部分，大多数人应该持有标普500</p>
+<h3 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h3><p>做好分散投资 不要把鸡蛋放在同一个篮子里。</p>
+<h3 id="9"><a href="#9" class="headerlink" title="9."></a>9.</h3><p>有时候觉得失去信心其实是没有看到市场的潜在能力，要对美国市场有信心</p>
+<h3 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h3><p>现在股价还太高</p>
+]]></content>
+      <categories>
+        <category>财富密码</category>
+      </categories>
+      <tags>
+        <tag>巴菲特</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>睡眠</title>
+    <url>/2022/09/07/%E7%9D%A1%E7%9C%A0/</url>
+    <content><![CDATA[<h3 id="1-睡眠是什么？"><a href="#1-睡眠是什么？" class="headerlink" title="1. 睡眠是什么？"></a>1. 睡眠是什么？</h3><p>人类的睡眠实际上被分为两种不同的类型：快速眼动睡眠以及非快速眼动睡眠。<br>人在入睡的时候，体温，心率，血压会下降并达到一个平稳的状态。</p>
+<p>快速眼动睡眠（ram-sleep）：</p>
+<ol>
+<li>记忆整合</li>
+<li>调节情绪</li>
+</ol>
+<p>非快速眼动睡眠（nram-sleep）：<br>脑电波频率明显变慢，呼吸频率和血压也明显降低。</p>
+<ol>
+<li>增强我们的记忆力</li>
+<li>使身体更加健康，增强我们的免疫因子，</li>
+</ol>
+<p>一个睡眠周期在90分钟左右，从浅睡眠到深度睡眠再回到浅睡眠为一个周期。</p>
+<h3 id="2-睡眠是怎么工作的？"><a href="#2-睡眠是怎么工作的？" class="headerlink" title="2. 睡眠是怎么工作的？"></a>2. 睡眠是怎么工作的？</h3><p>大概会有两个因素会对睡眠造成影响</p>
+<ol>
+<li>睡眠压力：睡觉的困意来自于神经元累积的叫”腺苷”分子，在一觉醒来后会开始逐渐累积，累积的越多困意就越大，但通过睡眠可以将这种分子恢复至最初的状态。</li>
+<li>昼夜节律：人在一个昏暗的环境下更容易产生困意，身体会分泌一种叫“褪黑素”的神经递质去调节昼夜节律，告诉身体现在是白天该保持警觉，还是是晚上你应该睡觉了。</li>
+</ol>
+<h3 id="2-1-褪黑素的使用"><a href="#2-1-褪黑素的使用" class="headerlink" title="2.1 褪黑素的使用"></a>2.1 褪黑素的使用</h3><p>褪黑素在一定程度上可以调节睡眠，改善睡眠质量。</p>
+<ol>
+<li>人在青年的阶段，自身夜间的时候褪黑素分泌是足够的，可以通过改善外部环境去刺激褪黑素的分泌。</li>
+<li>人在中年，老年的阶段自身夜间的时候褪黑素分泌会钝化或降低，在这时候补充一些褪黑素会让人体的褪黑素水平恢复到年轻时候的状态。</li>
+<li>褪黑素的服用不适宜过量，如果褪黑素过量复用的话（5-10毫克）,身体会觉得不需要这么多褪黑素了，反而会抑制自身褪黑素的分泌。而一般医生建议服用的量为0.3-0.5毫克之间。</li>
+</ol>
+<h3 id="3-你是夜猫子？还是云雀？"><a href="#3-你是夜猫子？还是云雀？" class="headerlink" title="3. 你是夜猫子？还是云雀？"></a>3. 你是夜猫子？还是云雀？</h3><p>睡眠时间类型一般分为两种：一种是夜猫子类型的晚睡晚起，另一种是云雀类型的（早睡早起），还有一些人会在这两者之间。<br>而睡眠类型也是有基因决定的，也是天生的，你会带着你的这个天赋贯穿你的一生。如果说你是夜猫子的话，很有可能是你的父母至少是其中一方是夜猫子类型的。</p>
+<h3 id="4-酒和咖啡因"><a href="#4-酒和咖啡因" class="headerlink" title="4. 酒和咖啡因"></a>4. 酒和咖啡因</h3><p>酒和咖啡都会影响人的睡眠情况</p>
+<h6 id="咖啡："><a href="#咖啡：" class="headerlink" title="咖啡："></a>咖啡：</h6><ol>
+<li>咖啡中含有大量的咖啡因，能让我们精神保持清醒。</li>
+<li>咖啡因的持续时间：半衰期可长达5~6小时，也就是说当你下午2点喝了一杯咖啡后，到晚上8点你还有半杯咖啡因的在起作用，甚至到了凌晨2点的时候还有1&#x2F;4的咖啡因没消耗完。</li>
+<li>咖啡会影响睡眠质量：会影响深度睡眠的质量，第二天起来会感觉比较疲劳。深度睡眠对心血管系统有益，可以帮助启动和充电免疫系统，可以把新的事实融入到神经结构中，增强记忆力。<br>原理：咖啡因会快速进入大脑与腺苷受体结合，从而阻断了腺苷与其受体的结合。让你的大脑觉得仍然还清醒没那么困了。但在这段时间内腺苷还是会持续增加的，当咖啡因失去作用时，大量的腺苷与受体结合会瞬间让你觉得非常得困。</li>
+</ol>
+<p>咖啡因隐藏：<br>注意咖啡因摄取，咖啡因会隐藏在一些日常的食物当中。</p>
+<ol>
+<li>及时是无咖啡因咖啡仍然具有小量的咖啡因。</li>
+<li>运动饮料、可乐等饮料也会具有咖啡</li>
+<li>冰淇淋也会具有咖啡因</li>
+</ol>
+<h6 id="酒："><a href="#酒：" class="headerlink" title="酒："></a>酒：</h6><p>平常认为酒会有助于睡眠，事实上酒对睡眠没有任何帮助甚至还会危害睡眠。</p>
+<ol>
+<li>酒只会让你进入镇定的状态，并不会让你进入自然睡觉。</li>
+<li>让你的睡眠质量变差，难以进入深度睡眠甚至在夜间容易醒来。</li>
+<li>扰乱快速眼动睡眠，降低记忆力。</li>
+</ol>
+<p>建议：</p>
+<ol>
+<li>尽量在下午或晚上减少咖啡因的摄入</li>
+<li>保持规律睡眠，在同一时间起来，同一时间睡觉。</li>
+</ol>
+<h3 id="5-睡眠债"><a href="#5-睡眠债" class="headerlink" title="5. 睡眠债"></a>5. 睡眠债</h3><p>每天晚上如果我们得不到所需的睡眠，就会落下睡眠债。</p>
+<ol>
+<li>大脑中的腺苷无法全面得清除，残余的部分会跟随着你的身体度过一整天，这样一天都会过得很疲惫。</li>
+<li>错过的睡眠无法通过恢复睡眠找回</li>
+</ol>
+<h6 id="少睡眠的危害"><a href="#少睡眠的危害" class="headerlink" title="少睡眠的危害"></a>少睡眠的危害</h6><ol>
+<li>容易引起疲劳驾驶，在驾驶的过程中会出现微睡眠，眼睛会不自觉的闭合一两秒，容易造成事故损伤。</li>
+<li>当你少睡一两个小时，个人是不自知的，觉得自己精神状态还很好，事实上</li>
+<li>当没有达到充足睡眠的时候就跟醉酒了一样。</li>
+</ol>
+<h3 id="6-小睡"><a href="#6-小睡" class="headerlink" title="6.小睡"></a>6.小睡</h3><ol>
+<li>小睡时长可达到15分钟到90分钟</li>
+<li>午睡对心血管系统，增加记忆力，以及加强警觉性和专注能力有帮助。</li>
+<li>但如果午睡的时间太长的话，会减少腺苷的累积，影响晚上的睡眠质量。</li>
+</ol>
+<h6 id="如何小睡？"><a href="#如何小睡？" class="headerlink" title="如何小睡？"></a>如何小睡？</h6><ol>
+<li>最好在下午2-3点之前小睡，而且睡眠时间不要过长在15-20分钟左右，不然会影响你晚上的睡眠质量。</li>
+</ol>
+<h6 id="时差"><a href="#时差" class="headerlink" title="时差"></a>时差</h6><ol>
+<li>身体会以每天减少一小时的时差逐渐适应当地的时间。</li>
+<li>可以在上飞机的时候就调整成目的地的时间，让身体去提前适应。</li>
+<li>身体需要至少持续清醒12小时以上才会累积健康的睡意，可以飞机是可以提前睡觉。</li>
+</ol>
+<h3 id="7-激活大脑"><a href="#7-激活大脑" class="headerlink" title="7. 激活大脑"></a>7. 激活大脑</h3><ol>
+<li>在学习之前，让你的大脑准备好放下那些新的记忆痕迹。在睡眠被剥夺的情况下大脑几乎有40%的能力缺陷。在实验中表明剥夺睡眠会阻断海马体接收信号，就不能将新的信息存储到记忆中。</li>
+<li>学习后睡觉巩固大脑中的神经结构。睡眠有助于将短期记忆变成长期的记忆。</li>
+<li>需要睡觉来联想并将所有信息吸收整合到一起。</li>
+</ol>
+<h3 id="8-贯穿一生的睡眠"><a href="#8-贯穿一生的睡眠" class="headerlink" title="8. 贯穿一生的睡眠"></a>8. 贯穿一生的睡眠</h3><ol>
+<li>当你老去睡眠质量以及睡眠时长也会逐渐下降。</li>
+<li>在0-2岁的时候50%的情况下是在快速眼动睡眠的状态，另外50%的睡眠是在非快速眼动睡眠。到青年的时候非快速眼动睡眠的时间会更长一些。到成年的时候大概会有80%的情况是在非快速眼动睡眠，仅20%情况是在快速眼动睡眠。到老年的时候在夜间睡眠的次数会逐渐增多</li>
+<li>在30岁后睡眠的脑电波就会开始下降，随着年龄的增长大脑不能产生睡眠满足必然的需求。</li>
+<li>随着年纪的增长我们对昼夜节律的感知也会变得更差，因为大脑会减少褪黑素的释放。</li>
+</ol>
+<h6 id="阿尔兹海默症（老年痴呆症）"><a href="#阿尔兹海默症（老年痴呆症）" class="headerlink" title="阿尔兹海默症（老年痴呆症）"></a>阿尔兹海默症（老年痴呆症）</h6><ol>
+<li>阿尔兹海默症与睡眠息息相关</li>
+<li>当睡觉不充分得时候，脑袋会产生有毒的蛋白质（淀粉样蛋白-bete amyloid），而当我们进入深度非快速眼动睡眠的时候会清理这些有毒蛋白。</li>
+</ol>
+<h3 id="9-通宵治疗"><a href="#9-通宵治疗" class="headerlink" title="9.通宵治疗"></a>9.通宵治疗</h3><p>睡眠不足是如何影响我们的情绪的</p>
+<ol>
+<li>大脑中的杏仁核是控制情绪的中枢</li>
+<li>当睡眠充足的时候前额叶皮层会对杏仁核进行调节，对于睡眠减少的情况下，这种调节机制基本上被切断了，杏仁核就会变得特别敏感。也就是说当有充足睡眠的时候情绪是可被管控的。</li>
+<li>睡眠跟P创伤性后遗症，抑郁症，精神分裂等精神疾病都有关联。有充足的睡眠会对精神疾病很好的预防。</li>
+<li>快速眼动睡眠和做梦是情绪急救。</li>
+<li>睡眠会的自己的情绪有所校准，会增加对于情绪的洞察能力，读懂别人的情绪。</li>
+</ol>
+<h3 id="10-荒诞的梦境表现"><a href="#10-荒诞的梦境表现" class="headerlink" title="10.荒诞的梦境表现"></a>10.荒诞的梦境表现</h3><ol>
+<li>做梦是一个正常的生理机制，是完全非理性的。</li>
+</ol>
+<h3 id="11-睡眠与你的身体"><a href="#11-睡眠与你的身体" class="headerlink" title="11.睡眠与你的身体"></a>11.睡眠与你的身体</h3><ol>
+<li>人们通常认为健康的三个支柱是睡眠+饮食+运动，其实睡眠是作为一个重要的支柱给做饮食和运动支撑。</li>
+<li>睡眠跟自身的免疫系统是强相关的，通过数百万的统计数据证明，睡眠时间越短，寿命就会越短。</li>
+<li>每晚睡觉少于7个小时的人感冒的概率是正常人的3倍。</li>
+<li>自然杀伤细胞：会像一个特工一样在你身体游走消灭有害的细胞，如果睡眠小于4小时的活活性会减弱80%。它是预防癌细胞的绝妙杀手。</li>
+<li>缺少睡眠对一个男人来说会缺少健康和阳刚之气。</li>
+</ol>
+<h3 id="12-饮食与睡眠"><a href="#12-饮食与睡眠" class="headerlink" title="12.饮食与睡眠"></a>12.饮食与睡眠</h3><ol>
+<li>睡眠不足的情况下体重会下降，但减少的并不是你的脂肪，而是肌肉。</li>
+<li>睡眠不足的时候杏仁核会发出信号，会让人产生对于非健康食品的渴望。大脑皮层也会受损，从而失去对大脑中冲动的控制。</li>
+<li>人体中有两种激素控制身体是否感受到饥饿，一是瘦素，让你的身体感受到饱腹感，二是饥饿素，让你的身体感受到饥饿。</li>
+<li>睡眠不足会让以上两种激素走向不健康的样子，瘦素会下降，饥饿素上升，让你的身体去获取一些垃圾食品而非健康的食物。</li>
+<li>当人人体的血糖升高时，人体中的胰岛素就会开始工作，告诉身体是时候从血液中吸食葡萄糖。</li>
+<li>高糖、低纤饮食通常会对你的夜间睡眠不利，会让你在夜间容易醒来。最好在睡觉前3-4个小时就停止进食，给身体一个足够的消化时间。</li>
+</ol>
+<h3 id="13-睡眠引领成功"><a href="#13-睡眠引领成功" class="headerlink" title="13.睡眠引领成功"></a>13.睡眠引领成功</h3><ol>
+<li>运动会让你的睡眠变得更好，可以增加你的睡眠的时长以及深度睡眠的时长。</li>
+<li>但值得注意是的，不要睡觉前一两个小时进行运动，因为这样你的心率的增速，内啡肽的分泌都会让你的身体处于一个兴奋的状态，难以入睡。</li>
+<li>睡觉其实是身体恢复的最佳良药，对于一些运动能力以及技巧是可以通过睡眠去固化的。</li>
+</ol>
+<h3 id="14-如何睡得更好"><a href="#14-如何睡得更好" class="headerlink" title="14.如何睡得更好"></a>14.如何睡得更好</h3><ol>
+<li>有规律的睡眠，不管是工作日还是周末休息在同一时间上床睡觉，在同一时间醒来。</li>
+<li>睡眠是有一个过度过程的，睡觉前可以先让身体放松起来，比方说洗个澡，伸个懒腰，读一下书等。试着建立相同的睡眠习惯。</li>
+<li>在睡觉前一两个小时可以把你的忧虑写下来，得到一种宣泄的作用，科学证明这可以提高入睡的可能性。</li>
+<li>保持凉爽，一个最佳的睡眠室内温度在18摄氏度，因为你的身体在睡觉的时候需要降低自身的体温1摄氏度才能入睡。</li>
+<li>在睡觉前一个小时尽量把室内灯光调暗，让大脑得到黑暗甚至黄昏的信号，它需要足够的时间去释放褪黑素。</li>
+<li>不要喝醉了上床睡觉，酒里含有尼古丁，是一种活性的化学物质这可以刺激你的大脑，让睡觉更加困难。</li>
+<li>尽量避免在床上工作、吃学习、看电视等，这样会让你的大脑产生混乱，不要把床跟其他东西关联起来，除了睡个好觉。</li>
+<li>若你在床上25分钟以上无法入睡的话应该起床到处走走，让大脑习惯性认为床是一个只适合睡觉的地方。</li>
+<li>如果你想知道你做完的一个睡眠状态的话，可以使用具有检测睡眠的手表进行检测。</li>
+</ol>
+<h3 id="15-找回睡眠"><a href="#15-找回睡眠" class="headerlink" title="15.找回睡眠"></a>15.找回睡眠</h3><ol>
+<li>找回自己的睡眠类型，因为每个人的睡眠类型都不一样有人早起早睡，有人晚起晚睡。现代社会工作制度不一定是合理的，统一的上班时间会剥夺了部分人的睡眠时间。但目前，也有一些大型的互联网公司采取弹性工作制度，可以让晚睡晚起的人晚些上班。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>运动健康</category>
+        <category>睡眠</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>数据质量评估标准</title>
+    <url>/2022/10/12/%E6%95%B0%E6%8D%AE%E8%B4%A8%E9%87%8F%E8%AF%84%E4%BC%B0%E6%A0%87%E5%87%86/</url>
+    <content><![CDATA[<h3 id="数据质量评估的6个标准"><a href="#数据质量评估的6个标准" class="headerlink" title="数据质量评估的6个标准"></a>数据质量评估的6个标准</h3><p>数据质量（DQ）维度是数据管理从业者基于已有的一些标准用来评估和衡量数据质量的一些特征。国际数据管理协会（DAMA）对数据质量的衡量标准，分为一些六大维度。</p>
+<ol>
+<li>完整性 - 衡量所必须数据的完整程度。</li>
+<li>及时性 - 针对用户对信息获取的时间及时性要求，确保数据及时更新。</li>
+<li>唯一性 - 针对某个数据项或某组数据，没与重复的数据值。 </li>
+<li>一致性 - 数据元素的类型和含义必须一致和清晰。</li>
+<li>准确性 - 确保数据必须反应真实的业务内容。</li>
+<li>有效性 - 对于数据的值、格式要求符合数据定义或业务定义的要求。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>数据分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>穿搭</title>
+    <url>/2022/08/25/%E7%A9%BF%E6%90%AD/</url>
+    <content><![CDATA[<h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h3><ol>
+<li>颜色不要超过3种颜色以上，注意颜色之间的搭配。</li>
+<li>搭配规则参考色环。同源色，相邻色、对比色。</li>
+<li>遵循2&#x2F;8分布，20%为主色，80%为配色。</li>
+<li>同色系衣服需要有不同的颜色进行过度。</li>
+<li>注意颜色呼应，如上衣图案的颜色最好能和配饰对应上。</li>
+</ol>
+<h3 id="风格"><a href="#风格" class="headerlink" title="风格"></a>风格</h3><ol>
+<li>尽量穿比较宽松的衣服，如直筒裤。</li>
+<li>记得繁简搭配，如果上衣比较复杂那么下身尽量穿得简单一些。</li>
+</ol>
+<h3 id="配饰"><a href="#配饰" class="headerlink" title="配饰"></a>配饰</h3><ol>
+<li>穿衣需要点缀：如项链，帽子，口罩，手表，袜子等都可以成为你的配饰。</li>
+<li>配饰也可以遵循2&#x2F;8分布，配饰作为20%的主显色系。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>人际关系</category>
+      </categories>
+      <tags>
+        <tag>穿搭</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自动聊天机器人学习笔记</title>
+    <url>/2020/04/04/%E8%87%AA%E5%8A%A8%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<span id="more"></span>
+<h2 id="自动聊天机器人学习笔记"><a href="#自动聊天机器人学习笔记" class="headerlink" title="自动聊天机器人学习笔记"></a>自动聊天机器人学习笔记</h2><h3 id="1-NLTK"><a href="#1-NLTK" class="headerlink" title="1 NLTK"></a>1 NLTK</h3><p>NLTK 是Python自然语言处理库<br>自带语料库 词性分类库 自带分类 分词 等功能</p>
+<h3 id="1-1-安装-x2F-测试"><a href="#1-1-安装-x2F-测试" class="headerlink" title="1.1 安装&#x2F;测试"></a>1.1 安装&#x2F;测试</h3><p>mac安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo pip install -u nltk</span><br></pre></td></tr></table></figure>
+
+<p>mac测试</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ Python</span><br><span class="line">&gt;&gt;&gt; import nltk</span><br></pre></td></tr></table></figure>
+
+<p>语料库安装cropus</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; nltk.download()</span><br></pre></td></tr></table></figure>
+<p>语料库使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; import nltk.cropus</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>NLP</tag>
+        <tag>文本分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自然语言处理（一）：TFIDF</title>
+    <url>/2022/07/16/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9ATFIDF/</url>
+    <content><![CDATA[<h3 id="1-TFIDF的定义"><a href="#1-TFIDF的定义" class="headerlink" title="1. TFIDF的定义"></a>1. TFIDF的定义</h3><p>TFIDF 全称 Term Frequency, Inverse document Frequency，也可以翻译成词频逆向文档频率。TFIDF可以分为两部分，其中TF就是一个词出现在一个文档中出现的频率，而IDF就是有多少个文档包含了该单词。</p>
+<h3 id="2-使用说明"><a href="#2-使用说明" class="headerlink" title="2. 使用说明"></a>2. 使用说明</h3><p>TFIDF是一种基于词频的算法公式，用来为每个词组计算一个分值，基于这个分值识别一个词在一个文档中的重要性，而后可以作为关键词提取或用于给词向量加权。</p>
+<h3 id="3-基本原理"><a href="#3-基本原理" class="headerlink" title="3. 基本原理"></a>3. 基本原理</h3><p>TF是计算词频，词频越高就证明了这词越重要，而IDF逆向文档频率就是为了降低一些常用词出现的权重。最后通过TF*IDF的乘积得到一个最后分值。一般来说经过TFIDF公式计算后的单词分值越大越为重要。原理是当一个词在单个文档中出现频繁的出现，但在其他文档中出现得少，这证明这个单词对于这个文档是重要的。</p>
+<p>比方说有个文件夹下有两个文档:<br>1.今天吃番茄炒蛋， 在这个句子分词后可以分为: 今天 上午 吃 番茄 炒 蛋 下午 吃 番茄 土豆<br>2.明天吃番茄炒土豆， 在这个句子分词后可以分为: 今天 上午 吃 红烧鱼 下午 吃 土豆</p>
+<p>从这两句话中可以看出 “番茄” 是比较重要的，因为番茄在句一出现了两次而在其他文档中没有频繁出现。而 “今天” ，”上午” 等词语经过IDF减权显得并非那么重要。</p>
+<h3 id="4-算法公式"><a href="#4-算法公式" class="headerlink" title="4. 算法公式"></a>4. 算法公式</h3><p>TF: 一个词在一个文档出现的次数&#x2F;在所有文档中所有出现过词的数量<br>IDF: log(文档总算量&#x2F;包含该词的文档数量)<br>TFIDF &#x3D; TF * IDF</p>
+<h3 id="5-优缺点"><a href="#5-优缺点" class="headerlink" title="5. 优缺点"></a>5. 优缺点</h3><p>优点<br>简答、快捷、满足一般分析需求</p>
+<p>缺点<br>1.不考虑上下文关系, 每个词都是相对独立了 我爱你和你爱我 算法过后表示同一意思。<br>2.文档过多的话会导致IDF可能会低估词的重要性。</p>
+]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>NLP</tag>
+        <tag>文本分析</tag>
+      </tags>
+  </entry>
+</search>
