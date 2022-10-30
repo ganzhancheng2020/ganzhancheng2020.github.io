@@ -24,94 +24,6 @@
       </tags>
   </entry>
   <entry>
-    <title>pandas笔记（一）：查看数据</title>
-    <url>/2022/09/23/pandas%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE/</url>
-    <content><![CDATA[<h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h3><p>Pandas 是 Python 语言的一个扩展程序库，用于数据分析。</p>
-<h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h3><p>打开<code>terminal</code>输入</p>
-<pre><code>&gt;&gt;&gt; pip install pandas
-</code></pre>
-<h3 id="3-生成数据"><a href="#3-生成数据" class="headerlink" title="3. 生成数据"></a>3. 生成数据</h3><p>使用<code>Pandas</code>生成数据的方式有3种：<br>第一种：使用列创建</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data [[<span class="string">&#x27;apple&#x27;</span>,<span class="number">10</span>],[<span class="string">&#x27;banana&#x27;</span>,<span class="number">11</span>],[<span class="string">&#x27;cherry&#x27;</span>,<span class="number">12</span>]]</span><br><span class="line">df = pd.DataFrame(data,columns=[<span class="string">&#x27;fruit&#x27;</span>,<span class="string">&#x27;count&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(df)</span><br></pre></td></tr></table></figure>
-<p>输出结果：</p>
-<table>
-<thead>
-<tr>
-<th align="center">fruit</th>
-<th align="center">count</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">apple</td>
-<td align="center">10</td>
-</tr>
-<tr>
-<td align="center">banana</td>
-<td align="center">11</td>
-</tr>
-<tr>
-<td align="center">cherry</td>
-<td align="center">12</td>
-</tr>
-</tbody></table>
-<p>第二种：使用<code>ndarrays</code>创建</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data = &#123;<span class="string">&#x27;fruit&#x27;</span>:[<span class="string">&#x27;apple&#x27;</span>,<span class="string">&#x27;banana&#x27;</span>,<span class="string">&#x27;cherry&#x27;</span>],<span class="string">&#x27;count&#x27;</span>:[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]&#125;</span><br><span class="line">df = pd.DataFrame(data)</span><br><span class="line"><span class="built_in">print</span>(df)</span><br></pre></td></tr></table></figure>
-<p>输出结果：</p>
-<table>
-<thead>
-<tr>
-<th align="center">fruit</th>
-<th align="center">count</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">apple</td>
-<td align="center">10</td>
-</tr>
-<tr>
-<td align="center">banana</td>
-<td align="center">11</td>
-</tr>
-<tr>
-<td align="center">cherry</td>
-<td align="center">12</td>
-</tr>
-</tbody></table>
-<p>第三种：使用字典创建：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data = [&#123;<span class="string">&#x27;fruit&#x27;</span>:<span class="string">&#x27;apple&#x27;</span>,<span class="string">&#x27;count&#x27;</span>:<span class="number">10</span>&#125;,&#123;<span class="string">&#x27;fruit&#x27;</span>:<span class="string">&#x27;banana&#x27;</span>,<span class="string">&#x27;count&#x27;</span>:<span class="number">11</span>&#125;,&#123;<span class="string">&#x27;fruit&#x27;</span>:<span class="string">&#x27;cherry&#x27;</span>,<span class="string">&#x27;count&#x27;</span>:<span class="number">12</span>&#125;]</span><br><span class="line">df = pd.DataFrame(data)</span><br><span class="line"><span class="built_in">print</span>(df)</span><br></pre></td></tr></table></figure>
-<p>输出结果：</p>
-<table>
-<thead>
-<tr>
-<th align="center">fruit</th>
-<th align="center">count</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">apple</td>
-<td align="center">10</td>
-</tr>
-<tr>
-<td align="center">banana</td>
-<td align="center">11</td>
-</tr>
-<tr>
-<td align="center">cherry</td>
-<td align="center">12</td>
-</tr>
-</tbody></table>
-<h3 id="4-读取数据Excel数据"><a href="#4-读取数据Excel数据" class="headerlink" title="4. 读取数据Excel数据"></a>4. 读取数据Excel数据</h3><p>使用以下<code>code</code>读取excel文件：XXX为文件名，若文件不是与代码放在同一个目录下，需要在前面加入文件路径。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pd.read_csv(<span class="string">&quot;XXX.csv&quot;</span>) <span class="comment">#cvs文件格式使用read_csv</span></span><br><span class="line">pd.read_excel(<span class="string">&quot;XXX.xlsx&quot;</span>) <span class="comment">#xlsx文件格式使用read_excel格式</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>编程笔记</category>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>pandas</tag>
-        <tag>数据分析</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>pandas函数大全</title>
     <url>/2022/09/29/pandas%E5%87%BD%E6%95%B0%E5%A4%A7%E5%85%A8/</url>
     <content><![CDATA[<h3 id="函数汇总"><a href="#函数汇总" class="headerlink" title="函数汇总"></a>函数汇总</h3><p>整理了100个Pandas常用的函数，分别分为6类：<br>统计汇总函数、<br>数据清洗函数、<br>数据筛选、<br>绘图与元素级运算函数、<br>时间序列函数<br>其他函数。</p>
@@ -504,6 +416,94 @@
 </tr>
 </tbody></table>
 ]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>pandas</tag>
+        <tag>数据分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pandas笔记（一）：查看数据</title>
+    <url>/2022/09/23/pandas%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE/</url>
+    <content><![CDATA[<h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h3><p>Pandas 是 Python 语言的一个扩展程序库，用于数据分析。</p>
+<h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h3><p>打开<code>terminal</code>输入</p>
+<pre><code>&gt;&gt;&gt; pip install pandas
+</code></pre>
+<h3 id="3-生成数据"><a href="#3-生成数据" class="headerlink" title="3. 生成数据"></a>3. 生成数据</h3><p>使用<code>Pandas</code>生成数据的方式有3种：<br>第一种：使用列创建</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">data [[<span class="string">&#x27;apple&#x27;</span>,<span class="number">10</span>],[<span class="string">&#x27;banana&#x27;</span>,<span class="number">11</span>],[<span class="string">&#x27;cherry&#x27;</span>,<span class="number">12</span>]]</span><br><span class="line">df = pd.DataFrame(data,columns=[<span class="string">&#x27;fruit&#x27;</span>,<span class="string">&#x27;count&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(df)</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<table>
+<thead>
+<tr>
+<th align="center">fruit</th>
+<th align="center">count</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">apple</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">banana</td>
+<td align="center">11</td>
+</tr>
+<tr>
+<td align="center">cherry</td>
+<td align="center">12</td>
+</tr>
+</tbody></table>
+<p>第二种：使用<code>ndarrays</code>创建</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data = &#123;<span class="string">&#x27;fruit&#x27;</span>:[<span class="string">&#x27;apple&#x27;</span>,<span class="string">&#x27;banana&#x27;</span>,<span class="string">&#x27;cherry&#x27;</span>],<span class="string">&#x27;count&#x27;</span>:[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]&#125;</span><br><span class="line">df = pd.DataFrame(data)</span><br><span class="line"><span class="built_in">print</span>(df)</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<table>
+<thead>
+<tr>
+<th align="center">fruit</th>
+<th align="center">count</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">apple</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">banana</td>
+<td align="center">11</td>
+</tr>
+<tr>
+<td align="center">cherry</td>
+<td align="center">12</td>
+</tr>
+</tbody></table>
+<p>第三种：使用字典创建：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">data = [&#123;<span class="string">&#x27;fruit&#x27;</span>:<span class="string">&#x27;apple&#x27;</span>,<span class="string">&#x27;count&#x27;</span>:<span class="number">10</span>&#125;,&#123;<span class="string">&#x27;fruit&#x27;</span>:<span class="string">&#x27;banana&#x27;</span>,<span class="string">&#x27;count&#x27;</span>:<span class="number">11</span>&#125;,&#123;<span class="string">&#x27;fruit&#x27;</span>:<span class="string">&#x27;cherry&#x27;</span>,<span class="string">&#x27;count&#x27;</span>:<span class="number">12</span>&#125;]</span><br><span class="line">df = pd.DataFrame(data)</span><br><span class="line"><span class="built_in">print</span>(df)</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<table>
+<thead>
+<tr>
+<th align="center">fruit</th>
+<th align="center">count</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">apple</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">banana</td>
+<td align="center">11</td>
+</tr>
+<tr>
+<td align="center">cherry</td>
+<td align="center">12</td>
+</tr>
+</tbody></table>
+<h3 id="4-读取数据Excel数据"><a href="#4-读取数据Excel数据" class="headerlink" title="4. 读取数据Excel数据"></a>4. 读取数据Excel数据</h3><p>使用以下<code>code</code>读取excel文件：XXX为文件名，若文件不是与代码放在同一个目录下，需要在前面加入文件路径。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pd.read_csv(<span class="string">&quot;XXX.csv&quot;</span>) <span class="comment">#cvs文件格式使用read_csv</span></span><br><span class="line">pd.read_excel(<span class="string">&quot;XXX.xlsx&quot;</span>) <span class="comment">#xlsx文件格式使用read_excel格式</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>编程笔记</category>
         <category>学习笔记</category>
@@ -939,6 +939,29 @@ Name: fruit, dtype: object
       </tags>
   </entry>
   <entry>
+    <title>如何创建自己的博客（三）：hexo主题更换</title>
+    <url>/2022/07/07/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9Ahexo%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%8D%A2/</url>
+    <content><![CDATA[<h3 id="1-主题选择"><a href="#1-主题选择" class="headerlink" title="1.主题选择"></a>1.主题选择</h3><p>hexo其实有许多好用的主题，其实原版的也不错都可以用。但每个人都会也有自己的个人喜好嘛~<br>hexo官方网页上也是有很多主题的，进入<code>https://hexo.io/themes/</code>页面可以选择自己所喜欢的。<br>这里推荐一款我目前自己在用的主题<code>yilia</code>,这个主题用的人会比较多而且也出得比较久了，所以出了问题的话也会比较好维护。</p>
+<h3 id="2-主题安装"><a href="#2-主题安装" class="headerlink" title="2.主题安装"></a>2.主题安装</h3><p>打开<code>terminal</code>进入在本地<code>**/blog/themes</code>路径下输入以下命令：</p>
+<pre><code>$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
+</code></pre>
+<p>克隆完成后修改hexo根目录下的<code>_config.yml</code>：<code>theme：yilia</code></p>
+<h3 id="3-主题配置"><a href="#3-主题配置" class="headerlink" title="3.主题配置"></a>3.主题配置</h3><p>主题配置在主目录下的<code>_config.yml</code>,请根据自己需要修改使用。下面是本人的配置可以参考使用哈</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Header</span></span><br><span class="line"><span class="comment"># 菜单下面的都是分页，可以按需添加</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">主页:</span> <span class="string">/</span></span><br><span class="line">  <span class="string">编程笔记:</span> <span class="string">/categories/编程</span> </span><br><span class="line">  <span class="string">数据分析:</span> <span class="string">/categories/数据分析</span></span><br><span class="line">  <span class="string">文章归档:</span> <span class="string">/archives/index.html</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="attr">jsonContent:</span></span><br><span class="line">    <span class="attr">meta:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">pages:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">posts:</span></span><br><span class="line">      <span class="attr">title:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">date:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">path:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">text:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">raw:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">content:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">slug:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">updated:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">comments:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">link:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">permalink:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">excerpt:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">categories:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">tags:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># SubNav</span></span><br><span class="line"><span class="attr">subnav:</span></span><br><span class="line">  <span class="attr">github:</span> <span class="string">&quot;https://github.com/ganzhancheng2020&quot;</span></span><br><span class="line">  <span class="comment">#weibo: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#rss: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#zhihu: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#qq: &quot;#&quot;</span></span><br><span class="line">  <span class="attr">weixin:</span> <span class="string">&quot;/assets/img/weixin.png&quot;</span></span><br><span class="line">  <span class="comment">#jianshu: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#douban: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#segmentfault: &quot;#&quot;</span></span><br><span class="line">  <span class="attr">bilibili:</span> <span class="string">&quot;https://space.bilibili.com/7522004&quot;</span></span><br><span class="line">  <span class="comment">#acfun: &quot;#&quot;</span></span><br><span class="line">  <span class="attr">mail:</span> <span class="string">&quot;mailto:2513663405@qq.com&quot;</span></span><br><span class="line">  <span class="comment">#facebook: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#google: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#twitter: &quot;#&quot;</span></span><br><span class="line">  <span class="attr">linkedin:</span> <span class="string">&quot;https://www.linkedin.com/in/jack-gan-29653b186/&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">rss:</span> <span class="string">/atom.xml</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否需要修改 root 路径</span></span><br><span class="line"><span class="comment"># 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，</span></span><br><span class="line"><span class="comment"># 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Content</span></span><br><span class="line"><span class="comment"># 觉得文章太长想截断，代码&lt;!--more--&gt;需要在文章中使用</span></span><br><span class="line"><span class="comment"># 文章太长，截断按钮文字</span></span><br><span class="line"><span class="attr">excerpt_link:</span> <span class="string">more</span></span><br><span class="line"><span class="comment"># 文章卡片右下角常驻链接，不需要请设置为false</span></span><br><span class="line"><span class="attr">show_all_link:</span> <span class="string">&#x27;展开全文&#x27;</span></span><br><span class="line"><span class="comment"># 数学公式</span></span><br><span class="line"><span class="attr">mathjax:</span> <span class="literal">false</span></span><br><span class="line"><span class="comment"># 是否在新窗口打开链接</span></span><br><span class="line"><span class="attr">open_in_new:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打赏</span></span><br><span class="line"><span class="comment"># 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏</span></span><br><span class="line"><span class="attr">reward_type:</span> <span class="number">2</span></span><br><span class="line"><span class="comment"># 打赏wording</span></span><br><span class="line"><span class="attr">reward_wording:</span> <span class="string">&#x27;谢谢你请我喝咖啡&#x27;</span></span><br><span class="line"><span class="comment"># 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg</span></span><br><span class="line"><span class="attr">alipay:</span> </span><br><span class="line"><span class="comment"># 微信二维码图片地址</span></span><br><span class="line"><span class="attr">weixin:</span> <span class="string">/assets/img/reward.png</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 目录</span></span><br><span class="line"><span class="comment"># 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录</span></span><br><span class="line"><span class="attr">toc:</span> <span class="number">2</span></span><br><span class="line"><span class="comment"># 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false</span></span><br><span class="line"><span class="attr">toc_hide_index:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># 目录为空时的提示</span></span><br><span class="line"><span class="attr">toc_empty_wording:</span> <span class="string">&#x27;目录，不存在的…&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否有快速回到顶部的按钮</span></span><br><span class="line"><span class="attr">top:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Miscellaneous</span></span><br><span class="line"><span class="attr">baidu_analytics:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">google_analytics:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">favicon:</span> <span class="string">/assets/img/icon.png</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#你的头像url</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">/assets/img/icon.png</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#是否开启分享</span></span><br><span class="line"><span class="attr">share_jia:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment</span></span><br><span class="line"><span class="comment">#不需要使用某项，直接设置值为false，或注释掉</span></span><br><span class="line"><span class="comment">#具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#1、多说</span></span><br><span class="line"><span class="attr">duoshuo:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#2、网易云跟帖</span></span><br><span class="line"><span class="attr">wangyiyun:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#3、畅言</span></span><br><span class="line"><span class="attr">changyan_appid:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">changyan_conf:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的</span></span><br><span class="line"><span class="attr">disqus:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#5、Gitment</span></span><br><span class="line"><span class="attr">gitment_owner:</span> <span class="literal">false</span>      <span class="comment">#你的 GitHub ID</span></span><br><span class="line"><span class="attr">gitment_repo:</span> <span class="string">&#x27;&#x27;</span>          <span class="comment">#存储评论的 repo</span></span><br><span class="line"><span class="attr">gitment_oauth:</span></span><br><span class="line">  <span class="attr">client_id:</span> <span class="string">&#x27;&#x27;</span>           <span class="comment">#client ID</span></span><br><span class="line">  <span class="attr">client_secret:</span> <span class="string">&#x27;&#x27;</span>       <span class="comment">#client secret</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 样式定制 - 一般不需要修改，除非有很强的定制欲望…</span></span><br><span class="line"><span class="attr">style:</span></span><br><span class="line">  <span class="comment"># 头像上面的背景颜色</span></span><br><span class="line">  <span class="attr">header:</span> <span class="string">&#x27;#434343&#x27;</span></span><br><span class="line">  <span class="comment"># 右滑板块背景</span></span><br><span class="line">  <span class="attr">slider:</span> <span class="string">&#x27;linear-gradient(200deg,#a0cfe4,#e8c37e)&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># slider的设置</span></span><br><span class="line"><span class="attr">slider:</span></span><br><span class="line">  <span class="comment"># 是否默认展开tags板块</span></span><br><span class="line">  <span class="attr">showTags:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 智能菜单</span></span><br><span class="line"><span class="comment"># 如不需要，将该对应项置为false</span></span><br><span class="line"><span class="comment"># 比如</span></span><br><span class="line"><span class="comment">#smart_menu:</span></span><br><span class="line"><span class="comment">#  friends: false</span></span><br><span class="line"><span class="attr">smart_menu:</span></span><br><span class="line">  <span class="attr">innerArchive:</span> <span class="string">&#x27;所有文章&#x27;</span></span><br><span class="line">  <span class="attr">friends:</span> <span class="string">&#x27;友情链接&#x27;</span></span><br><span class="line">  <span class="attr">aboutme:</span> <span class="string">&#x27;关于我&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">friends:</span></span><br><span class="line">  <span class="attr">github:</span> <span class="string">‘https://github.com/ganzhancheng2020’</span></span><br><span class="line"></span><br><span class="line"><span class="attr">aboutme:</span> <span class="string">&#x27;一名野生的数据分析师&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-图片位置"><a href="#4-图片位置" class="headerlink" title="4.图片位置"></a>4.图片位置</h3><p>这里要注意一下打赏中有三个图片是需要放在<code>/assets/img/</code>,这个文件夹是在hexo根目录下的，并不是在theme文件夹下。<br>其中两张是打赏的图片，一张是头像的图片。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打赏</span></span><br><span class="line"><span class="comment"># 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏</span></span><br><span class="line"><span class="attr">reward_type:</span> <span class="number">2</span></span><br><span class="line"><span class="comment"># 打赏wording</span></span><br><span class="line"><span class="attr">reward_wording:</span> <span class="string">&#x27;谢谢你请我喝咖啡&#x27;</span></span><br><span class="line"><span class="comment"># 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg</span></span><br><span class="line"><span class="attr">alipay:</span> </span><br><span class="line"><span class="comment"># 微信二维码图片地址</span></span><br><span class="line"><span class="attr">weixin:</span> <span class="string">/assets/img/reward.png</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#你的头像url</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">/assets/img/icon.png</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>如何创建自己的博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何创建自己的博客（二）：hexo博客部署到github</title>
     <url>/2022/07/06/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9Ahexo%E5%8D%9A%E5%AE%A2%E4%B8%8A%E7%BA%BFgithub%EF%BC%88%E7%BA%BF%E4%B8%8A%E9%83%A8%E7%BD%B2%EF%BC%89/</url>
     <content><![CDATA[<h3 id="1-创建github帐号"><a href="#1-创建github帐号" class="headerlink" title="1. 创建github帐号"></a>1. 创建github帐号</h3><p>打开浏览器输入<code>github.com</code>进入github页面，点击右上角的<code>sign up</code>,根据指引依次填写邮箱、密码、用户名就可以了。<br>填好之后github会向你邮箱发送一封验证邮件，通过邮箱验证后就完成注册了。</p>
@@ -969,18 +992,12 @@ deploy:
       </tags>
   </entry>
   <entry>
-    <title>如何创建自己的博客（三）：hexo主题更换</title>
-    <url>/2022/07/07/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9Ahexo%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%8D%A2/</url>
-    <content><![CDATA[<h3 id="1-主题选择"><a href="#1-主题选择" class="headerlink" title="1.主题选择"></a>1.主题选择</h3><p>hexo其实有许多好用的主题，其实原版的也不错都可以用。但每个人都会也有自己的个人喜好嘛~<br>hexo官方网页上也是有很多主题的，进入<code>https://hexo.io/themes/</code>页面可以选择自己所喜欢的。<br>这里推荐一款我目前自己在用的主题<code>yilia</code>,这个主题用的人会比较多而且也出得比较久了，所以出了问题的话也会比较好维护。</p>
-<h3 id="2-主题安装"><a href="#2-主题安装" class="headerlink" title="2.主题安装"></a>2.主题安装</h3><p>打开<code>terminal</code>进入在本地<code>**/blog/themes</code>路径下输入以下命令：</p>
-<pre><code>$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
+    <title>如何创建自己的博客（五）：hexo文章中插入图片</title>
+    <url>/2022/07/10/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9Ahexo%E6%96%87%E7%AB%A0%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<h3 id="1-资源文件夹配置"><a href="#1-资源文件夹配置" class="headerlink" title="1. 资源文件夹配置"></a>1. 资源文件夹配置</h3><p>首先要修改hexo目录根上的<code>_config.yml</code>文件，在里面找到<code>post_asset_folder</code>并设置为：<code>true</code></p>
+<h3 id="2-文章内引用"><a href="#2-文章内引用" class="headerlink" title="2. 文章内引用"></a>2. 文章内引用</h3><p>这时新建文章时会在<code>_post</code>文件夹当中出现一个与文章名同名的资源文件夹，我们只需把图片放到这个资源文件夹当中。<br>然后根据以下命令进行引用，引用的参数为资源文件夹中的图片名称如<code>example.jpg</code>。</p>
+<pre><code>&#123;% asset_img example.jpg %&#125;
 </code></pre>
-<p>克隆完成后修改hexo根目录下的<code>_config.yml</code>：<code>theme：yilia</code></p>
-<h3 id="3-主题配置"><a href="#3-主题配置" class="headerlink" title="3.主题配置"></a>3.主题配置</h3><p>主题配置在主目录下的<code>_config.yml</code>,请根据自己需要修改使用。下面是本人的配置可以参考使用哈</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Header</span></span><br><span class="line"><span class="comment"># 菜单下面的都是分页，可以按需添加</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">主页:</span> <span class="string">/</span></span><br><span class="line">  <span class="string">编程笔记:</span> <span class="string">/categories/编程</span> </span><br><span class="line">  <span class="string">数据分析:</span> <span class="string">/categories/数据分析</span></span><br><span class="line">  <span class="string">文章归档:</span> <span class="string">/archives/index.html</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="attr">jsonContent:</span></span><br><span class="line">    <span class="attr">meta:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">pages:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">posts:</span></span><br><span class="line">      <span class="attr">title:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">date:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">path:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">text:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">raw:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">content:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">slug:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">updated:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">comments:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">link:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">permalink:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">excerpt:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">categories:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">tags:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># SubNav</span></span><br><span class="line"><span class="attr">subnav:</span></span><br><span class="line">  <span class="attr">github:</span> <span class="string">&quot;https://github.com/ganzhancheng2020&quot;</span></span><br><span class="line">  <span class="comment">#weibo: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#rss: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#zhihu: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#qq: &quot;#&quot;</span></span><br><span class="line">  <span class="attr">weixin:</span> <span class="string">&quot;/assets/img/weixin.png&quot;</span></span><br><span class="line">  <span class="comment">#jianshu: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#douban: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#segmentfault: &quot;#&quot;</span></span><br><span class="line">  <span class="attr">bilibili:</span> <span class="string">&quot;https://space.bilibili.com/7522004&quot;</span></span><br><span class="line">  <span class="comment">#acfun: &quot;#&quot;</span></span><br><span class="line">  <span class="attr">mail:</span> <span class="string">&quot;mailto:2513663405@qq.com&quot;</span></span><br><span class="line">  <span class="comment">#facebook: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#google: &quot;#&quot;</span></span><br><span class="line">  <span class="comment">#twitter: &quot;#&quot;</span></span><br><span class="line">  <span class="attr">linkedin:</span> <span class="string">&quot;https://www.linkedin.com/in/jack-gan-29653b186/&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">rss:</span> <span class="string">/atom.xml</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否需要修改 root 路径</span></span><br><span class="line"><span class="comment"># 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，</span></span><br><span class="line"><span class="comment"># 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Content</span></span><br><span class="line"><span class="comment"># 觉得文章太长想截断，代码&lt;!--more--&gt;需要在文章中使用</span></span><br><span class="line"><span class="comment"># 文章太长，截断按钮文字</span></span><br><span class="line"><span class="attr">excerpt_link:</span> <span class="string">more</span></span><br><span class="line"><span class="comment"># 文章卡片右下角常驻链接，不需要请设置为false</span></span><br><span class="line"><span class="attr">show_all_link:</span> <span class="string">&#x27;展开全文&#x27;</span></span><br><span class="line"><span class="comment"># 数学公式</span></span><br><span class="line"><span class="attr">mathjax:</span> <span class="literal">false</span></span><br><span class="line"><span class="comment"># 是否在新窗口打开链接</span></span><br><span class="line"><span class="attr">open_in_new:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打赏</span></span><br><span class="line"><span class="comment"># 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏</span></span><br><span class="line"><span class="attr">reward_type:</span> <span class="number">2</span></span><br><span class="line"><span class="comment"># 打赏wording</span></span><br><span class="line"><span class="attr">reward_wording:</span> <span class="string">&#x27;谢谢你请我喝咖啡&#x27;</span></span><br><span class="line"><span class="comment"># 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg</span></span><br><span class="line"><span class="attr">alipay:</span> </span><br><span class="line"><span class="comment"># 微信二维码图片地址</span></span><br><span class="line"><span class="attr">weixin:</span> <span class="string">/assets/img/reward.png</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 目录</span></span><br><span class="line"><span class="comment"># 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录</span></span><br><span class="line"><span class="attr">toc:</span> <span class="number">2</span></span><br><span class="line"><span class="comment"># 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false</span></span><br><span class="line"><span class="attr">toc_hide_index:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># 目录为空时的提示</span></span><br><span class="line"><span class="attr">toc_empty_wording:</span> <span class="string">&#x27;目录，不存在的…&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否有快速回到顶部的按钮</span></span><br><span class="line"><span class="attr">top:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Miscellaneous</span></span><br><span class="line"><span class="attr">baidu_analytics:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">google_analytics:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">favicon:</span> <span class="string">/assets/img/icon.png</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#你的头像url</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">/assets/img/icon.png</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#是否开启分享</span></span><br><span class="line"><span class="attr">share_jia:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment</span></span><br><span class="line"><span class="comment">#不需要使用某项，直接设置值为false，或注释掉</span></span><br><span class="line"><span class="comment">#具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#1、多说</span></span><br><span class="line"><span class="attr">duoshuo:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#2、网易云跟帖</span></span><br><span class="line"><span class="attr">wangyiyun:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#3、畅言</span></span><br><span class="line"><span class="attr">changyan_appid:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">changyan_conf:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的</span></span><br><span class="line"><span class="attr">disqus:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#5、Gitment</span></span><br><span class="line"><span class="attr">gitment_owner:</span> <span class="literal">false</span>      <span class="comment">#你的 GitHub ID</span></span><br><span class="line"><span class="attr">gitment_repo:</span> <span class="string">&#x27;&#x27;</span>          <span class="comment">#存储评论的 repo</span></span><br><span class="line"><span class="attr">gitment_oauth:</span></span><br><span class="line">  <span class="attr">client_id:</span> <span class="string">&#x27;&#x27;</span>           <span class="comment">#client ID</span></span><br><span class="line">  <span class="attr">client_secret:</span> <span class="string">&#x27;&#x27;</span>       <span class="comment">#client secret</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 样式定制 - 一般不需要修改，除非有很强的定制欲望…</span></span><br><span class="line"><span class="attr">style:</span></span><br><span class="line">  <span class="comment"># 头像上面的背景颜色</span></span><br><span class="line">  <span class="attr">header:</span> <span class="string">&#x27;#434343&#x27;</span></span><br><span class="line">  <span class="comment"># 右滑板块背景</span></span><br><span class="line">  <span class="attr">slider:</span> <span class="string">&#x27;linear-gradient(200deg,#a0cfe4,#e8c37e)&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># slider的设置</span></span><br><span class="line"><span class="attr">slider:</span></span><br><span class="line">  <span class="comment"># 是否默认展开tags板块</span></span><br><span class="line">  <span class="attr">showTags:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 智能菜单</span></span><br><span class="line"><span class="comment"># 如不需要，将该对应项置为false</span></span><br><span class="line"><span class="comment"># 比如</span></span><br><span class="line"><span class="comment">#smart_menu:</span></span><br><span class="line"><span class="comment">#  friends: false</span></span><br><span class="line"><span class="attr">smart_menu:</span></span><br><span class="line">  <span class="attr">innerArchive:</span> <span class="string">&#x27;所有文章&#x27;</span></span><br><span class="line">  <span class="attr">friends:</span> <span class="string">&#x27;友情链接&#x27;</span></span><br><span class="line">  <span class="attr">aboutme:</span> <span class="string">&#x27;关于我&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">friends:</span></span><br><span class="line">  <span class="attr">github:</span> <span class="string">‘https://github.com/ganzhancheng2020’</span></span><br><span class="line"></span><br><span class="line"><span class="attr">aboutme:</span> <span class="string">&#x27;一名野生的数据分析师&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="4-图片位置"><a href="#4-图片位置" class="headerlink" title="4.图片位置"></a>4.图片位置</h3><p>这里要注意一下打赏中有三个图片是需要放在<code>/assets/img/</code>,这个文件夹是在hexo根目录下的，并不是在theme文件夹下。<br>其中两张是打赏的图片，一张是头像的图片。</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打赏</span></span><br><span class="line"><span class="comment"># 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏</span></span><br><span class="line"><span class="attr">reward_type:</span> <span class="number">2</span></span><br><span class="line"><span class="comment"># 打赏wording</span></span><br><span class="line"><span class="attr">reward_wording:</span> <span class="string">&#x27;谢谢你请我喝咖啡&#x27;</span></span><br><span class="line"><span class="comment"># 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg</span></span><br><span class="line"><span class="attr">alipay:</span> </span><br><span class="line"><span class="comment"># 微信二维码图片地址</span></span><br><span class="line"><span class="attr">weixin:</span> <span class="string">/assets/img/reward.png</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#你的头像url</span></span><br><span class="line"><span class="attr">avatar:</span> <span class="string">/assets/img/icon.png</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>编程笔记</category>
@@ -1037,12 +1054,54 @@ $ hexo new &quot;post title with white space&quot;
       </tags>
   </entry>
   <entry>
-    <title>如何创建自己的博客（五）：hexo文章中插入图片</title>
-    <url>/2022/07/10/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9Ahexo%E6%96%87%E7%AB%A0%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<h3 id="1-资源文件夹配置"><a href="#1-资源文件夹配置" class="headerlink" title="1. 资源文件夹配置"></a>1. 资源文件夹配置</h3><p>首先要修改hexo目录根上的<code>_config.yml</code>文件，在里面找到<code>post_asset_folder</code>并设置为：<code>true</code></p>
-<h3 id="2-文章内引用"><a href="#2-文章内引用" class="headerlink" title="2. 文章内引用"></a>2. 文章内引用</h3><p>这时新建文章时会在<code>_post</code>文件夹当中出现一个与文章名同名的资源文件夹，我们只需把图片放到这个资源文件夹当中。<br>然后根据以下命令进行引用，引用的参数为资源文件夹中的图片名称如<code>example.jpg</code>。</p>
-<pre><code>&#123;% asset_img example.jpg %&#125;
+    <title>如何撰写读书笔记</title>
+    <url>/2022/09/04/%E5%A6%82%E4%BD%95%E6%92%B0%E5%86%99%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h3 id="为什么需要做笔记？"><a href="#为什么需要做笔记？" class="headerlink" title="为什么需要做笔记？"></a>为什么需要做笔记？</h3><p>知识的积累是内容提取、梳理、并将知识架构重组的循环过程。好的笔记可以帮助我们更有效率得完成知识转化的过程。</p>
+<img src="/2022/09/04/%E5%A6%82%E4%BD%95%E6%92%B0%E5%86%99%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E8%8E%B7%E5%8F%96%E8%BF%87%E7%A8%8B.png" class="">
+
+<h3 id="怎么去做好的笔记？"><a href="#怎么去做好的笔记？" class="headerlink" title="怎么去做好的笔记？"></a>怎么去做好的笔记？</h3><p>好的笔记是会加速知识转化的过程，那么怎么去写出好的笔记呢？这个可能会因人而异，但我稍微说一下我个人做笔记的方法。</p>
+<h6 id="1-图文并茂"><a href="#1-图文并茂" class="headerlink" title="1. 图文并茂"></a>1. 图文并茂</h6><p>这个不是最重要的一点，但我认为是不可少的。从记忆的角度去看，人类对于图片的记忆要远大于文字。在笔记中适当得插入一些图片、图绘是能有效得帮助记忆的。</p>
+<h6 id="2-有序"><a href="#2-有序" class="headerlink" title="2. 有序"></a>2. 有序</h6><p>比起无序的事情人类更容易记住有序的事，知识也是一样的。在学习的过程中，把知识点融入到自身的知识框架当中就是一个无序转换为有序的过程。在这过程中可以使用思维导图，框架图，列表，思维模型等方法去梳理知识脉络，把知识点串联起来。</p>
+<h6 id="3-拓展"><a href="#3-拓展" class="headerlink" title="3. 拓展"></a>3. 拓展</h6><p>我们在学习新的知识点的时候知识内容是碎片化的，也有可能是因为时间维度上的碎片化学习而导致内容是碎片化的。一个新的知识点在同一本书中也很可能是并不完全的。这时候需要对知识进行补充，与自身的知识架构所匹配，或者在别的书中补充对当前知识点做适当得拓展，把知识点补充完整。</p>
+<h6 id="4-思考"><a href="#4-思考" class="headerlink" title="4. 思考"></a>4. 思考</h6><p>光掌握一个知识点或者说仅仅知道这个知识点的本身是远远不够的，我们需要将已有的知识点链接起来，放到我们整个的知识框架当中去，就像是在寻找知识地图中那块拼图所缺失的位置，这时候可以根据自身的场景写出自己的一些心得与思考，以及多个知识点的组合理论，在整理&#x2F;梳理的时候正是对这个知识思考的过程。</p>
+<h6 id="5-行动"><a href="#5-行动" class="headerlink" title="5. 行动"></a>5. 行动</h6><p>知识点需要与行动相结合，做到知行合一。通过新学习到的知识点可以梳理出一些可以行动的事情或者自身能运用到的场景，立刻去执行，最好是能放到自身的日常系统当中去，周而复始的思考与行动会让知识记得更加牢固。</p>
+]]></content>
+      <categories>
+        <category>思维模型</category>
+      </categories>
+      <tags>
+        <tag>读书笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如果创建自己的博客（一）：hexo博客本地部署</title>
+    <url>/2022/07/05/%E5%A6%82%E6%9E%9C%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Ahexo%E5%8D%9A%E5%AE%A2%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h3 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1. 安装node.js"></a>1. 安装node.js</h3><p>安装地址：在浏览器输入<code>nodejs.org</code>，点击下载当前版本<code>10.15.1.LTS</code>（以LTS结尾长期支持版的）。<br>下载后将安装包打开然后一直点击安装就可以了，按对应的操作系统安装对应的版本即可。<br>node.js会安装两个包，1是<code>npm</code>，2是<code>node</code></p>
+<h3 id="2-检测hexo是否安装成功"><a href="#2-检测hexo是否安装成功" class="headerlink" title="2. 检测hexo是否安装成功"></a>2. 检测hexo是否安装成功</h3><p>打开我们的<code>terminal</code>输入以下代码，如果成功显示版本号那就是为成功的。</p>
+<pre><code>#sh-3.2# npm -v
+6.10.2
+#sh-3.2# node -v
+v12.8.0 
 </code></pre>
+<h3 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3. 安装hexo"></a>3. 安装hexo</h3><p>用<code>npm</code>可以直接安装<code>hexo</code>框架</p>
+<pre><code>npm install hexo-cli -g
+</code></pre>
+<p>如果安装失败看下是不是node版本不适应的原因。<br>请到<code>nodejs.org</code>安装相应的版本（hexo 4.2.0对应的版本为node12.XX.XX）。</p>
+<h3 id="4-验证hexo是否安装成功"><a href="#4-验证hexo是否安装成功" class="headerlink" title="4. 验证hexo是否安装成功"></a>4. 验证hexo是否安装成功</h3><p>注意看当前版本配置为hexo4.2.0 node版本为12.8.0, 如果出错请下载与之对应的版本。</p>
+<pre><code>hexo -v
+</code></pre>
+<h3 id="5-新建一个目录"><a href="#5-新建一个目录" class="headerlink" title="5. 新建一个目录"></a>5. 新建一个目录</h3><p>hexo安装成功后可以新建一个目录，那是你存放博客文件的地方 如：</p>
+<pre><code>mkdir 个人博客2022
+</code></pre>
+<h3 id="6-hexo初始化博客"><a href="#6-hexo初始化博客" class="headerlink" title="6. hexo初始化博客"></a>6. hexo初始化博客</h3><p>然后可以进入我们的目录开始初始化博客了。</p>
+<pre><code>cd 个人博客2022
+hexo init blog
+</code></pre>
+<h3 id="7-启动hexo博客"><a href="#7-启动hexo博客" class="headerlink" title="7. 启动hexo博客"></a>7. 启动hexo博客</h3><p>好的，我们试一下博客是否可以正常启动。</p>
+<pre><code>cd blog
+hexo s
+</code></pre>
+<h3 id="8-验证hexo博客是否正常运行"><a href="#8-验证hexo博客是否正常运行" class="headerlink" title="8. 验证hexo博客是否正常运行"></a>8. 验证hexo博客是否正常运行</h3><p>最后打开浏览器输入<code>http://localhost:4000/</code>进行验证就可以了。</p>
 ]]></content>
       <categories>
         <category>编程笔记</category>
@@ -1124,45 +1183,6 @@ global.trusted-host=&#39;pypi.tuna.tsinghua.edu.cn&#39;
       </tags>
   </entry>
   <entry>
-    <title>如果创建自己的博客（一）：hexo博客本地部署</title>
-    <url>/2022/07/05/%E5%A6%82%E6%9E%9C%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Ahexo%E5%8D%9A%E5%AE%A2%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<h3 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1. 安装node.js"></a>1. 安装node.js</h3><p>安装地址：在浏览器输入<code>nodejs.org</code>，点击下载当前版本<code>10.15.1.LTS</code>（以LTS结尾长期支持版的）。<br>下载后将安装包打开然后一直点击安装就可以了，按对应的操作系统安装对应的版本即可。<br>node.js会安装两个包，1是<code>npm</code>，2是<code>node</code></p>
-<h3 id="2-检测hexo是否安装成功"><a href="#2-检测hexo是否安装成功" class="headerlink" title="2. 检测hexo是否安装成功"></a>2. 检测hexo是否安装成功</h3><p>打开我们的<code>terminal</code>输入以下代码，如果成功显示版本号那就是为成功的。</p>
-<pre><code>#sh-3.2# npm -v
-6.10.2
-#sh-3.2# node -v
-v12.8.0 
-</code></pre>
-<h3 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3. 安装hexo"></a>3. 安装hexo</h3><p>用<code>npm</code>可以直接安装<code>hexo</code>框架</p>
-<pre><code>npm install hexo-cli -g
-</code></pre>
-<p>如果安装失败看下是不是node版本不适应的原因。<br>请到<code>nodejs.org</code>安装相应的版本（hexo 4.2.0对应的版本为node12.XX.XX）。</p>
-<h3 id="4-验证hexo是否安装成功"><a href="#4-验证hexo是否安装成功" class="headerlink" title="4. 验证hexo是否安装成功"></a>4. 验证hexo是否安装成功</h3><p>注意看当前版本配置为hexo4.2.0 node版本为12.8.0, 如果出错请下载与之对应的版本。</p>
-<pre><code>hexo -v
-</code></pre>
-<h3 id="5-新建一个目录"><a href="#5-新建一个目录" class="headerlink" title="5. 新建一个目录"></a>5. 新建一个目录</h3><p>hexo安装成功后可以新建一个目录，那是你存放博客文件的地方 如：</p>
-<pre><code>mkdir 个人博客2022
-</code></pre>
-<h3 id="6-hexo初始化博客"><a href="#6-hexo初始化博客" class="headerlink" title="6. hexo初始化博客"></a>6. hexo初始化博客</h3><p>然后可以进入我们的目录开始初始化博客了。</p>
-<pre><code>cd 个人博客2022
-hexo init blog
-</code></pre>
-<h3 id="7-启动hexo博客"><a href="#7-启动hexo博客" class="headerlink" title="7. 启动hexo博客"></a>7. 启动hexo博客</h3><p>好的，我们试一下博客是否可以正常启动。</p>
-<pre><code>cd blog
-hexo s
-</code></pre>
-<h3 id="8-验证hexo博客是否正常运行"><a href="#8-验证hexo博客是否正常运行" class="headerlink" title="8. 验证hexo博客是否正常运行"></a>8. 验证hexo博客是否正常运行</h3><p>最后打开浏览器输入<code>http://localhost:4000/</code>进行验证就可以了。</p>
-]]></content>
-      <categories>
-        <category>编程笔记</category>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>如何创建自己的博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数字化客服设计读后感（一）：中心思想</title>
     <url>/2022/07/26/%E6%95%B0%E5%AD%97%E5%8C%96%E5%AE%A2%E6%9C%8D%E8%AE%BE%E8%AE%A1%E8%AF%BB%E5%90%8E%E6%84%9F%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E4%B8%AD%E5%BF%83%E6%80%9D%E6%83%B3/</url>
     <content><![CDATA[<h3 id="1-中心思想"><a href="#1-中心思想" class="headerlink" title="1. 中心思想"></a>1. 中心思想</h3><p>对于一个企业而言，客服是解决产品设计与用户认知之间一切误差的团队。<br>当发生产品设计与企业产生偏差时，用户会通过服务渠道去联系企业，这时服务就产生了。而客服的主要任务会有3个：</p>
@@ -1185,23 +1205,31 @@ hexo s
       </tags>
   </entry>
   <entry>
-    <title>如何撰写读书笔记</title>
-    <url>/2022/09/04/%E5%A6%82%E4%BD%95%E6%92%B0%E5%86%99%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h3 id="为什么需要做笔记？"><a href="#为什么需要做笔记？" class="headerlink" title="为什么需要做笔记？"></a>为什么需要做笔记？</h3><p>知识的积累是内容提取、梳理、并将知识架构重组的循环过程。好的笔记可以帮助我们更有效率得完成知识转化的过程。</p>
-<img src="/2022/09/04/%E5%A6%82%E4%BD%95%E6%92%B0%E5%86%99%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E8%8E%B7%E5%8F%96%E8%BF%87%E7%A8%8B.png" class="">
-
-<h3 id="怎么去做好的笔记？"><a href="#怎么去做好的笔记？" class="headerlink" title="怎么去做好的笔记？"></a>怎么去做好的笔记？</h3><p>好的笔记是会加速知识转化的过程，那么怎么去写出好的笔记呢？这个可能会因人而异，但我稍微说一下我个人做笔记的方法。</p>
-<h6 id="1-图文并茂"><a href="#1-图文并茂" class="headerlink" title="1. 图文并茂"></a>1. 图文并茂</h6><p>这个不是最重要的一点，但我认为是不可少的。从记忆的角度去看，人类对于图片的记忆要远大于文字。在笔记中适当得插入一些图片、图绘是能有效得帮助记忆的。</p>
-<h6 id="2-有序"><a href="#2-有序" class="headerlink" title="2. 有序"></a>2. 有序</h6><p>比起无序的事情人类更容易记住有序的事，知识也是一样的。在学习的过程中，把知识点融入到自身的知识框架当中就是一个无序转换为有序的过程。在这过程中可以使用思维导图，框架图，列表，思维模型等方法去梳理知识脉络，把知识点串联起来。</p>
-<h6 id="3-拓展"><a href="#3-拓展" class="headerlink" title="3. 拓展"></a>3. 拓展</h6><p>我们在学习新的知识点的时候知识内容是碎片化的，也有可能是因为时间维度上的碎片化学习而导致内容是碎片化的。一个新的知识点在同一本书中也很可能是并不完全的。这时候需要对知识进行补充，与自身的知识架构所匹配，或者在别的书中补充对当前知识点做适当得拓展，把知识点补充完整。</p>
-<h6 id="4-思考"><a href="#4-思考" class="headerlink" title="4. 思考"></a>4. 思考</h6><p>光掌握一个知识点或者说仅仅知道这个知识点的本身是远远不够的，我们需要将已有的知识点链接起来，放到我们整个的知识框架当中去，就像是在寻找知识地图中那块拼图所缺失的位置，这时候可以根据自身的场景写出自己的一些心得与思考，以及多个知识点的组合理论，在整理&#x2F;梳理的时候正是对这个知识思考的过程。</p>
-<h6 id="5-行动"><a href="#5-行动" class="headerlink" title="5. 行动"></a>5. 行动</h6><p>知识点需要与行动相结合，做到知行合一。通过新学习到的知识点可以梳理出一些可以行动的事情或者自身能运用到的场景，立刻去执行，最好是能放到自身的日常系统当中去，周而复始的思考与行动会让知识记得更加牢固。</p>
+    <title>数据分析岗位相关职责</title>
+    <url>/2022/07/06/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B2%97%E4%BD%8D%E7%9B%B8%E5%85%B3%E8%81%8C%E8%B4%A3/</url>
+    <content><![CDATA[<h3 id="数据分析师-x2F-数据挖掘工程师"><a href="#数据分析师-x2F-数据挖掘工程师" class="headerlink" title="数据分析师&#x2F;数据挖掘工程师"></a>数据分析师&#x2F;数据挖掘工程师</h3><ol>
+<li>基于业务理解设计数据基础体系与兄弟团队紧密合作，确保数据收集完好，结构合理，质量良好。</li>
+<li>通过数据收集、数据处理及等可视化方法，善用数据产品释放BI宝贵资源。</li>
+<li>通过业务分析和数据解读，转化成商业洞察和策略建议。</li>
+<li>沉淀分析报告，建立并不断完善分析体系。</li>
+<li>具备一定的数据挖掘能力，挖掘业务隐藏模式，能够预测业务发展趋势，帮助决策及快速调整方向。</li>
+</ol>
+<h3 id="算法团队-x2F-算法工程师"><a href="#算法团队-x2F-算法工程师" class="headerlink" title="算法团队&#x2F;算法工程师"></a>算法团队&#x2F;算法工程师</h3><ol>
+<li>精通统计模式，创新性应用前沿技术。落地实际业务场景，实现最大增值。</li>
+<li>在数据收集与校验中，与兄弟团队紧密合作。</li>
+<li>基于决策层的商业决定，提供及时资源保证。</li>
+<li>发明专利，发表论文。</li>
+</ol>
+<h3 id="数据技术团队-x2F-大数据工程师"><a href="#数据技术团队-x2F-大数据工程师" class="headerlink" title="数据技术团队&#x2F;大数据工程师"></a>数据技术团队&#x2F;大数据工程师</h3><ol>
+<li>数据仓库，数据质量管理。</li>
+<li>从技术评估出发，深度参与数据架构设计。</li>
+<li>通过Hadoop、流计算等工具、高效得加工各种类型的数据。</li>
+</ol>
 ]]></content>
-      <categories>
-        <category>思维模型</category>
-      </categories>
       <tags>
-        <tag>读书笔记</tag>
+        <tag>数据分析</tag>
+        <tag>岗位</tag>
+        <tag>职业规划</tag>
       </tags>
   </entry>
   <entry>
@@ -1240,31 +1268,24 @@ hexo s
       </tags>
   </entry>
   <entry>
-    <title>数据分析岗位相关职责</title>
-    <url>/2022/07/06/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B2%97%E4%BD%8D%E7%9B%B8%E5%85%B3%E8%81%8C%E8%B4%A3/</url>
-    <content><![CDATA[<h3 id="数据分析师-x2F-数据挖掘工程师"><a href="#数据分析师-x2F-数据挖掘工程师" class="headerlink" title="数据分析师&#x2F;数据挖掘工程师"></a>数据分析师&#x2F;数据挖掘工程师</h3><ol>
-<li>基于业务理解设计数据基础体系与兄弟团队紧密合作，确保数据收集完好，结构合理，质量良好。</li>
-<li>通过数据收集、数据处理及等可视化方法，善用数据产品释放BI宝贵资源。</li>
-<li>通过业务分析和数据解读，转化成商业洞察和策略建议。</li>
-<li>沉淀分析报告，建立并不断完善分析体系。</li>
-<li>具备一定的数据挖掘能力，挖掘业务隐藏模式，能够预测业务发展趋势，帮助决策及快速调整方向。</li>
-</ol>
-<h3 id="算法团队-x2F-算法工程师"><a href="#算法团队-x2F-算法工程师" class="headerlink" title="算法团队&#x2F;算法工程师"></a>算法团队&#x2F;算法工程师</h3><ol>
-<li>精通统计模式，创新性应用前沿技术。落地实际业务场景，实现最大增值。</li>
-<li>在数据收集与校验中，与兄弟团队紧密合作。</li>
-<li>基于决策层的商业决定，提供及时资源保证。</li>
-<li>发明专利，发表论文。</li>
-</ol>
-<h3 id="数据技术团队-x2F-大数据工程师"><a href="#数据技术团队-x2F-大数据工程师" class="headerlink" title="数据技术团队&#x2F;大数据工程师"></a>数据技术团队&#x2F;大数据工程师</h3><ol>
-<li>数据仓库，数据质量管理。</li>
-<li>从技术评估出发，深度参与数据架构设计。</li>
-<li>通过Hadoop、流计算等工具、高效得加工各种类型的数据。</li>
+    <title>数据质量评估标准</title>
+    <url>/2022/10/12/%E6%95%B0%E6%8D%AE%E8%B4%A8%E9%87%8F%E8%AF%84%E4%BC%B0%E6%A0%87%E5%87%86/</url>
+    <content><![CDATA[<h3 id="数据质量评估的6个标准"><a href="#数据质量评估的6个标准" class="headerlink" title="数据质量评估的6个标准"></a>数据质量评估的6个标准</h3><p>数据质量（DQ）维度是数据管理从业者基于已有的一些标准用来评估和衡量数据质量的一些特征。国际数据管理协会（DAMA）对数据质量的衡量标准，分为一些六大维度。</p>
+<ol>
+<li>完整性 - 衡量所必须数据的完整程度。</li>
+<li>及时性 - 针对用户对信息获取的时间及时性要求，确保数据及时更新。</li>
+<li>唯一性 - 针对某个数据项或某组数据，没与重复的数据值。 </li>
+<li>一致性 - 数据元素的类型和含义必须一致和清晰。</li>
+<li>准确性 - 确保数据必须反应真实的业务内容。</li>
+<li>有效性 - 对于数据的值、格式要求符合数据定义或业务定义的要求。</li>
 </ol>
 ]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
+      </categories>
       <tags>
         <tag>数据分析</tag>
-        <tag>岗位</tag>
-        <tag>职业规划</tag>
       </tags>
   </entry>
   <entry>
@@ -1325,27 +1346,6 @@ hexo s
       </categories>
       <tags>
         <tag>酒</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据质量评估标准</title>
-    <url>/2022/10/12/%E6%95%B0%E6%8D%AE%E8%B4%A8%E9%87%8F%E8%AF%84%E4%BC%B0%E6%A0%87%E5%87%86/</url>
-    <content><![CDATA[<h3 id="数据质量评估的6个标准"><a href="#数据质量评估的6个标准" class="headerlink" title="数据质量评估的6个标准"></a>数据质量评估的6个标准</h3><p>数据质量（DQ）维度是数据管理从业者基于已有的一些标准用来评估和衡量数据质量的一些特征。国际数据管理协会（DAMA）对数据质量的衡量标准，分为一些六大维度。</p>
-<ol>
-<li>完整性 - 衡量所必须数据的完整程度。</li>
-<li>及时性 - 针对用户对信息获取的时间及时性要求，确保数据及时更新。</li>
-<li>唯一性 - 针对某个数据项或某组数据，没与重复的数据值。 </li>
-<li>一致性 - 数据元素的类型和含义必须一致和清晰。</li>
-<li>准确性 - 确保数据必须反应真实的业务内容。</li>
-<li>有效性 - 对于数据的值、格式要求符合数据定义或业务定义的要求。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>编程笔记</category>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>数据分析</tag>
       </tags>
   </entry>
   <entry>
@@ -1535,6 +1535,28 @@ hexo s
       </tags>
   </entry>
   <entry>
+    <title>自然语言处理（一）：TFIDF</title>
+    <url>/2022/07/16/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9ATFIDF/</url>
+    <content><![CDATA[<h3 id="1-TFIDF的定义"><a href="#1-TFIDF的定义" class="headerlink" title="1. TFIDF的定义"></a>1. TFIDF的定义</h3><p>TFIDF 全称 Term Frequency, Inverse document Frequency，也可以翻译成词频逆向文档频率。TFIDF可以分为两部分，其中TF就是一个词出现在一个文档中出现的频率，而IDF就是有多少个文档包含了该单词。</p>
+<h3 id="2-使用说明"><a href="#2-使用说明" class="headerlink" title="2. 使用说明"></a>2. 使用说明</h3><p>TFIDF是一种基于词频的算法公式，用来为每个词组计算一个分值，基于这个分值识别一个词在一个文档中的重要性，而后可以作为关键词提取或用于给词向量加权。</p>
+<h3 id="3-基本原理"><a href="#3-基本原理" class="headerlink" title="3. 基本原理"></a>3. 基本原理</h3><p>TF是计算词频，词频越高就证明了这词越重要，而IDF逆向文档频率就是为了降低一些常用词出现的权重。最后通过TF*IDF的乘积得到一个最后分值。一般来说经过TFIDF公式计算后的单词分值越大越为重要。原理是当一个词在单个文档中出现频繁的出现，但在其他文档中出现得少，这证明这个单词对于这个文档是重要的。</p>
+<p>比方说有个文件夹下有两个文档:<br>1.今天吃番茄炒蛋， 在这个句子分词后可以分为: 今天 上午 吃 番茄 炒 蛋 下午 吃 番茄 土豆<br>2.明天吃番茄炒土豆， 在这个句子分词后可以分为: 今天 上午 吃 红烧鱼 下午 吃 土豆</p>
+<p>从这两句话中可以看出 “番茄” 是比较重要的，因为番茄在句一出现了两次而在其他文档中没有频繁出现。而 “今天” ，”上午” 等词语经过IDF减权显得并非那么重要。</p>
+<h3 id="4-算法公式"><a href="#4-算法公式" class="headerlink" title="4. 算法公式"></a>4. 算法公式</h3><p>TF: 一个词在一个文档出现的次数&#x2F;在所有文档中所有出现过词的数量<br>IDF: log(文档总算量&#x2F;包含该词的文档数量)<br>TFIDF &#x3D; TF * IDF</p>
+<h3 id="5-优缺点"><a href="#5-优缺点" class="headerlink" title="5. 优缺点"></a>5. 优缺点</h3><p>优点<br>简答、快捷、满足一般分析需求</p>
+<p>缺点<br>1.不考虑上下文关系, 每个词都是相对独立了 我爱你和你爱我 算法过后表示同一意思。<br>2.文档过多的话会导致IDF可能会低估词的重要性。</p>
+]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>NLP</tag>
+        <tag>文本分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>自动聊天机器人学习笔记</title>
     <url>/2020/04/04/%E8%87%AA%E5%8A%A8%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<span id="more"></span>
@@ -1549,28 +1571,6 @@ hexo s
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; nltk.download()</span><br></pre></td></tr></table></figure>
 <p>语料库使用</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt; import nltk.cropus</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>编程笔记</category>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>NLP</tag>
-        <tag>文本分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>自然语言处理（一）：TFIDF</title>
-    <url>/2022/07/16/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9ATFIDF/</url>
-    <content><![CDATA[<h3 id="1-TFIDF的定义"><a href="#1-TFIDF的定义" class="headerlink" title="1. TFIDF的定义"></a>1. TFIDF的定义</h3><p>TFIDF 全称 Term Frequency, Inverse document Frequency，也可以翻译成词频逆向文档频率。TFIDF可以分为两部分，其中TF就是一个词出现在一个文档中出现的频率，而IDF就是有多少个文档包含了该单词。</p>
-<h3 id="2-使用说明"><a href="#2-使用说明" class="headerlink" title="2. 使用说明"></a>2. 使用说明</h3><p>TFIDF是一种基于词频的算法公式，用来为每个词组计算一个分值，基于这个分值识别一个词在一个文档中的重要性，而后可以作为关键词提取或用于给词向量加权。</p>
-<h3 id="3-基本原理"><a href="#3-基本原理" class="headerlink" title="3. 基本原理"></a>3. 基本原理</h3><p>TF是计算词频，词频越高就证明了这词越重要，而IDF逆向文档频率就是为了降低一些常用词出现的权重。最后通过TF*IDF的乘积得到一个最后分值。一般来说经过TFIDF公式计算后的单词分值越大越为重要。原理是当一个词在单个文档中出现频繁的出现，但在其他文档中出现得少，这证明这个单词对于这个文档是重要的。</p>
-<p>比方说有个文件夹下有两个文档:<br>1.今天吃番茄炒蛋， 在这个句子分词后可以分为: 今天 上午 吃 番茄 炒 蛋 下午 吃 番茄 土豆<br>2.明天吃番茄炒土豆， 在这个句子分词后可以分为: 今天 上午 吃 红烧鱼 下午 吃 土豆</p>
-<p>从这两句话中可以看出 “番茄” 是比较重要的，因为番茄在句一出现了两次而在其他文档中没有频繁出现。而 “今天” ，”上午” 等词语经过IDF减权显得并非那么重要。</p>
-<h3 id="4-算法公式"><a href="#4-算法公式" class="headerlink" title="4. 算法公式"></a>4. 算法公式</h3><p>TF: 一个词在一个文档出现的次数&#x2F;在所有文档中所有出现过词的数量<br>IDF: log(文档总算量&#x2F;包含该词的文档数量)<br>TFIDF &#x3D; TF * IDF</p>
-<h3 id="5-优缺点"><a href="#5-优缺点" class="headerlink" title="5. 优缺点"></a>5. 优缺点</h3><p>优点<br>简答、快捷、满足一般分析需求</p>
-<p>缺点<br>1.不考虑上下文关系, 每个词都是相对独立了 我爱你和你爱我 算法过后表示同一意思。<br>2.文档过多的话会导致IDF可能会低估词的重要性。</p>
-]]></content>
       <categories>
         <category>编程笔记</category>
         <category>学习笔记</category>
