@@ -1,0 +1,436 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Python函数学习笔记 | Jack的个人博客</title><meta name="keywords" content="AI,阿里云,天池,python"><meta name="author" content="Jack Gan"><meta name="copyright" content="Jack Gan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="函数函数的定义还记得 Python 里面“万物皆对象”么？Python 把函数也当成对象，可以从另一个函数中返回出来而去构建高阶函数，比如：参数是函数、返回值是函数。 我们首先来介绍函数的定义。  函数以def关键词开头，后接函数名和圆括号()。 函数执行的代码以冒号起始，并且缩进。 return [表达式] 结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回None。  1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python函数学习笔记">
+<meta property="og:url" content="https://ganzhancheng.cn/2022/11/06/Python%E5%87%BD%E6%95%B0%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Jack的个人博客">
+<meta property="og:description" content="函数函数的定义还记得 Python 里面“万物皆对象”么？Python 把函数也当成对象，可以从另一个函数中返回出来而去构建高阶函数，比如：参数是函数、返回值是函数。 我们首先来介绍函数的定义。  函数以def关键词开头，后接函数名和圆括号()。 函数执行的代码以冒号起始，并且缩进。 return [表达式] 结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回None。  1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ganzhancheng.cn/img/gallery/cover7.png">
+<meta property="article:published_time" content="2022-11-06T12:42:43.000Z">
+<meta property="article:modified_time" content="2022-11-06T12:59:37.292Z">
+<meta property="article:author" content="Jack Gan">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="阿里云">
+<meta property="article:tag" content="天池">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ganzhancheng.cn/img/gallery/cover7.png"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://ganzhancheng.cn/2022/11/06/Python%E5%87%BD%E6%95%B0%E5%AD%A6%E4%B9%A0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"4JML5TCPV7","apiKey":"99b309d6e0cd73467de8740a39cef07f","indexName":"ganzhancheng2020.github.io","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: {"path":"http://localhost:8000/","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Python函数学习笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-06 20:59:37'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.2"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-solid fa-folder"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/"><i class="fa-fw fa-solid fa-terminal"></i><span> 编程笔记</span></a></li><li><a class="site-page child" href="/categories/%E8%BF%90%E5%8A%A8%E5%81%A5%E5%BA%B7/"><i class="fa-fw fa-solid fa-basketball"></i><span> 运动健康</span></a></li><li><a class="site-page child" href="/categories/%E8%B4%A2%E5%AF%8C%E5%AF%86%E7%A0%81/"><i class="fa-fw fa-solid fa-money-bill"></i><span> 财富密码</span></a></li><li><a class="site-page child" href="/categories/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"><i class="fa-fw fa-solid fa-handshake"></i><span> 人际关系</span></a></li><li><a class="site-page child" href="/categories/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/"><i class="fa-fw fa-sharp fa-solid fa-brain"></i><span> 思维模型</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-solid fa-solid fa-gamepad"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><i class="fa-fw fa-solid fa-book"></i><span> 书籍</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fa-solid fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/aboutMe/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/gallery/cover7.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Jack的个人博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-solid fa-folder"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/"><i class="fa-fw fa-solid fa-terminal"></i><span> 编程笔记</span></a></li><li><a class="site-page child" href="/categories/%E8%BF%90%E5%8A%A8%E5%81%A5%E5%BA%B7/"><i class="fa-fw fa-solid fa-basketball"></i><span> 运动健康</span></a></li><li><a class="site-page child" href="/categories/%E8%B4%A2%E5%AF%8C%E5%AF%86%E7%A0%81/"><i class="fa-fw fa-solid fa-money-bill"></i><span> 财富密码</span></a></li><li><a class="site-page child" href="/categories/%E4%BA%BA%E9%99%85%E5%85%B3%E7%B3%BB/"><i class="fa-fw fa-solid fa-handshake"></i><span> 人际关系</span></a></li><li><a class="site-page child" href="/categories/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/"><i class="fa-fw fa-sharp fa-solid fa-brain"></i><span> 思维模型</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-solid fa-solid fa-gamepad"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/books/"><i class="fa-fw fa-solid fa-book"></i><span> 书籍</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/games/"><i class="fa-fw fa-solid fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fa-solid fa-image"></i><span> 图库</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/aboutMe/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Python函数学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-06T12:42:43.000Z" title="发表于 2022-11-06 20:42:43">2022-11-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-06T12:59:37.292Z" title="更新于 2022-11-06 20:59:37">2022-11-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/">编程笔记</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Python函数学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h2><p>还记得 Python 里面“万物皆对象”么？Python 把函数也当成对象，可以从另一个函数中返回出来而去构建高阶函数，比如：<br>参数是函数、返回值是函数。</p>
+<p>我们首先来介绍函数的定义。</p>
+<ul>
+<li>函数以<code>def</code>关键词开头，后接函数名和圆括号()。</li>
+<li>函数执行的代码以冒号起始，并且缩进。</li>
+<li>return [表达式] 结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回<code>None</code>。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">functionname</span> (parameters):</span><br><span class="line">	<span class="string">&quot;函数_文档字符串&quot;</span></span><br><span class="line">	function_suite</span><br><span class="line">	<span class="keyword">return</span> [expression]</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="函数的调用"><a href="#函数的调用" class="headerlink" title="函数的调用"></a>函数的调用</h2><p>【例子】</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">function1</span>(<span class="params"><span class="built_in">str</span></span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">str</span>)</span><br><span class="line"></span><br><span class="line">printme(<span class="string">&quot;调用函数&quot;</span>)  <span class="comment"># 我要调用用户自定义函数!</span></span><br><span class="line">printme(<span class="string">&quot;再次调用同一函数&quot;</span>)  <span class="comment"># </span></span><br><span class="line"><span class="comment">## 函数文档再次调用同一函数</span></span><br><span class="line"></span><br><span class="line">temp = printme(<span class="string">&#x27;尝试进行赋值&#x27;</span>) <span class="comment"># 试一试赋值</span></span><br><span class="line"><span class="built_in">print</span>(temp)  <span class="comment"># 输出为None，该function并不会赋值</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="函数文档"><a href="#函数文档" class="headerlink" title="函数文档"></a>函数文档</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">MyFirstFunction</span>(<span class="params">name</span>):</span><br><span class="line">    <span class="string">&quot;函数定义过程中name是形参&quot;</span></span><br><span class="line">    <span class="comment"># 因为Ta只是一个形式，表示占据一个参数位置</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;传递进来的&#123;0&#125;叫做实参，因为Ta是具体的参数值！&#x27;</span>.<span class="built_in">format</span>(name))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">MyFirstFunction(<span class="string">&#x27;老马的程序人生&#x27;</span>)  </span><br><span class="line"><span class="comment"># 传递进来的老马的程序人生叫做实参，因为Ta是具体的参数值！</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(MyFirstFunction.__doc__) <span class="comment">#输出MyFirstFunction function中的注释</span></span><br><span class="line"><span class="comment"># 函数定义过程中name是形参</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">help</span>(MyFirstFunction) <span class="comment">#输出完整的函数文档</span></span><br><span class="line"><span class="comment"># Help on function MyFirstFunction in module __main__:</span></span><br><span class="line"><span class="comment"># MyFirstFunction(name)</span></span><br><span class="line"><span class="comment">#    函数定义过程中name是形参</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>传递进来的老马的程序人生叫做实参，因为Ta是具体的参数值！
+函数定义过程中name是形参
+Help on function MyFirstFunction in module __main__:
+
+MyFirstFunction(name)
+    函数定义过程中name是形参
+</code></pre>
+<h2 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h2><p>Python 的函数具有非常灵活多样的参数形态，既可以实现简单的调用，又可以传入非常复杂的参数。从简到繁的参数形态如下：</p>
+<ul>
+<li>位置参数 (positional argument)</li>
+<li>默认参数 (default argument)</li>
+<li>可变参数 (variable argument)</li>
+<li>关键字参数 (keyword argument)</li>
+<li>命名关键字参数 (name keyword argument)</li>
+<li>参数组合</li>
+</ul>
+<p><strong>1. 位置参数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">functionname</span>(<span class="params">arg1</span>):</span><br><span class="line">	<span class="string">&quot;函数_文档字符串&quot;</span></span><br><span class="line">	function_suite</span><br><span class="line">	<span class="keyword">return</span> [expression]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>arg1</code> - 位置参数 ，这些参数在调用函数 (call function) 时位置要固定。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">printinfo</span>(<span class="params">name, age</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Name:&#123;0&#125;,Age:&#123;1&#125;&#x27;</span>.<span class="built_in">format</span>(name, age))</span><br><span class="line"></span><br><span class="line">printinfo(<span class="string">&#x27;小猫&#x27;</span>, <span class="number">10</span>)  <span class="comment"># Name:小马,Age:10</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>Name:小猫,Age:10
+</code></pre>
+<p><strong>2. 默认参数</strong></p>
+<blockquote>
+<p>def functionname(arg1, arg2&#x3D;v):<br><br>&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;”函数_文档字符串”<br><br>&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;function_suite<br><br>&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;return [expression]<br></p>
+</blockquote>
+<ul>
+<li><code>arg2 = v</code> - 默认参数 &#x3D; 默认值，调用函数时，默认参数的值如果没有传入，则被认为是默认值。</li>
+<li>默认参数一定要放在位置参数 <b>后面</b>，不然程序会报错。</li>
+</ul>
+<p>【例子】</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">printinfo</span>(<span class="params">name, age=<span class="number">18</span></span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Name:&#123;0&#125;,Age:&#123;1&#125;&#x27;</span>.<span class="built_in">format</span>(name, age))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">printinfo(<span class="string">&#x27;小猫&#x27;</span>)  <span class="comment"># Name:小猫,Age:18</span></span><br><span class="line">printinfo(<span class="string">&#x27;小猫&#x27;</span>, <span class="number">10</span>)  <span class="comment"># Name:小猫,Age:10</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>Name:小猫,Age:18
+Name:小猫,Age:10
+</code></pre>
+<ul>
+<li>Python 允许函数调用时参数的顺序与声明时不一致，因为 Python 解释器能够用参数名匹配参数值。</li>
+</ul>
+<p>【例子】</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">printinfo</span>(<span class="params">name, age</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Name:&#123;0&#125;,Age:&#123;1&#125;&#x27;</span>.<span class="built_in">format</span>(name, age))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">printinfo(age=<span class="number">18</span>, name=<span class="string">&#x27;小猫&#x27;</span>)  <span class="comment"># Name:小猫,Age:18</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>Name:小猫,Age:18
+</code></pre>
+<p><strong>3. 可变参数</strong></p>
+<p>顾名思义，可变参数就是传入的参数个数是可变的，可以是 0, 1, 2 到任意个，是不定长的参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">functionname</span>(<span class="params">arg1, arg2=v, *args</span>):</span><br><span class="line">	<span class="string">&quot;函数_文档字符串&quot;</span></span><br><span class="line">	function_suite</span><br><span class="line">	<span class="keyword">return</span> [expression]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>*args</code> - 可变参数，可以是从零个到任意个，自动组装成<code>元组</code>。</li>
+<li>加了星号（*）的变量名会存放所有未命名的变量参数。</li>
+</ul>
+<p>【例子】</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">printinfo</span>(<span class="params">arg1, *args</span>):</span><br><span class="line">    <span class="built_in">print</span>(arg1)</span><br><span class="line">    <span class="keyword">for</span> var <span class="keyword">in</span> args:</span><br><span class="line">        <span class="built_in">print</span>(var)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;输入一个参数：&quot;</span>)</span><br><span class="line">printinfo(<span class="number">10</span>)  <span class="comment"># 10</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;输入多个参数：&quot;</span>)</span><br><span class="line">printinfo(<span class="number">70</span>, <span class="number">60</span>, <span class="number">50</span>)</span><br><span class="line"><span class="comment"># 70</span></span><br><span class="line"><span class="comment"># 60</span></span><br><span class="line"><span class="comment"># 50</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>输入一个参数：
+10
+输入多个参数：
+70
+60
+50
+</code></pre>
+<p><strong>4. 关键字参数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">functionname</span>(<span class="params">arg1, arg2=v, *args, **kw</span>):</span><br><span class="line">	<span class="string">&quot;函数_文档字符串&quot;</span></span><br><span class="line">	function_suite</span><br><span class="line">	<span class="keyword">return</span> [expression]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>**kw</code> - 关键字参数，可以是从零个到任意个，<code>自动组装成字典</code>。</li>
+</ul>
+<p>【例子】</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">printinfo</span>(<span class="params">arg1, *args, **kwargs</span>):</span><br><span class="line">    <span class="built_in">print</span>(arg1)</span><br><span class="line">    <span class="built_in">print</span>(args)</span><br><span class="line">    <span class="built_in">print</span>(kwargs)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">printinfo(<span class="number">70</span>, <span class="number">60</span>, <span class="number">50</span>)</span><br><span class="line"><span class="comment"># 70</span></span><br><span class="line"><span class="comment"># (60, 50)</span></span><br><span class="line"><span class="comment"># &#123;&#125;</span></span><br><span class="line">printinfo(<span class="number">70</span>, <span class="number">60</span>, <span class="number">50</span>, a=<span class="number">1</span>, b=<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 70</span></span><br><span class="line"><span class="comment"># (60, 50)</span></span><br><span class="line"><span class="comment"># &#123;&#x27;a&#x27;: 1, &#x27;b&#x27;: 2&#125;</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>70
+(60, 50)
+&#123;&#125;
+70
+(60, 50)
+&#123;&#39;a&#39;: 1, &#39;b&#39;: 2&#125;
+</code></pre>
+<p>「可变参数」和「关键字参数」的同异总结如下：</p>
+<ul>
+<li>可变参数允许传入零个到任意个参数，它们在函数调用时自动组装为一个元组 (tuple)。</li>
+<li>关键字参数允许传入零个到任意个参数，它们在函数内部自动组装为一个字典 (dict)。</li>
+</ul>
+<p><strong>5. 命名关键字参数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">functionname</span>(<span class="params">arg1, arg2=v, *args, *, nkw, **kw</span>):</span><br><span class="line"> 	<span class="string">&quot;函数_文档字符串&quot;</span></span><br><span class="line"> 	function_suite</span><br><span class="line"> 	<span class="keyword">return</span> [expression]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>*, nkw</code> - 命名关键字参数，用户想要输入的关键字参数，定义方式是在nkw 前面加个分隔符 <code>*</code>。</li>
+<li>如果要限制关键字参数的名字，就可以用「命名关键字参数」</li>
+<li>使用命名关键字参数时，要特别注意不能缺少参数名。</li>
+</ul>
+<p>【例子】</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">printinfo</span>(<span class="params">arg1, *, nkw, **kwargs</span>):</span><br><span class="line">    <span class="built_in">print</span>(arg1)</span><br><span class="line">    <span class="built_in">print</span>(nkw)</span><br><span class="line">    <span class="built_in">print</span>(kwargs)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">printinfo(<span class="number">70</span>, nkw=<span class="number">10</span>, a=<span class="number">1</span>, b=<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 70</span></span><br><span class="line"><span class="comment"># 10</span></span><br><span class="line"><span class="comment"># &#123;&#x27;a&#x27;: 1, &#x27;b&#x27;: 2&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># printinfo(70, 10, a=1, b=2)</span></span><br><span class="line"><span class="comment"># TypeError: printinfo() takes 1 positional argument but 2 were given</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>70
+10
+&#123;&#39;a&#39;: 1, &#39;b&#39;: 2&#125;
+</code></pre>
+<ul>
+<li>没有写参数名<code>nwk</code>，因此 10 被当成「位置参数」，而原函数只有 1 个位置函数，现在调用了 2 个，因此程序会报错。</li>
+</ul>
+<p><strong>6. 参数组合</strong></p>
+<p>在 Python 中定义函数，可以用位置参数、默认参数、可变参数、命名关键字参数和关键字参数，这 5 种参数中的 4 个都可以一起使用，但是注意，参数定义的顺序必须是：</p>
+<ul>
+<li>位置参数、默认参数、可变参数和关键字参数。</li>
+<li>位置参数、默认参数、命名关键字参数和关键字参数。</li>
+</ul>
+<p>要注意定义可变参数和关键字参数的语法：</p>
+<ul>
+<li><code>*args</code> 是可变参数，<code>args</code> 接收的是一个 <code>tuple</code></li>
+<li><code>**kw</code> 是关键字参数，<code>kw</code> 接收的是一个 <code>dict</code></li>
+</ul>
+<p>命名关键字参数是为了限制调用者可以传入的参数名，同时可以提供默认值。定义命名关键字参数不要忘了写分隔符 <code>*</code>，否则定义的是位置参数。</p>
+<p>警告：虽然可以组合多达 5 种参数，但不要同时使用太多的组合，否则函数很难懂。</p>
+<h2 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h2><p>【例子1】</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(add(<span class="number">1</span>, <span class="number">2</span>))  <span class="comment"># 3</span></span><br><span class="line"><span class="built_in">print</span>(add([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]))  <span class="comment"># [1, 2, 3, 4, 5, 6]</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>3
+[1, 2, 3, 4, 5, 6]
+</code></pre>
+<p>【例子2】</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">back</span>():</span><br><span class="line">    <span class="keyword">return</span> [<span class="number">1</span>, <span class="string">&#x27;小马的程序人生&#x27;</span>, <span class="number">3.14</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(back())  <span class="comment"># [1, &#x27;小马的程序人生&#x27;, 3.14]</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>[1, &#39;小马的程序人生&#39;, 3.14]
+</code></pre>
+<p>【例子3】</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">back</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>, <span class="string">&#x27;小马的程序人生&#x27;</span>, <span class="number">3.14</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(back())  <span class="comment"># (1, &#x27;小马的程序人生&#x27;, 3.14)</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>(1, &#39;小马的程序人生&#39;, 3.14)
+</code></pre>
+<p>【例子4】</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">printme</span>(<span class="params"><span class="built_in">str</span></span>): <span class="comment">#当函数不具备返回值时</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">str</span>)</span><br><span class="line"></span><br><span class="line">temp = printme(<span class="string">&#x27;hello&#x27;</span>) <span class="comment"># hello</span></span><br><span class="line"><span class="built_in">print</span>(temp) <span class="comment"># None</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(temp))  <span class="comment"># &lt;class &#x27;NoneType&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>hello
+None
+&lt;class &#39;NoneType&#39;&gt;
+</code></pre>
+<h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><ul>
+<li>Python 中，程序的变量并不是在哪个位置都可以访问的，访问权限决定于这个变量是在哪里赋值的。</li>
+<li>定义在函数内部的变量拥有局部作用域，该变量称为局部变量。</li>
+<li>定义在函数外部的变量拥有全局作用域，该变量称为全局变量。</li>
+<li>局部变量只能在其被声明的函数内部访问，而全局变量可以在整个程序范围内访问。</li>
+</ul>
+<p>【例子】</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">discounts</span>(<span class="params">price, rate</span>):</span><br><span class="line">    final_price = price * rate</span><br><span class="line">    <span class="keyword">return</span> final_price</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">old_price = <span class="built_in">float</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入原价:&#x27;</span>))  <span class="comment"># 98</span></span><br><span class="line">rate = <span class="built_in">float</span>(<span class="built_in">input</span>(<span class="string">&#x27;请输入折扣率:&#x27;</span>))  <span class="comment"># 0.9</span></span><br><span class="line">new_price = discounts(old_price, rate)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;打折后价格是:%.2f&#x27;</span> % new_price)  <span class="comment"># 88.20</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>请输入原价:98
+请输入折扣率:0.9
+打折后价格是:88.20
+</code></pre>
+<ul>
+<li>当内部作用域想修改外部作用域的变量时，就要用到<code>global</code>和<code>nonlocal</code>关键字了。</li>
+</ul>
+<p>【例子】</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">num = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun1</span>():</span><br><span class="line">    <span class="keyword">global</span> num  <span class="comment"># 需要使用 global 关键字声明</span></span><br><span class="line">    <span class="built_in">print</span>(num)  <span class="comment"># 1</span></span><br><span class="line">    num = <span class="number">123</span></span><br><span class="line">    <span class="built_in">print</span>(num)  <span class="comment"># 123</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fun1()</span><br><span class="line"><span class="built_in">print</span>(num)  <span class="comment"># 123</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>1
+123
+123
+</code></pre>
+<p><strong>内嵌函数</strong></p>
+<p>【例子】</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">outer</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;outer函数在这被调用&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">inner</span>():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;inner函数在这被调用&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    inner()  <span class="comment"># 该函数只能在outer函数内部被调用</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">outer()</span><br><span class="line"><span class="comment"># outer函数在这被调用</span></span><br><span class="line"><span class="comment"># inner函数在这被调用</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>outer函数在这被调用
+inner函数在这被调用
+</code></pre>
+<p>【例子】闭包的返回值通常是函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">make_counter</span>(<span class="params">init</span>):</span><br><span class="line">    counter = [init]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">inc</span>(): counter[<span class="number">0</span>] += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dec</span>(): counter[<span class="number">0</span>] -= <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get</span>(): <span class="keyword">return</span> counter[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reset</span>(): counter[<span class="number">0</span>] = init</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> inc, dec, get, reset</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">inc, dec, get, reset = make_counter(<span class="number">0</span>)</span><br><span class="line">inc()</span><br><span class="line">inc()</span><br><span class="line">inc()</span><br><span class="line"><span class="built_in">print</span>(get())  <span class="comment"># 3</span></span><br><span class="line">dec()</span><br><span class="line"><span class="built_in">print</span>(get())  <span class="comment"># 2</span></span><br><span class="line">reset()</span><br><span class="line"><span class="built_in">print</span>(get())  <span class="comment"># 0</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>3
+2
+0
+</code></pre>
+<p>【例子】 如果要修改闭包作用域中的变量则需要 <code>nonlocal</code> 关键字</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">outer</span>():</span><br><span class="line">    num = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">inner</span>():</span><br><span class="line">        <span class="keyword">nonlocal</span> num  <span class="comment"># nonlocal关键字声明</span></span><br><span class="line">        num = <span class="number">100</span></span><br><span class="line">        <span class="built_in">print</span>(num)</span><br><span class="line"></span><br><span class="line">    inner()</span><br><span class="line">    <span class="built_in">print</span>(num)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">outer()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 100</span></span><br><span class="line"><span class="comment"># 100</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>100
+100
+</code></pre>
+<p><strong>递归</strong></p>
+<ul>
+<li>如果一个函数在内部调用自身本身，这个函数就是递归函数。</li>
+</ul>
+<p>【例子】<code>n! = 1 x 2 x 3 x ... x n</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 利用循环</span></span><br><span class="line">n = <span class="number">5</span></span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">5</span>):</span><br><span class="line">    n = n * k</span><br><span class="line"><span class="built_in">print</span>(n)  <span class="comment"># 120</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用递归</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">factorial</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> n * factorial(n - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(factorial(<span class="number">5</span>)) <span class="comment"># 120</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>120
+120
+</code></pre>
+<p>【例子】斐波那契数列 <code>f(n)=f(n-1)+f(n-2), f(0)=0 f(1)=1</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 利用循环</span></span><br><span class="line">i = <span class="number">0</span></span><br><span class="line">j = <span class="number">1</span></span><br><span class="line">lst = <span class="built_in">list</span>([i, j])</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, <span class="number">11</span>):</span><br><span class="line">    k = i + j</span><br><span class="line">    lst.append(k)</span><br><span class="line">    i = j</span><br><span class="line">    j = k</span><br><span class="line"><span class="built_in">print</span>(lst)  </span><br><span class="line"><span class="comment"># [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用递归</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">recur_fibo</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> n</span><br><span class="line">    <span class="keyword">return</span> recur_fibo(n - <span class="number">1</span>) + recur_fibo(n - <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">lst = <span class="built_in">list</span>()</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">11</span>):</span><br><span class="line">    lst.append(recur_fibo(k))</span><br><span class="line"><span class="built_in">print</span>(lst)  </span><br><span class="line"><span class="comment"># [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+</code></pre>
+<p>【例子】设置递归的层数，Python默认递归层数为 100</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">sys.setrecursionlimit(<span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://ganzhancheng.cn">Jack Gan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://ganzhancheng.cn/2022/11/06/Python%E5%87%BD%E6%95%B0%E5%AD%A6%E4%B9%A0/">https://ganzhancheng.cn/2022/11/06/Python%E5%87%BD%E6%95%B0%E5%AD%A6%E4%B9%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://ganzhancheng.cn" target="_blank">Jack的个人博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/AI/">AI</a><a class="post-meta__tags" href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">阿里云</a><a class="post-meta__tags" href="/tags/%E5%A4%A9%E6%B1%A0/">天池</a><a class="post-meta__tags" href="/tags/python/">python</a></div><div class="post_share"><div class="social-share" data-image="/img/gallery/cover7.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat_reward.jpeg" target="_blank"><img class="post-qr-code-img" src="/img/wechat_reward.jpeg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay_reward.jpeg" target="_blank"><img class="post-qr-code-img" src="/img/alipay_reward.jpeg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/11/07/Anaconda%E4%B8%8Epip%E9%95%9C%E5%83%8F%E6%BA%90%E8%AE%BE%E7%BD%AE/"><img class="prev-cover" src="/img/gallery/cover6.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Anaconda与pip镜像源设置</div></div></a></div><div class="next-post pull-right"><a href="/2022/11/06/%E9%98%BF%E9%87%8C%E4%BA%91AI%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89%E5%A4%A9%E6%B1%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5/"><img class="next-cover" src="/img/gallery/cover4.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">阿里云AI学习（一）天池入门与实践笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/11/06/%E9%98%BF%E9%87%8C%E4%BA%91AI%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89%E5%A4%A9%E6%B1%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5/" title="阿里云AI学习（一）天池入门与实践笔记"><img class="cover" src="/img/gallery/cover4.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-06</div><div class="title">阿里云AI学习（一）天池入门与实践笔记</div></div></a></div><div><a href="/2022/11/13/%E9%98%BF%E9%87%8C%E4%BA%91AI%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89%E7%94%A8Pandas%E6%8F%AD%E7%A7%98%E7%BE%8E%E5%9B%BD%E9%80%89%E6%B0%91%E7%9A%84%E6%80%BB%E7%BB%9F%E5%96%9C%E5%A5%BD/" title="阿里云AI学习（二）用Pandas揭秘美国选民的总统喜好"><img class="cover" src="/img/gallery/cover6.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-13</div><div class="title">阿里云AI学习（二）用Pandas揭秘美国选民的总统喜好</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jack Gan</div><div class="author-info__description">一位数据分析师的自我修养</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ganzhancheng2020"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ganzhancheng2020" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:ganzhancheng@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/img/wechat.jpeg" target="_blank" title="wechat"><i class="fa-brands fa-weixin"></i></a><a class="social-icon" href="https://space.bilibili.com/7522004" target="_blank" title="bilibili"><i class="fa-brands fa-bilibili"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">请多关注</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.</span> <span class="toc-text">函数的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E8%B0%83%E7%94%A8"><span class="toc-number">1.2.</span> <span class="toc-text">函数的调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E6%96%87%E6%A1%A3"><span class="toc-number">1.3.</span> <span class="toc-text">函数文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0"><span class="toc-number">1.4.</span> <span class="toc-text">函数参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-number">1.5.</span> <span class="toc-text">函数的返回值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">1.6.</span> <span class="toc-text">变量作用域</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/13/%E9%98%BF%E9%87%8C%E4%BA%91AI%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89%E7%94%A8Pandas%E6%8F%AD%E7%A7%98%E7%BE%8E%E5%9B%BD%E9%80%89%E6%B0%91%E7%9A%84%E6%80%BB%E7%BB%9F%E5%96%9C%E5%A5%BD/" title="阿里云AI学习（二）用Pandas揭秘美国选民的总统喜好"><img src="/img/gallery/cover6.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="阿里云AI学习（二）用Pandas揭秘美国选民的总统喜好"/></a><div class="content"><a class="title" href="/2022/11/13/%E9%98%BF%E9%87%8C%E4%BA%91AI%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89%E7%94%A8Pandas%E6%8F%AD%E7%A7%98%E7%BE%8E%E5%9B%BD%E9%80%89%E6%B0%91%E7%9A%84%E6%80%BB%E7%BB%9F%E5%96%9C%E5%A5%BD/" title="阿里云AI学习（二）用Pandas揭秘美国选民的总统喜好">阿里云AI学习（二）用Pandas揭秘美国选民的总统喜好</a><time datetime="2022-11-13T14:23:30.000Z" title="发表于 2022-11-13 22:23:30">2022-11-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/07/Anaconda%E4%B8%8Epip%E9%95%9C%E5%83%8F%E6%BA%90%E8%AE%BE%E7%BD%AE/" title="Anaconda与pip镜像源设置"><img src="/img/gallery/cover6.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Anaconda与pip镜像源设置"/></a><div class="content"><a class="title" href="/2022/11/07/Anaconda%E4%B8%8Epip%E9%95%9C%E5%83%8F%E6%BA%90%E8%AE%BE%E7%BD%AE/" title="Anaconda与pip镜像源设置">Anaconda与pip镜像源设置</a><time datetime="2022-11-07T13:13:43.000Z" title="发表于 2022-11-07 21:13:43">2022-11-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/06/Python%E5%87%BD%E6%95%B0%E5%AD%A6%E4%B9%A0/" title="Python函数学习笔记"><img src="/img/gallery/cover7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python函数学习笔记"/></a><div class="content"><a class="title" href="/2022/11/06/Python%E5%87%BD%E6%95%B0%E5%AD%A6%E4%B9%A0/" title="Python函数学习笔记">Python函数学习笔记</a><time datetime="2022-11-06T12:42:43.000Z" title="发表于 2022-11-06 20:42:43">2022-11-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/06/%E9%98%BF%E9%87%8C%E4%BA%91AI%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89%E5%A4%A9%E6%B1%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5/" title="阿里云AI学习（一）天池入门与实践笔记"><img src="/img/gallery/cover4.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="阿里云AI学习（一）天池入门与实践笔记"/></a><div class="content"><a class="title" href="/2022/11/06/%E9%98%BF%E9%87%8C%E4%BA%91AI%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89%E5%A4%A9%E6%B1%A0%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5/" title="阿里云AI学习（一）天池入门与实践笔记">阿里云AI学习（一）天池入门与实践笔记</a><time datetime="2022-11-06T01:40:43.000Z" title="发表于 2022-11-06 09:40:43">2022-11-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/03/%E7%BA%B3%E7%93%A6%E5%B0%94%E5%85%B3%E4%BA%8E%E7%94%9F%E6%B4%BB%E3%80%81%E5%B7%A5%E4%BD%9C%E5%92%8C%E6%99%BA%E6%85%A7%E7%9A%84%E8%AE%BF%E8%B0%88%E7%AC%94%E5%BD%95/" title="纳瓦尔关于生活、工作和智慧的访谈笔录"><img src="/img/gallery/cover3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="纳瓦尔关于生活、工作和智慧的访谈笔录"/></a><div class="content"><a class="title" href="/2022/11/03/%E7%BA%B3%E7%93%A6%E5%B0%94%E5%85%B3%E4%BA%8E%E7%94%9F%E6%B4%BB%E3%80%81%E5%B7%A5%E4%BD%9C%E5%92%8C%E6%99%BA%E6%85%A7%E7%9A%84%E8%AE%BF%E8%B0%88%E7%AC%94%E5%BD%95/" title="纳瓦尔关于生活、工作和智慧的访谈笔录">纳瓦尔关于生活、工作和智慧的访谈笔录</a><time datetime="2022-11-02T23:15:00.000Z" title="发表于 2022-11-03 07:15:00">2022-11-03</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/gallery/cover7.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Jack Gan</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">知行合一，大道至简。</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/algoliasearch/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="2129443857" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-autoplay="true" data-lrcType=“-1”> </div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
