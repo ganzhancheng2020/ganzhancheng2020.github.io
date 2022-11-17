@@ -1327,26 +1327,6 @@ deploy:
       </tags>
   </entry>
   <entry>
-    <title>如何撰写读书笔记</title>
-    <url>/2022/09/04/%E5%A6%82%E4%BD%95%E6%92%B0%E5%86%99%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h3 id="为什么需要做笔记？"><a href="#为什么需要做笔记？" class="headerlink" title="为什么需要做笔记？"></a>为什么需要做笔记？</h3><p>知识的积累是内容提取、梳理、并将知识架构重组的循环过程。好的笔记可以帮助我们更有效率得完成知识转化的过程。</p>
-<img src="/2022/09/04/%E5%A6%82%E4%BD%95%E6%92%B0%E5%86%99%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E8%8E%B7%E5%8F%96%E8%BF%87%E7%A8%8B.png" class="">
-
-<h3 id="怎么去做好的笔记？"><a href="#怎么去做好的笔记？" class="headerlink" title="怎么去做好的笔记？"></a>怎么去做好的笔记？</h3><p>好的笔记是会加速知识转化的过程，那么怎么去写出好的笔记呢？这个可能会因人而异，但我稍微说一下我个人做笔记的方法。</p>
-<h6 id="1-图文并茂"><a href="#1-图文并茂" class="headerlink" title="1. 图文并茂"></a>1. 图文并茂</h6><p>这个不是最重要的一点，但我认为是不可少的。从记忆的角度去看，人类对于图片的记忆要远大于文字。在笔记中适当得插入一些图片、图绘是能有效得帮助记忆的。</p>
-<h6 id="2-有序"><a href="#2-有序" class="headerlink" title="2. 有序"></a>2. 有序</h6><p>比起无序的事情人类更容易记住有序的事，知识也是一样的。在学习的过程中，把知识点融入到自身的知识框架当中就是一个无序转换为有序的过程。在这过程中可以使用思维导图，框架图，列表，思维模型等方法去梳理知识脉络，把知识点串联起来。</p>
-<h6 id="3-拓展"><a href="#3-拓展" class="headerlink" title="3. 拓展"></a>3. 拓展</h6><p>我们在学习新的知识点的时候知识内容是碎片化的，也有可能是因为时间维度上的碎片化学习而导致内容是碎片化的。一个新的知识点在同一本书中也很可能是并不完全的。这时候需要对知识进行补充，与自身的知识架构所匹配，或者在别的书中补充对当前知识点做适当得拓展，把知识点补充完整。</p>
-<h6 id="4-思考"><a href="#4-思考" class="headerlink" title="4. 思考"></a>4. 思考</h6><p>光掌握一个知识点或者说仅仅知道这个知识点的本身是远远不够的，我们需要将已有的知识点链接起来，放到我们整个的知识框架当中去，就像是在寻找知识地图中那块拼图所缺失的位置，这时候可以根据自身的场景写出自己的一些心得与思考，以及多个知识点的组合理论，在整理&#x2F;梳理的时候正是对这个知识思考的过程。</p>
-<h6 id="5-行动"><a href="#5-行动" class="headerlink" title="5. 行动"></a>5. 行动</h6><p>知识点需要与行动相结合，做到知行合一。通过新学习到的知识点可以梳理出一些可以行动的事情或者自身能运用到的场景，立刻去执行，最好是能放到自身的日常系统当中去，周而复始的思考与行动会让知识记得更加牢固。</p>
-]]></content>
-      <categories>
-        <category>思维模型</category>
-      </categories>
-      <tags>
-        <tag>读书笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何创建自己的博客（四）：hexo常用命令</title>
     <url>/2022/07/10/%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9Ahexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h3 id="1-新建新文章"><a href="#1-新建新文章" class="headerlink" title="1. 新建新文章"></a>1. 新建新文章</h3><p>新建一篇文章。如果没有设置 layout 的话，默认使用 <code>_config.yml</code> 中的 <code>default_layout</code> 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
@@ -1392,6 +1372,26 @@ $ hexo new &quot;post title with white space&quot;
       </tags>
   </entry>
   <entry>
+    <title>如何撰写读书笔记</title>
+    <url>/2022/09/04/%E5%A6%82%E4%BD%95%E6%92%B0%E5%86%99%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h3 id="为什么需要做笔记？"><a href="#为什么需要做笔记？" class="headerlink" title="为什么需要做笔记？"></a>为什么需要做笔记？</h3><p>知识的积累是内容提取、梳理、并将知识架构重组的循环过程。好的笔记可以帮助我们更有效率得完成知识转化的过程。</p>
+<img src="/2022/09/04/%E5%A6%82%E4%BD%95%E6%92%B0%E5%86%99%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%9F%A5%E8%AF%86%E8%8E%B7%E5%8F%96%E8%BF%87%E7%A8%8B.png" class="">
+
+<h3 id="怎么去做好的笔记？"><a href="#怎么去做好的笔记？" class="headerlink" title="怎么去做好的笔记？"></a>怎么去做好的笔记？</h3><p>好的笔记是会加速知识转化的过程，那么怎么去写出好的笔记呢？这个可能会因人而异，但我稍微说一下我个人做笔记的方法。</p>
+<h6 id="1-图文并茂"><a href="#1-图文并茂" class="headerlink" title="1. 图文并茂"></a>1. 图文并茂</h6><p>这个不是最重要的一点，但我认为是不可少的。从记忆的角度去看，人类对于图片的记忆要远大于文字。在笔记中适当得插入一些图片、图绘是能有效得帮助记忆的。</p>
+<h6 id="2-有序"><a href="#2-有序" class="headerlink" title="2. 有序"></a>2. 有序</h6><p>比起无序的事情人类更容易记住有序的事，知识也是一样的。在学习的过程中，把知识点融入到自身的知识框架当中就是一个无序转换为有序的过程。在这过程中可以使用思维导图，框架图，列表，思维模型等方法去梳理知识脉络，把知识点串联起来。</p>
+<h6 id="3-拓展"><a href="#3-拓展" class="headerlink" title="3. 拓展"></a>3. 拓展</h6><p>我们在学习新的知识点的时候知识内容是碎片化的，也有可能是因为时间维度上的碎片化学习而导致内容是碎片化的。一个新的知识点在同一本书中也很可能是并不完全的。这时候需要对知识进行补充，与自身的知识架构所匹配，或者在别的书中补充对当前知识点做适当得拓展，把知识点补充完整。</p>
+<h6 id="4-思考"><a href="#4-思考" class="headerlink" title="4. 思考"></a>4. 思考</h6><p>光掌握一个知识点或者说仅仅知道这个知识点的本身是远远不够的，我们需要将已有的知识点链接起来，放到我们整个的知识框架当中去，就像是在寻找知识地图中那块拼图所缺失的位置，这时候可以根据自身的场景写出自己的一些心得与思考，以及多个知识点的组合理论，在整理&#x2F;梳理的时候正是对这个知识思考的过程。</p>
+<h6 id="5-行动"><a href="#5-行动" class="headerlink" title="5. 行动"></a>5. 行动</h6><p>知识点需要与行动相结合，做到知行合一。通过新学习到的知识点可以梳理出一些可以行动的事情或者自身能运用到的场景，立刻去执行，最好是能放到自身的日常系统当中去，周而复始的思考与行动会让知识记得更加牢固。</p>
+]]></content>
+      <categories>
+        <category>思维模型</category>
+      </categories>
+      <tags>
+        <tag>读书笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如果创建自己的博客（一）：hexo博客本地部署</title>
     <url>/2022/07/05/%E5%A6%82%E6%9E%9C%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9Ahexo%E5%8D%9A%E5%AE%A2%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/</url>
     <content><![CDATA[<h3 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1. 安装node.js"></a>1. 安装node.js</h3><p>安装地址：在浏览器输入<code>nodejs.org</code>，点击下载当前版本<code>10.15.1.LTS</code>（以LTS结尾长期支持版的）。<br>下载后将安装包打开然后一直点击安装就可以了，按对应的操作系统安装对应的版本即可。<br>node.js会安装两个包，1是<code>npm</code>，2是<code>node</code></p>
@@ -1428,6 +1428,40 @@ hexo s
       <tags>
         <tag>hexo</tag>
         <tag>如何创建自己的博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装Anaconda</title>
+    <url>/2022/10/02/%E5%AE%89%E8%A3%85Anaconda/</url>
+    <content><![CDATA[<h3 id="安装介绍"><a href="#安装介绍" class="headerlink" title="安装介绍"></a>安装介绍</h3><p>之前一直因为安装Anaconda踩了不少坑，所以写个笔记记录一下。本人是用的MacOS系统，下面的安装步骤也是根据这系统写的，若是使用windows系统的朋友也可以参考一下。Anaconda是一个python的环境管理器，广泛适用于人工智能、数据分析、机器学习等领域、可以为用户提供一个很好的编程环境。</p>
+<h3 id="Anaconda安装"><a href="#Anaconda安装" class="headerlink" title="Anaconda安装"></a>Anaconda安装</h3><p>官网安装地址：<a href="https://www.anaconda.com/products/distribution">https://www.anaconda.com/products/distribution</a><br>进入官网页面直接点绿色按钮的下载就可以，但直接下载的话一般会比较慢，这时候我们可以选择到清华源进行下载。<br>清华大学开源软件镜像站安装地址：<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/</a><br>这里有几个版本，根据系统环境的不同下载对应的即可。打开<code>terminal</code>,输入以下命令行，如果以x86_64结尾的下载Anaconda3-2022.05-MacOSX-x86_64.pkg，<br>否则下载Anaconda3-2022.05-MacOSX-arm64.pkg，其余环境的请自行判断。</p>
+<pre><code>(base) JackdeMacBook-Pro:~ jackgan$ uname -a
+Darwin JackdeMacBook-Pro.local **.**.** Darwin Kernel Version 21.6.0: Mon Aug 22 20:17:10 PDT 2022; root:xnu-****.***.****/RELEASE_X86_64 x86_64
+</code></pre>
+<p>安装包下载后直接安装，一直点continue就成。如果不是第一次安装的话请先彻底卸载Anconda。</p>
+<p>安装完成后可以打开<code>terminal</code>并输入以下命令行，确认是否安装成功：</p>
+<pre><code>conda -V
+conda 22.9.0
+</code></pre>
+<p>卸载过程：下载anaconda-clean安装包并运行，若在目录下还有Anaconda的文件夹，把文件夹也一并删除了。</p>
+<pre><code>conda install anaconda-clean
+anaconda-clean --yes
+</code></pre>
+<h3 id="安装Jupyter-notebook"><a href="#安装Jupyter-notebook" class="headerlink" title="安装Jupyter notebook"></a>安装Jupyter notebook</h3><p>输入以下命令行安装：</p>
+<pre><code>conda install jupyter notebook
+</code></pre>
+<p>运行jupyter notebook：</p>
+<pre><code>jupyter notebook
+</code></pre>
+]]></content>
+      <categories>
+        <category>编程笔记</category>
+        <category>学习笔记</category>
+      </categories>
+      <tags>
+        <tag>Anaconda</tag>
+        <tag>Python</tag>
+        <tag>数据分析</tag>
       </tags>
   </entry>
   <entry>
@@ -1478,40 +1512,6 @@ hexo s
         <tag>数据分析</tag>
         <tag>岗位</tag>
         <tag>职业规划</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>安装Anaconda</title>
-    <url>/2022/10/02/%E5%AE%89%E8%A3%85Anaconda/</url>
-    <content><![CDATA[<h3 id="安装介绍"><a href="#安装介绍" class="headerlink" title="安装介绍"></a>安装介绍</h3><p>之前一直因为安装Anaconda踩了不少坑，所以写个笔记记录一下。本人是用的MacOS系统，下面的安装步骤也是根据这系统写的，若是使用windows系统的朋友也可以参考一下。Anaconda是一个python的环境管理器，广泛适用于人工智能、数据分析、机器学习等领域、可以为用户提供一个很好的编程环境。</p>
-<h3 id="Anaconda安装"><a href="#Anaconda安装" class="headerlink" title="Anaconda安装"></a>Anaconda安装</h3><p>官网安装地址：<a href="https://www.anaconda.com/products/distribution">https://www.anaconda.com/products/distribution</a><br>进入官网页面直接点绿色按钮的下载就可以，但直接下载的话一般会比较慢，这时候我们可以选择到清华源进行下载。<br>清华大学开源软件镜像站安装地址：<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/</a><br>这里有几个版本，根据系统环境的不同下载对应的即可。打开<code>terminal</code>,输入以下命令行，如果以x86_64结尾的下载Anaconda3-2022.05-MacOSX-x86_64.pkg，<br>否则下载Anaconda3-2022.05-MacOSX-arm64.pkg，其余环境的请自行判断。</p>
-<pre><code>(base) JackdeMacBook-Pro:~ jackgan$ uname -a
-Darwin JackdeMacBook-Pro.local **.**.** Darwin Kernel Version 21.6.0: Mon Aug 22 20:17:10 PDT 2022; root:xnu-****.***.****/RELEASE_X86_64 x86_64
-</code></pre>
-<p>安装包下载后直接安装，一直点continue就成。如果不是第一次安装的话请先彻底卸载Anconda。</p>
-<p>安装完成后可以打开<code>terminal</code>并输入以下命令行，确认是否安装成功：</p>
-<pre><code>conda -V
-conda 22.9.0
-</code></pre>
-<p>卸载过程：下载anaconda-clean安装包并运行，若在目录下还有Anaconda的文件夹，把文件夹也一并删除了。</p>
-<pre><code>conda install anaconda-clean
-anaconda-clean --yes
-</code></pre>
-<h3 id="安装Jupyter-notebook"><a href="#安装Jupyter-notebook" class="headerlink" title="安装Jupyter notebook"></a>安装Jupyter notebook</h3><p>输入以下命令行安装：</p>
-<pre><code>conda install jupyter notebook
-</code></pre>
-<p>运行jupyter notebook：</p>
-<pre><code>jupyter notebook
-</code></pre>
-]]></content>
-      <categories>
-        <category>编程笔记</category>
-        <category>学习笔记</category>
-      </categories>
-      <tags>
-        <tag>Anaconda</tag>
-        <tag>Python</tag>
-        <tag>数据分析</tag>
       </tags>
   </entry>
   <entry>
